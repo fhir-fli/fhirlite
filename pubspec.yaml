@@ -7,14 +7,21 @@ environment:
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
+  animated_login: ^1.5.5
+  cupertino_icons: ^1.0.5
+  fhir: ^0.9.3
+  fhir_auth: ^0.9.3
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-
+  hooks_riverpod: ^2.1.1
+  riverpod_annotation: ^1.0.6
+    
 dev_dependencies:
+  build_runner: ^2.3.2  
+  flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  riverpod_generator: ^1.0.6
 
 flutter:
   uses-material-design: true
