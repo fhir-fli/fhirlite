@@ -17,7 +17,14 @@ class LoginView extends ConsumerWidget {
             child: Container(
               height: height,
               width: width,
-              color: Colors.blue,
+              decoration: const BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(40.0),
+                    bottomRight: Radius.circular(40.0),
+                    topLeft: Radius.circular(40.0),
+                    bottomLeft: Radius.circular(40.0)),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -36,6 +43,15 @@ class LoginView extends ConsumerWidget {
                               .clientImages!
                               .primaryLogo!,
                         ),
+                      ),
+                    if (ref.read(clientAssetsProvider)!.clientNames?.title !=
+                        null)
+                      Text(
+                        ref.read(clientAssetsProvider)!.clientNames!.title!,
+                        style: ref
+                            .read(clientAssetsProvider)
+                            ?.textTheme
+                            ?.headlineLarge,
                       ),
                   ],
                 ),

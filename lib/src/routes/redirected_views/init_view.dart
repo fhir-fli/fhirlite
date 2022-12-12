@@ -16,6 +16,9 @@ class InitView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.watch(clientAssetsProvider);
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: ref.watch(clientAssetsProvider)?.textTheme,
+      ),
       home: Scaffold(
         body: SafeArea(
           child: FutureBuilder(

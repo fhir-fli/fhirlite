@@ -18,6 +18,7 @@ dependencies:
   go_router: ^5.2.4
   hooks_riverpod: ^2.1.1
   json_annotation: ^4.7.0
+  json_theme: ^4.0.3+1
   riverpod_annotation: ^1.0.6
     
 dev_dependencies:
