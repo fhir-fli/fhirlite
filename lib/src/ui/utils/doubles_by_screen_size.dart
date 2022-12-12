@@ -77,28 +77,67 @@ double doubleByWidth(BuildContext context, num number) {
   }
 }
 
-double doubleByPercentHeight(BuildContext context, num percentOfHeight) {
+/// Returns a double that is the given percent of the height of the given
+/// context, if a max and min number are included, we ensure it is between them
+double doubleByPercentHeight(
+  BuildContext context, [
+  num? percentOfHeight,
+  num? max,
+  num? min,
+]) {
   final height = activeHeight(context);
-  if (height < mobileBreakPointHeight) {
-    return height * percentOfHeight.toDouble() * mobileCoefficient;
-  } else if (height < tabletBreakPointHeight) {
-    return height * percentOfHeight.toDouble() * tabletCoefficient;
-  } else if (height < laptopBreakPointHeight) {
-    return percentOfHeight.toDouble() * laptopCoefficient;
-  } else {
-    return height * percentOfHeight.toDouble();
-  }
+  return between(
+    percentOfHeight == null
+        ? height
+        : height * percentOfHeight.toDouble() / 100,
+    max == null
+        ? height
+        : max > height
+            ? height
+            : max,
+    min == null
+        ? null
+        : min > height
+            ? height
+            : min,
+  );
 }
 
-double doubleByPercentWidth(BuildContext context, num percentOfWidth) {
+/// Returns a double that is the given percent of the width of the given
+/// context, if a max and min number are included, we ensure it is between them
+double doubleByPercentWidth(
+  BuildContext context, [
+  num? percentOfWidth,
+  num? max,
+  num? min,
+]) {
   final width = activeWidth(context);
-  if (width < mobileBreakPointWidth) {
-    return width * percentOfWidth.toDouble() * mobileCoefficient;
-  } else if (width < tabletBreakPointWidth) {
-    return width * percentOfWidth.toDouble() * tabletCoefficient;
-  } else if (width < laptopBreakPointWidth) {
-    return percentOfWidth.toDouble() * laptopCoefficient;
-  } else {
-    return width * percentOfWidth.toDouble();
-  }
+  return between(
+    percentOfWidth == null ? width : width * percentOfWidth.toDouble() / 100,
+    max == null
+        ? width
+        : max > width
+            ? width
+            : max,
+    min == null
+        ? null
+        : min > width
+            ? width
+            : min,
+  );
 }
+
+double between(num dimension, num? max, num? min) => (max != null
+        ? dimension > max
+            ? max
+            : min != null
+                ? dimension < min
+                    ? min
+                    : dimension
+                : dimension
+        : min != null
+            ? dimension < min
+                ? min
+                : dimension
+            : dimension)
+    .toDouble();

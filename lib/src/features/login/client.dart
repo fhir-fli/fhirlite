@@ -2,10 +2,10 @@ import 'package:fhir/r4.dart';
 import 'package:fhir_auth/r4.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'login_provider.g.dart';
+part 'client.g.dart';
 
 @riverpod
-class LoginProvider extends _$LoginProvider {
+class Client extends _$Client {
   @override
   FhirClient build() {
     return FhirClient(fhirUri: FhirUri('mayjuun.com/fhir'));
@@ -21,6 +21,17 @@ class LoginProvider extends _$LoginProvider {
         {
           await (state as SecureFhirClient).login();
           return true;
+        }
+      default:
+        return false;
+    }
+  }
+
+  Future<bool> isLoggedIn() async {
+    switch (state.runtimeType) {
+      case SecureFhirClient:
+        {
+          return await (state as SecureFhirClient).isLoggedIn();
         }
       default:
         return false;

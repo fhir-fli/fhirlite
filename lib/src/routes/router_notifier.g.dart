@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_provider.dart';
+part of 'router_notifier.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,19 +29,20 @@ class _SystemHash {
   }
 }
 
-String $LoginProviderHash() => r'69353ae765121c5ea05bb02d37f5972731788ec0';
+String $RouterNotifierHash() => r'd00369d943826ebe11ff8bad8e52ebf404d00597';
 
-/// See also [LoginProvider].
-final loginProviderProvider =
-    AutoDisposeNotifierProvider<LoginProvider, FhirClient>(
-  LoginProvider.new,
-  name: r'loginProviderProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $LoginProviderHash,
+/// See also [RouterNotifier].
+final routerNotifierProvider =
+    AutoDisposeAsyncNotifierProvider<RouterNotifier, bool>(
+  RouterNotifier.new,
+  name: r'routerNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : $RouterNotifierHash,
 );
-typedef LoginProviderRef = AutoDisposeNotifierProviderRef<FhirClient>;
+typedef RouterNotifierRef = AutoDisposeAsyncNotifierProviderRef<bool>;
 
-abstract class _$LoginProvider extends AutoDisposeNotifier<FhirClient> {
+abstract class _$RouterNotifier extends AutoDisposeAsyncNotifier<bool> {
   @override
-  FhirClient build();
+  FutureOr<bool> build();
 }
