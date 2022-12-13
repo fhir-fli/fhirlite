@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../utils/utils.dart';
+
 /// The design for this login page was based mostly on this github repo:
 /// https://github.com/MarcusNg/flutter_login_ui
 /// Can also be seen on YouTube: https://www.youtube.com/watch?v=6kaEbTfb444
@@ -14,8 +16,7 @@ class LoginView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final double width = doubleByPercentWidth(context, 33, 600, 400);
-    final double height = doubleByPercentHeight(context, 80, 900);
+    final labels = LocaleUtil().getLabels(context);
 
     Widget buildTF(
       String text,
@@ -60,8 +61,8 @@ class LoginView extends ConsumerWidget {
           alignment: Alignment.centerRight,
           child: TextButton(
             onPressed: () => log('Forgot Password Button Pressed'),
-            child: const Text(
-              'Forgot Password?',
+            child: Text(
+              labels.forgotPassword,
               style: kLabelStyle,
             ),
           ),
@@ -84,8 +85,8 @@ class LoginView extends ConsumerWidget {
                   },
                 ),
               ),
-              const Text(
-                'Remember me',
+              Text(
+                labels.rememberMe,
                 style: kLabelStyle,
               ),
             ],
@@ -110,9 +111,9 @@ class LoginView extends ConsumerWidget {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
           onPressed: () => log('Login Button Pressed'),
-          child: const Text(
-            'LOGIN',
-            style: TextStyle(
+          child: Text(
+            labels.loginCapital,
+            style: const TextStyle(
               color: Color(0xFF527DAA),
               letterSpacing: 1.5,
               fontSize: 18.0,
@@ -125,17 +126,17 @@ class LoginView extends ConsumerWidget {
     }
 
     Widget buildSignInWithText() => Column(
-          children: const <Widget>[
+          children: <Widget>[
             Text(
-              '- OR -',
-              style: TextStyle(
+              labels.orForLogin,
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Text(
-              'Sign in with',
+              labels.signInWith,
               style: kLabelStyle,
             ),
           ],
@@ -197,19 +198,19 @@ class LoginView extends ConsumerWidget {
       return GestureDetector(
         onTap: () => log('Sign Up Button Pressed'),
         child: RichText(
-          text: const TextSpan(
+          text: TextSpan(
             children: [
               TextSpan(
-                text: 'Don\'t have an Account? ',
-                style: TextStyle(
+                text: labels.dontHaveAccount,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
                 ),
               ),
               TextSpan(
-                text: 'Sign Up',
-                style: TextStyle(
+                text: labels.signUp,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -258,7 +259,7 @@ class LoginView extends ConsumerWidget {
                       children: <Widget>[
                         Text(
                           ref.read(clientAssetsProvider)!.clientNames?.title ??
-                              'Sign In',
+                              labels.signIn,
                           style: ref
                               .read(clientAssetsProvider)
                               ?.textTheme
@@ -269,16 +270,16 @@ class LoginView extends ConsumerWidget {
                         ),
                         const Gap(30),
                         buildTF(
-                          'Email',
-                          'Enter your Email',
+                          labels.email,
+                          labels.enterYourEmail,
                           false,
                           Icons.email,
                           TextInputType.emailAddress,
                         ),
                         const Gap(10),
                         buildTF(
-                          'Password',
-                          'Enter your Password',
+                          labels.password,
+                          labels.enterYourEmail,
                           true,
                           Icons.lock,
                         ),
@@ -293,56 +294,6 @@ class LoginView extends ConsumerWidget {
                   ),
                 ),
               ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TextBoxLogin extends ConsumerWidget {
-  TextBoxLogin({
-    required this.controller,
-    required this.labelText,
-    required this.obscureText,
-    required this.prefixIcon,
-    super.key,
-  });
-
-  final TextEditingController controller;
-  final String labelText;
-  final bool obscureText;
-  final IconData prefixIcon;
-  final boxDecoration = BoxDecoration(
-    color: Colors.black,
-    borderRadius: BorderRadius.circular(10),
-  );
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      child: Container(
-        width: doubleByPercentWidth(context, 25, 500, 200),
-        decoration: boxDecoration,
-        child: TextField(
-          style: const TextStyle(fontSize: 20),
-          obscureText: obscureText,
-          controller: controller,
-          showCursor: true,
-          // cursorColor: Colors.grey[600],
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(40),
-              borderSide: BorderSide.none,
-            ),
-            label: Text(
-              labelText,
-              // style: TextStyle(color: Colors.grey[600]),
-            ),
-            prefixIcon: Icon(
-              prefixIcon,
-              // color: Colors.grey[600],
             ),
           ),
         ),
