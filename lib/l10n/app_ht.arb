@@ -1,0 +1,18 @@
+{
+    "@@locale": "ht",
+    "a1languageInEnglish": "Haitian Creole",
+    "a1languageTitle": "Kreyòl ayisyen",
+    "forgotPassword": "Bliye modpas?",
+    "rememberMe": "Sonje mwen",
+    "loginCapital": "OUVRI SESYON AN",
+    "loginLowercase": "ouvri sesyon an",
+    "orForLogin": "- oswa -",
+    "signInWith": "Siyen ak",
+    "dontHaveAccount": "Pa gen yon kont?",
+    "signUp": "Enskri",
+    "signIn": "Siyen nan",
+    "email": "Imèl",
+    "enterYourEmail": "Mete imèl ou",
+    "password": "Paròl",
+    "enterYourPassword": "Mete modpas ou"
+}

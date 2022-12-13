@@ -1,0 +1,18 @@
+{
+    "@@locale": "pt",
+    "a1languageInEnglish": "Portuguese",
+    "a1languageTitle": "Português",
+    "forgotPassword": "Esqueceu a senha?",
+    "rememberMe": "Lembre de mim",
+    "loginCapital": "CONECTE-SE",
+    "loginLowercase": "Conecte-se",
+    "orForLogin": "- OU -",
+    "signInWith": "Entrar com",
+    "dontHaveAccount": "Não tem uma conta?",
+    "signUp": "Inscrever-se",
+    "signIn": "Entrar",
+    "email": "E-mail",
+    "enterYourEmail": "Digite seu e-mail",
+    "password": "Senha",
+    "enterYourPassword": "Coloque sua senha"
+}

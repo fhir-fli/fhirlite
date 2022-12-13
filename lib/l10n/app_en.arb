@@ -1,0 +1,63 @@
+{
+    "@@locale": "en",
+    "a1languageInEnglish": "English",
+    "@a1languageInEnglish": {
+        "description": "A message without extra parameters"
+    },
+    "a1languageTitle": "English",
+    "@a1languageTitle": {
+        "description": "A message without extra parameters"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Forgot Password?"
+    },
+    "rememberMe": "Remember Me",
+    "@rememberMe": {
+        "description": "Remember Me"
+    },
+    "loginCapital": "LOGIN",
+    "@loginCapital": {
+        "description": "LOGIN"
+    },
+    "loginLowercase": "login",
+    "@loginLowercase": {
+        "description": "login"
+    },
+    "orForLogin": "- OR -",
+    "@orForLogin": {
+        "description": "- OR -"
+    },
+    "signInWith": "Sign In With",
+    "@signInWith": {
+        "description": "Sign In With"
+    },
+    "dontHaveAccount": "Don't Have an Account?",
+    "@dontHaveAccount": {
+        "description": "Don't Have an Account?"
+    },
+    "signUp": "Sign Up",
+    "@signUp": {
+        "description": "Sign Up"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Sign In"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email"
+    },
+    "enterYourEmail": "Enter your Email",
+    "@enterYourEmail": {
+        "description": "Enter your Email"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Password"
+    },
+    "enterYourPassword": "Enter your Password",
+    "@enterYourPassword": {
+        "description": "Enter your Password"
+    }
+}

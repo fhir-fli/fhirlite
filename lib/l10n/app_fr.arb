@@ -1,0 +1,18 @@
+{
+    "@@locale": "fr",
+    "a1languageInEnglish": "French",
+    "a1languageTitle": "Français",
+    "forgotPassword": "Mot de passe oublié?",
+    "rememberMe": "Souviens-toi de moi",
+    "loginCapital": "CONNEXION",
+    "loginLowercase": "connexion",
+    "orForLogin": "- OU -",
+    "signInWith": "Se connecter avec",
+    "dontHaveAccount": "Vous n'avez pas de compte?",
+    "signUp": "S'inscrire",
+    "signIn": "S'identifier",
+    "email": "E-mail",
+    "enterYourEmail": "Entrer votre Email",
+    "password": "Mot de passe",
+    "enterYourPassword": "Tapez votre mot de passe"
+}
