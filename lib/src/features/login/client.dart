@@ -22,10 +22,6 @@ class Client extends _$Client {
           await (state as SecureFhirClient).login();
           return true;
         }
-      case FhirClient:
-        {
-          return state.fhirUri.toString() != '';
-        }
       default:
         return false;
     }
@@ -36,6 +32,10 @@ class Client extends _$Client {
       case SecureFhirClient:
         {
           return await (state as SecureFhirClient).isLoggedIn();
+        }
+      case FhirClient:
+        {
+          return state.fhirUri.toString() != '';
         }
       default:
         return false;
