@@ -4,9 +4,6 @@ import 'package:fhirlite/fhirlite.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-Widget fhirLite(String configFilePath) =>
-    ProviderScope(child: InitView(configFilePath));
-
 class InitView extends HookConsumerWidget {
   const InitView(this.configFilePath, {super.key});
 
