@@ -21,7 +21,7 @@ GoRouter router(RouterRef ref) {
       navigatorKey: _key,
       refreshListenable: notifier,
       debugLogDiagnostics: true,
-      initialLocation: AlertRoute.path,
+      initialLocation: InitRoute.path,
       routes: notifier.routes,
       redirect: notifier.redirect,
       errorBuilder: (c, s) =>

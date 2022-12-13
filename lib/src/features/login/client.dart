@@ -8,7 +8,7 @@ part 'client.g.dart';
 class Client extends _$Client {
   @override
   FhirClient build() {
-    return FhirClient(fhirUri: FhirUri('mayjuun.com/fhir'));
+    return FhirClient(fhirUri: FhirUri(''));
   }
 
   void update(FhirClient client) {
@@ -21,6 +21,10 @@ class Client extends _$Client {
         {
           await (state as SecureFhirClient).login();
           return true;
+        }
+      case FhirClient:
+        {
+          return state.fhirUri.toString() != '';
         }
       default:
         return false;

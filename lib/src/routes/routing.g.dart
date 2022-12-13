@@ -7,22 +7,19 @@ part of 'routing.dart';
 // **************************************************************************
 
 List<GoRoute> get $appRoutes => [
-      $alertRoute,
+      $initRoute,
+      $fhirLiteRoute,
+      $homeRoute,
+      $loginRoute,
     ];
 
-GoRoute get $alertRoute => GoRouteData.$route(
+GoRoute get $initRoute => GoRouteData.$route(
       path: '/',
-      factory: $AlertRouteExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: '/init:configFilePath',
-          factory: $InitRouteExtension._fromState,
-        ),
-      ],
+      factory: $InitRouteExtension._fromState,
     );
 
-extension $AlertRouteExtension on AlertRoute {
-  static AlertRoute _fromState(GoRouterState state) => const AlertRoute();
+extension $InitRouteExtension on InitRoute {
+  static InitRoute _fromState(GoRouterState state) => const InitRoute();
 
   String get location => GoRouteData.$location(
         '/',
@@ -33,16 +30,60 @@ extension $AlertRouteExtension on AlertRoute {
   void push(BuildContext context) => context.push(location, extra: this);
 }
 
-extension $InitRouteExtension on InitRoute {
-  static InitRoute _fromState(GoRouterState state) => InitRoute(
+GoRoute get $fhirLiteRoute => GoRouteData.$route(
+      path: '/fhirlite:configFilePath',
+      factory: $FhirLiteRouteExtension._fromState,
+    );
+
+extension $FhirLiteRouteExtension on FhirLiteRoute {
+  static FhirLiteRoute _fromState(GoRouterState state) => FhirLiteRoute(
         configFilePath: state.queryParams['config-file-path'],
       );
 
   String get location => GoRouteData.$location(
-        '/init${Uri.encodeComponent(configFilePath!)}',
+        '/fhirlite${Uri.encodeComponent(configFilePath!)}',
         queryParams: {
           if (configFilePath != null) 'config-file-path': configFilePath!,
         },
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+GoRoute get $homeRoute => GoRouteData.$route(
+      path: '/home',
+      factory: $HomeRouteExtension._fromState,
+    );
+
+extension $HomeRouteExtension on HomeRoute {
+  static HomeRoute _fromState(GoRouterState state) => HomeRoute(
+        configFilePath: state.queryParams['config-file-path'],
+      );
+
+  String get location => GoRouteData.$location(
+        '/home',
+        queryParams: {
+          if (configFilePath != null) 'config-file-path': configFilePath!,
+        },
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+GoRoute get $loginRoute => GoRouteData.$route(
+      path: '/login',
+      factory: $LoginRouteExtension._fromState,
+    );
+
+extension $LoginRouteExtension on LoginRoute {
+  static LoginRoute _fromState(GoRouterState state) => const LoginRoute();
+
+  String get location => GoRouteData.$location(
+        '/login',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);

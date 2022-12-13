@@ -1,11 +1,11 @@
 import 'dart:developer';
 
+import 'package:fhir/r4.dart';
+import 'package:fhir_auth/r4.dart';
 import 'package:fhirlite/fhirlite.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../utils/utils.dart';
 
 /// The design for this login page was based mostly on this github repo:
 /// https://github.com/MarcusNg/flutter_login_ui
@@ -110,7 +110,12 @@ class LoginView extends ConsumerWidget {
             ),
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
-          onPressed: () => log('Login Button Pressed'),
+          onPressed: () {
+            ref
+                .read(clientProvider.notifier)
+                .update(FhirClient(fhirUri: FhirUri('mayjuun.com/fhir')));
+            const HomeRoute().go(context);
+          },
           child: Text(
             labels.loginCapital,
             style: const TextStyle(
@@ -258,7 +263,7 @@ class LoginView extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          ref.read(clientAssetsProvider)!.clientNames?.title ??
+                          ref.read(clientAssetsProvider)?.clientNames?.title ??
                               labels.signIn,
                           style: ref
                               .read(clientAssetsProvider)

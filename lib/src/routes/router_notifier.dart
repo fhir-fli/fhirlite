@@ -28,7 +28,19 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
   List<GoRoute> get routes => $appRoutes;
 
   String? redirect(BuildContext context, GoRouterState state) {
-    return null;
+    final isLoggedIn = this.state.valueOrNull;
+
+    /// If there's no state, something isn't initialized, so to Login we go
+    if (isLoggedIn == null) {
+      return LoginRoute.path;
+
+      /// If you ARE logged in, you're good to go
+    } else if (isLoggedIn) {
+      return null;
+    } else {
+      /// If you're here you're not logged in, you need to do so
+      return LoginRoute.path;
+    }
   }
 
   /// Adds [GoRouter]'s listener as specified by its [Listenable].

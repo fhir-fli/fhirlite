@@ -8,26 +8,42 @@ part 'routing.g.dart';
 /// *********** ROUTING / INHERITANCE FOR: ALERT ***********
 /// ********** ********** *********** *********** **********
 
-@TypedGoRoute<AlertRoute>(
-    path: AlertRoute.path,
-    routes: <TypedGoRoute<GoRouteData>>[
-      TypedGoRoute<InitRoute>(path: InitRoute.path)
-    ])
-class AlertRoute extends GoRouteData {
-  const AlertRoute();
+@TypedGoRoute<InitRoute>(path: InitRoute.path)
+class InitRoute extends GoRouteData {
+  const InitRoute();
   static const path = '/';
 
   @override
   Widget build(BuildContext context) => const AlertView();
 }
 
-class InitRoute extends GoRouteData {
-  const InitRoute({this.configFilePath});
-  static const path = '/init:configFilePath';
+@TypedGoRoute<FhirLiteRoute>(path: FhirLiteRoute.path)
+class FhirLiteRoute extends GoRouteData {
+  const FhirLiteRoute({this.configFilePath});
+  static const path = '/fhirlite:configFilePath';
   final String? configFilePath;
 
   @override
-  Widget build(BuildContext context) => InitView(configFilePath);
+  Widget build(BuildContext context) => FhirLiteView(configFilePath);
+}
+
+@TypedGoRoute<HomeRoute>(path: HomeRoute.path)
+class HomeRoute extends GoRouteData {
+  const HomeRoute({this.configFilePath});
+  static const path = '/home';
+  final String? configFilePath;
+
+  @override
+  Widget build(BuildContext context) => const HomeView();
+}
+
+@TypedGoRoute<LoginRoute>(path: LoginRoute.path)
+class LoginRoute extends GoRouteData {
+  const LoginRoute();
+  static const path = '/login';
+
+  @override
+  Widget build(BuildContext context) => const LoginView();
 }
 
 /// ********** ********** *********** *********** **********
