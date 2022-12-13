@@ -44,3 +44,19 @@ abstract class _$Client extends AutoDisposeNotifier<FhirClient> {
   @override
   FhirClient build();
 }
+
+String $RememberMeHash() => r'9e3e951422ae08a055dce69e01885ea0a8fa06a1';
+
+/// See also [RememberMe].
+final rememberMeProvider = AutoDisposeNotifierProvider<RememberMe, bool>(
+  RememberMe.new,
+  name: r'rememberMeProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : $RememberMeHash,
+);
+typedef RememberMeRef = AutoDisposeNotifierProviderRef<bool>;
+
+abstract class _$RememberMe extends AutoDisposeNotifier<bool> {
+  @override
+  bool build();
+}

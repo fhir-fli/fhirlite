@@ -38,3 +38,9 @@ class Client extends _$Client {
     }
   }
 }
+
+@riverpod
+class RememberMe extends _$RememberMe {
+  @override
+  bool build() => false;
+}
