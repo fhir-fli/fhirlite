@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $ClientHash() => r'10518f8f484570d099c4be23ebd56c50f55163c9';
+String $ClientHash() => r'7d26d336d0d11564622f29d9969ca2295876cb9e';
 
 /// See also [Client].
 final clientProvider = AutoDisposeNotifierProvider<Client, FhirClient>(

@@ -8,6 +8,7 @@ class HomeView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final labels = LocaleUtil().getLabels(context);
     Widget activityCard(
             IconData icons, String label, void Function()? onPressed) =>
         Padding(
@@ -70,7 +71,7 @@ class HomeView extends ConsumerWidget {
                         ),
                       Text(
                         ref.watch(clientAssetsProvider)?.clientNames?.title ??
-                            'Home Page',
+                            labels.homePage,
                         style: ref
                             .watch(clientAssetsProvider)
                             ?.textTheme
@@ -85,13 +86,14 @@ class HomeView extends ConsumerWidget {
                     child: GridView.count(
                       crossAxisCount: 2,
                       children: [
-                        activityCard(Icons.calendar_month, 'Schedule', () {}),
                         activityCard(
-                            Icons.person_search, 'Patient Index', () {}),
+                            Icons.calendar_month, labels.schedule, () {}),
                         activityCard(
-                            Icons.chat_outlined, 'Communication', () {}),
-                        activityCard(Icons.groups, 'Population', () {}),
-                        activityCard(Icons.settings, 'Admin', () {}),
+                            Icons.person_search, labels.patientIndex, () {}),
+                        activityCard(
+                            Icons.chat_outlined, labels.communication, () {}),
+                        activityCard(Icons.groups, labels.communication, () {}),
+                        activityCard(Icons.settings, labels.admin, () {}),
                       ],
                     ),
                   ),
