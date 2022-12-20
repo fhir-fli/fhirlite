@@ -24,6 +24,7 @@ dependencies:
   json_annotation: ^4.7.0
   json_theme: ^4.0.3+1
   riverpod_annotation: ^1.0.6
+  yaml: ^3.1.1
     
 dev_dependencies:
   build_runner: ^2.3.2  
@@ -38,3 +39,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+  - assets/
