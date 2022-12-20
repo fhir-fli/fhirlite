@@ -1,0 +1,57 @@
+clientImages:
+  primaryLogo: assets/images/flames.png
+clientNames:
+  title: FHIR Lite
+clientTheme:
+  clientColorSchemeDark: null
+  clientColorSchemeLight: null
+  textThemeStyle: null
+  textTheme:
+    bodyLarge:
+      fontWeight: w400
+      fontSize: 16.0
+      inherit: true
+    bodyMedium:
+      fontWeight: w400
+      fontSize: 14.0
+      inherit: true
+    displayLarge:
+      fontWeight: w400
+      fontSize: 96.0
+      inherit: true
+    displayMedium:
+      fontWeight: w700
+      fontSize: 60.0
+      inherit: true
+    displaySmall:
+      fontWeight: w400
+      fontSize: 48.0
+      inherit: true
+    headlineLarge:
+      fontWeight: w700
+      fontSize: 26.0
+      inherit: true
+    headlineMedium:
+      fontWeight: w500
+      fontSize: 24.0
+      inherit: true
+    headlineSmall:
+      fontWeight: w700
+      fontSize: 20.0
+      inherit: true
+    labelLarge:
+      fontWeight: w700
+      fontSize: 18.0
+      inherit: true
+    labelMedium:
+      fontWeight: w600
+      fontSize: 16.0
+      inherit: true
+    labelSmall:
+      fontWeight: w400
+      fontSize: 12.0
+      inherit: true
+    titleLarge:
+      fontWeight: w400
+      fontSize: 18.0
+      inherit: true
