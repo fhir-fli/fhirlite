@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'client.dart';
+part of 'is_mock_demo.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,34 +29,18 @@ class _SystemHash {
   }
 }
 
-String $ClientHash() => r'7d26d336d0d11564622f29d9969ca2295876cb9e';
+String $IsMockDemoHash() => r'dcd0e5291efba97ebbb011f6f7501796898a7a99';
 
-/// See also [Client].
-final clientProvider = AutoDisposeNotifierProvider<Client, FhirClient>(
-  Client.new,
-  name: r'clientProvider',
+/// See also [IsMockDemo].
+final isMockDemoProvider = AutoDisposeNotifierProvider<IsMockDemo, bool>(
+  IsMockDemo.new,
+  name: r'isMockDemoProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $ClientHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : $IsMockDemoHash,
 );
-typedef ClientRef = AutoDisposeNotifierProviderRef<FhirClient>;
+typedef IsMockDemoRef = AutoDisposeNotifierProviderRef<bool>;
 
-abstract class _$Client extends AutoDisposeNotifier<FhirClient> {
-  @override
-  FhirClient build();
-}
-
-String $RememberMeHash() => r'9e3e951422ae08a055dce69e01885ea0a8fa06a1';
-
-/// See also [RememberMe].
-final rememberMeProvider = AutoDisposeNotifierProvider<RememberMe, bool>(
-  RememberMe.new,
-  name: r'rememberMeProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $RememberMeHash,
-);
-typedef RememberMeRef = AutoDisposeNotifierProviderRef<bool>;
-
-abstract class _$RememberMe extends AutoDisposeNotifier<bool> {
+abstract class _$IsMockDemo extends AutoDisposeNotifier<bool> {
   @override
   bool build();
 }
