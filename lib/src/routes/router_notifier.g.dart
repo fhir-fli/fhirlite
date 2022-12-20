@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $RouterNotifierHash() => r'aa897e8d961bfd46054323abe4ab35741129b815';
+String $RouterNotifierHash() => r'd048e0bf8a52114650423e6c8f29bef0796a66eb';
 
 /// See also [RouterNotifier].
 final routerNotifierProvider =

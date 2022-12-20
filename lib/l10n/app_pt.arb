@@ -14,5 +14,11 @@
     "email": "E-mail",
     "enterYourEmail": "Digite seu e-mail",
     "password": "Senha",
-    "enterYourPassword": "Coloque sua senha"
+    "enterYourPassword": "Coloque sua senha",
+    "homePage": "Pagina inicial",
+    "schedule": "Cronograma",
+    "patientIndex": "Índice de pacientes",
+    "communication": "Comunicação",
+    "population": "População",
+    "admin": "Admin"
 }

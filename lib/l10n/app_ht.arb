@@ -14,5 +14,11 @@
     "email": "Imèl",
     "enterYourEmail": "Mete imèl ou",
     "password": "Paròl",
-    "enterYourPassword": "Mete modpas ou"
+    "enterYourPassword": "Mete modpas ou",
+    "homePage": "Paj lakay",
+    "schedule": "Orè",
+    "patientIndex": "Pasyan endèks",
+    "communication": "Kominikasyon",
+    "population": "Popilasyon",
+    "admin": "Administre"
 }

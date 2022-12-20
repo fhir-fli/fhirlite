@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../src.dart';
@@ -9,6 +8,7 @@ class HomeView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final labels = LocaleUtil().getLabels(context);
     Widget activityCard(
             IconData icons, String label, void Function()? onPressed) =>
         Padding(
@@ -27,66 +27,73 @@ class HomeView extends ConsumerWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Icon(icons,
+                      Icon(
+                        icons,
+                        color: Colors.black,
+                        size: doubleByPercentWidth(context, 15),
+                      ),
+                      Text(
+                        label,
+                        style: TextStyle(
                           color: Colors.black,
-                          size: MediaQuery.of(context).size.width * .1),
-                      Text(label,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * .04)),
+                          fontSize: doubleByPercentWidth(context, 5),
+                        ),
+                      ),
                     ])));
 
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.blueGrey,
+          // backgroundColor: Colors.blueGrey,
           drawer: const NavigationDrawer(),
           body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: Column(
                 children: [
-                  if (ref
-                          .watch(clientAssetsProvider)
-                          ?.clientImages
-                          ?.primaryLogo !=
-                      null)
-                    Image(
-                      image: AssetImage(
-                        ref
-                            .watch(clientAssetsProvider)!
-                            .clientImages!
-                            .primaryLogo!,
-                      ),
-                      height: doubleByPercentHeight(context, 33),
-                      width: doubleByPercentWidth(context, 33),
-                      color: Colors.white,
-                    ),
-                  Text(
-                    ref.watch(clientAssetsProvider)?.clientNames?.title ??
-                        'Home Page',
-                    style: ref
-                        .watch(clientAssetsProvider)
-                        ?.textTheme
-                        ?.bodyMedium
-                        ?.copyWith(
-                          color: Colors.white,
+                  Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      if (ref
+                              .watch(clientAssetsProvider)
+                              ?.clientImages
+                              ?.primaryLogo !=
+                          null)
+                        Image(
+                          image: AssetImage(
+                            ref
+                                .watch(clientAssetsProvider)!
+                                .clientImages!
+                                .primaryLogo!,
+                          ),
+                          height: doubleByPercentHeight(context, 22),
+                          width: doubleByPercentWidth(context, 22),
                         ),
-                    textAlign: TextAlign.center,
+                      Text(
+                        ref.watch(clientAssetsProvider)?.clientNames?.title ??
+                            labels.homePage,
+                        style: ref
+                            .watch(clientAssetsProvider)
+                            ?.textTheme
+                            ?.displaySmall
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
-                  const Gap(48),
+                  // const Gap(48),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
                       children: [
-                        activityCard(Icons.calendar_month, 'Schedule', () {}),
                         activityCard(
-                            Icons.person_search, 'Patient Index', () {}),
+                            Icons.calendar_month, labels.schedule, () {}),
                         activityCard(
-                            Icons.chat_outlined, 'Communications', () {}),
-                        activityCard(Icons.groups, 'Population', () {}),
-                        activityCard(Icons.settings, 'Admin', () {}),
+                            Icons.person_search, labels.patientIndex, () {}),
+                        activityCard(
+                            Icons.chat_outlined, labels.communication, () {}),
+                        activityCard(Icons.groups, labels.communication, () {}),
+                        activityCard(Icons.settings, labels.admin, () {}),
                       ],
                     ),
                   ),

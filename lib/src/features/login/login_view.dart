@@ -213,6 +213,7 @@ class LoginView extends ConsumerWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              const TextSpan(text: '  '),
               TextSpan(
                 text: labels.signUp,
                 style: const TextStyle(
@@ -257,16 +258,16 @@ class LoginView extends ConsumerWidget {
                     physics: const AlwaysScrollableScrollPhysics(),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40.0,
-                      vertical: 80.0,
+                      vertical: 40.0,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          ref.read(clientAssetsProvider)?.clientNames?.title ??
+                          ref.watch(clientAssetsProvider)?.clientNames?.title ??
                               labels.signIn,
                           style: ref
-                              .read(clientAssetsProvider)
+                              .watch(clientAssetsProvider)
                               ?.textTheme
                               ?.headlineLarge
                               ?.apply(

@@ -59,5 +59,29 @@
     "enterYourPassword": "Enter your Password",
     "@enterYourPassword": {
         "description": "Enter your Password"
+    },
+    "homePage": "Home Page",
+    "@homePage": {
+        "description": "Home Page"
+    },
+    "schedule": "Schedule",
+    "@schedule": {
+        "description": "Schedule"
+    },
+    "patientIndex": "Patient Index",
+    "@patientIndex": {
+        "description": "Patient Index"
+    },
+    "communication": "Communication",
+    "@communication": {
+        "description": "Communication"
+    },
+    "population": "Population",
+    "@population": {
+        "description": "Population"
+    },
+    "admin": "Admin",
+    "@admin": {
+        "description": "Admin"
     }
 }

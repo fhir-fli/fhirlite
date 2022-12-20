@@ -14,5 +14,11 @@
     "email": "E-mail",
     "enterYourEmail": "Entrer votre Email",
     "password": "Mot de passe",
-    "enterYourPassword": "Tapez votre mot de passe"
+    "enterYourPassword": "Tapez votre mot de passe",
+    "homePage": "Page d'accueil",
+    "schedule": "Programme",
+    "patientIndex": "Index du patient",
+    "communication": "Communication",
+    "population": "Population",
+    "admin": "Administrer"
 }

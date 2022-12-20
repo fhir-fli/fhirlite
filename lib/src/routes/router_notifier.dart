@@ -1,3 +1,4 @@
+import 'package:fhir_auth/dstu2.dart';
 import 'package:fhirlite/fhirlite.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -13,6 +14,7 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
   Future<bool> build() async {
     // One could watch more providers and write logic accordingly
 
+    ref.watch(clientProvider);
     final isLoggedIn = await ref.watch(clientProvider.notifier).isLoggedIn();
 
     ref.listenSelf((_, __) {
