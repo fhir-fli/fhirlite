@@ -59,7 +59,7 @@ class _SystemHash {
   }
 }
 
-String $ClientAssetsHash() => r'f06c927c4210fe3692475b609cff63b759461016';
+String $ClientAssetsHash() => r'f4eb2af0c4c03d3e6fcece6dfd3002db2d6a2f88';
 
 /// See also [ClientAssets].
 final clientAssetsProvider = AutoDisposeNotifierProvider<ClientAssets, Assets?>(
