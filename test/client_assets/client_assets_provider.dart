@@ -52,15 +52,12 @@ class TestAssets extends StatelessWidget {
   }
 }
 
-Future<void> main() async {
-  TestWidgetsFlutterBinding.ensureInitialized();
+Future<void> clientAssetsProviderTest(WidgetTester tester) async {
   final jsonFile =
       jsonEncode(jsonDecode(await rootBundle.loadString(jsonFilePath)));
   final yamlFile = await rootBundle.loadString(yamlFilePath);
-  testWidgets('ReadFile', (tester) async {
-    await tester.pumpWidget(const ProviderScope(child: TestAssets()));
-    await tester.pumpAndSettle();
-    expect(find.text(jsonFile), findsNWidgets(2));
-    expect(find.text(yamlFile), findsNWidgets(2));
-  });
+  await tester.pumpWidget(const ProviderScope(child: TestAssets()));
+  await tester.pumpAndSettle();
+  expect(find.text(jsonFile), findsNWidgets(2));
+  expect(find.text(yamlFile), findsNWidgets(2));
 }
