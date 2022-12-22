@@ -47,6 +47,31 @@ class LoginRoute extends GoRouteData {
 }
 
 /// ********** ********** *********** *********** **********
+/// *********** ROUTING / INHERITANCE FOR: Pateint**********
+/// ********** ********** *********** *********** **********
+
+@TypedGoRoute<PatientRoute>(
+    path: PatientRoute.path,
+    routes: <TypedGoRoute<GoRouteData>>[
+      TypedGoRoute<PatientIndexRoute>(path: PatientIndexRoute.path)
+    ])
+class PatientRoute extends GoRouteData {
+  const PatientRoute();
+  static const path = '/patient';
+
+  @override
+  Widget build(BuildContext context) => const PatientView();
+}
+
+class PatientIndexRoute extends GoRouteData {
+  const PatientIndexRoute();
+  static const path = '/patient/index';
+
+  @override
+  Widget build(BuildContext context) => const PatientIndexView();
+}
+
+/// ********** ********** *********** *********** **********
 /// *********** ROUTING / INHERITANCE FOR: ERROR ***********
 /// ********** ********** *********** *********** **********
 

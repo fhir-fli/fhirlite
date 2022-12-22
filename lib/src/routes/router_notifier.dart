@@ -1,4 +1,3 @@
-import 'package:fhir_auth/dstu2.dart';
 import 'package:fhirlite/fhirlite.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

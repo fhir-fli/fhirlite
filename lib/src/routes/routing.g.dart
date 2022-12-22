@@ -11,6 +11,7 @@ List<GoRoute> get $appRoutes => [
       $fhirLiteRoute,
       $homeRoute,
       $loginRoute,
+      $patientRoute,
     ];
 
 GoRoute get $initRoute => GoRouteData.$route(
@@ -84,6 +85,42 @@ extension $LoginRouteExtension on LoginRoute {
 
   String get location => GoRouteData.$location(
         '/login',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+GoRoute get $patientRoute => GoRouteData.$route(
+      path: '/patient',
+      factory: $PatientRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: '/patient/index',
+          factory: $PatientIndexRouteExtension._fromState,
+        ),
+      ],
+    );
+
+extension $PatientRouteExtension on PatientRoute {
+  static PatientRoute _fromState(GoRouterState state) => const PatientRoute();
+
+  String get location => GoRouteData.$location(
+        '/patient',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
+}
+
+extension $PatientIndexRouteExtension on PatientIndexRoute {
+  static PatientIndexRoute _fromState(GoRouterState state) =>
+      const PatientIndexRoute();
+
+  String get location => GoRouteData.$location(
+        '/patient/index',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
