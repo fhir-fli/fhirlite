@@ -31,7 +31,9 @@ class _SystemHash {
 
 String $ActivePatientHash() => r'93a69f8e3628e13fcd2dfa44b3b0d1011a7c6e86';
 
-/// See also [ActivePatient].
+/// When there is a single patient selected, this provider will hold it
+///
+/// Copied from [ActivePatient].
 final activePatientProvider =
     AutoDisposeNotifierProvider<ActivePatient, Patient?>(
   ActivePatient.new,
@@ -48,7 +50,10 @@ abstract class _$ActivePatient extends AutoDisposeNotifier<Patient?> {
 
 String $ProviderPatientsHash() => r'0ff04088faa47f6c7acabe89d5799fe1f4bb0c7c';
 
-/// See also [ProviderPatients].
+/// Practitioners often have a patient panel assigned to them, this provider
+/// will contain the those patients assigned to a Provider
+///
+/// Copied from [ProviderPatients].
 final providerPatientsProvider =
     AutoDisposeNotifierProvider<ProviderPatients, Map<String, Patient>>(
   ProviderPatients.new,
@@ -68,7 +73,11 @@ abstract class _$ProviderPatients
 
 String $ActivePatientsHash() => r'1262ec56d2fb7bf62bf698e0e18da09fa9fbf0ea';
 
-/// See also [ActivePatients].
+/// Will not be used initially, but will be used for reports. This will be when
+/// a specific display needs a group of patients to function on (people with
+/// diabetes, children with asthma, etc.)
+///
+/// Copied from [ActivePatients].
 final activePatientsProvider =
     AutoDisposeNotifierProvider<ActivePatients, Map<String, Patient>>(
   ActivePatients.new,
@@ -88,7 +97,10 @@ abstract class _$ActivePatients
 
 String $AllPatientsHash() => r'5ca32f78ae84a327710e298d3c1fd75642c46c0c';
 
-/// See also [AllPatients].
+/// The Provider that contains all patients stored (even temporarily) on the
+/// device.
+///
+/// Copied from [AllPatients].
 final allPatientsProvider =
     AutoDisposeNotifierProvider<AllPatients, Map<String, Patient>>(
   AllPatients.new,
