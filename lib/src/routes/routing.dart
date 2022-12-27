@@ -65,7 +65,7 @@ class PatientRoute extends GoRouteData {
 
 class PatientIndexRoute extends GoRouteData {
   const PatientIndexRoute();
-  static const path = '/patient/index';
+  static const path = 'index';
 
   @override
   Widget build(BuildContext context) => const PatientIndexView();

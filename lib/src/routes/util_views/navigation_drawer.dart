@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../src.dart';
 
 class NavigationDrawer extends ConsumerWidget {
-  const NavigationDrawer({super.key});
+  const NavigationDrawer(this.labels, {super.key});
+
+  final AppLocalizations labels;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -44,18 +47,47 @@ class NavigationDrawer extends ConsumerWidget {
             textAlign: TextAlign.center,
           ),
           const Gap(24),
-          drawerButton(Icons.home, 'Home', () => const HomeRoute().go(context)),
+          drawerButton(
+            Icons.home,
+            labels.homePage,
+            () => const HomeRoute().go(context),
+          ),
           const Gap(8),
-          drawerButton(Icons.calendar_month, 'Schedule', () {}),
+          drawerButton(
+            Icons.calendar_month,
+            labels.schedule,
+            () {},
+          ),
           const Gap(8),
-          drawerButton(Icons.person_search, 'Patient Index', () {}),
+          drawerButton(
+            Icons.person_search,
+            labels.patientIndex,
+            () => const PatientIndexRoute().go(context),
+          ),
           const Gap(8),
-          drawerButton(Icons.chat_outlined, 'Communications', () {}),
+          drawerButton(
+            Icons.chat_outlined,
+            labels.communication,
+            () {},
+          ),
           const Gap(8),
-          drawerButton(Icons.cloud_upload_outlined, 'Transfer Data', () {}),
+          drawerButton(
+            Icons.groups,
+            labels.population,
+            () {},
+          ),
+          const Gap(8),
+          drawerButton(
+            Icons.settings,
+            labels.admin,
+            () {},
+          ),
           const Expanded(child: SizedBox()),
-          drawerButton(Icons.logout_rounded, 'Logout',
-              () => const LoginRoute().go(context)),
+          drawerButton(
+            Icons.logout_rounded,
+            'Logout',
+            () => const LoginRoute().go(context),
+          ),
         ],
       ),
     );

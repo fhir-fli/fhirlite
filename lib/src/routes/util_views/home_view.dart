@@ -45,7 +45,7 @@ class HomeView extends ConsumerWidget {
       home: SafeArea(
         child: Scaffold(
           // backgroundColor: Colors.blueGrey,
-          drawer: const NavigationDrawer(),
+          drawer: NavigationDrawer(labels),
           body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
@@ -87,13 +87,30 @@ class HomeView extends ConsumerWidget {
                       crossAxisCount: 2,
                       children: [
                         activityCard(
-                            Icons.calendar_month, labels.schedule, () {}),
+                          Icons.calendar_month,
+                          labels.schedule,
+                          () {},
+                        ),
                         activityCard(
-                            Icons.person_search, labels.patientIndex, () {}),
+                          Icons.person_search,
+                          labels.patientIndex,
+                          () => const PatientIndexRoute().go(context),
+                        ),
                         activityCard(
-                            Icons.chat_outlined, labels.communication, () {}),
-                        activityCard(Icons.groups, labels.communication, () {}),
-                        activityCard(Icons.settings, labels.admin, () {}),
+                          Icons.chat_outlined,
+                          labels.communication,
+                          () {},
+                        ),
+                        activityCard(
+                          Icons.groups,
+                          labels.population,
+                          () {},
+                        ),
+                        activityCard(
+                          Icons.settings,
+                          labels.admin,
+                          () {},
+                        ),
                       ],
                     ),
                   ),

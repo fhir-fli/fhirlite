@@ -97,7 +97,7 @@ GoRoute get $patientRoute => GoRouteData.$route(
       factory: $PatientRouteExtension._fromState,
       routes: [
         GoRouteData.$route(
-          path: '/patient/index',
+          path: 'index',
           factory: $PatientIndexRouteExtension._fromState,
         ),
       ],
