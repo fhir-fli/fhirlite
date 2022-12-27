@@ -2,7 +2,7 @@
     "@@locale": "pt",
     "a1languageInEnglish": "Portuguese",
     "a1languageTitle": "Português",
-    "forgotPassword": "Esqueceu a senha?",
+    "forgotPassword": "Esqueceu sua senha?",
     "rememberMe": "Lembre de mim",
     "loginCapital": "CONECTE-SE",
     "loginLowercase": "Conecte-se",
@@ -20,5 +20,14 @@
     "patientIndex": "Índice de pacientes",
     "communication": "Comunicação",
     "population": "População",
-    "admin": "Admin"
+    "admin": "Admin",
+    "patient": "Paciente",
+    "name": "Nome",
+    "names": "Nomes",
+    "birthDate": "Data de nascimento",
+    "birthDateAbbreviation": "DDN",
+    "contactName": "Nome de contato",
+    "sexAtBirth": "Sexo no nascimento",
+    "navigator": "Navegador",
+    "logout": "Sair"
 }

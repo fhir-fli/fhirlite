@@ -20,5 +20,14 @@
     "patientIndex": "Pasyan endèks",
     "communication": "Kominikasyon",
     "population": "Popilasyon",
-    "admin": "Administre"
+    "admin": "Administre",
+    "patient": "Pasyan",
+    "name": "Non",
+    "names": "Non",
+    "birthDate": "Dat nesans",
+    "birthDateAbbreviation": "Né(e) le",
+    "contactName": "Non Kontakte",
+    "sexAtBirth": "Sèks nan nesans",
+    "navigator": "Navigatè",
+    "logout": "Dekonekte"
 }

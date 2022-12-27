@@ -6,7 +6,7 @@
     "rememberMe": "Souviens-toi de moi",
     "loginCapital": "CONNEXION",
     "loginLowercase": "connexion",
-    "orForLogin": "- OU -",
+    "orForLogin": "- OU ALORS -",
     "signInWith": "Se connecter avec",
     "dontHaveAccount": "Vous n'avez pas de compte?",
     "signUp": "S'inscrire",
@@ -20,5 +20,14 @@
     "patientIndex": "Index du patient",
     "communication": "Communication",
     "population": "Population",
-    "admin": "Administrer"
+    "admin": "Administrer",
+    "patient": "Patient",
+    "name": "Nom",
+    "names": "Des noms",
+    "birthDate": "Date de naissance",
+    "birthDateAbbreviation": "Né(e) le",
+    "contactName": "Nom du contact",
+    "sexAtBirth": "Sexe à la naissance",
+    "navigator": "Navigateur",
+    "logout": "Se déconnecter"
 }

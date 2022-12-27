@@ -20,5 +20,14 @@
     "patientIndex": "Índice de pacientes",
     "communication": "Comunicación",
     "population": "Población",
-    "admin": "Administración"
+    "admin": "Administración",
+    "patient": "Paciente",
+    "name": "Nombre",
+    "names": "Nombramiento",
+    "birthDate": "Fecha de nacimiento",
+    "birthDateAbbreviation": "FDN",
+    "contactName": "Nombre de contacto",
+    "sexAtBirth": "Sexo al nacer",
+    "navigator": "Navegador",
+    "logout": "Cerrar sesión"
 }

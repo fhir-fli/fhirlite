@@ -83,5 +83,41 @@
     "admin": "Admin",
     "@admin": {
         "description": "Admin"
+    },
+    "patient": "Patient",
+    "@patient": {
+        "description": "Patient"
+    },
+    "name": "Name",
+    "@name": {
+        "description": "name"
+    },
+    "names": "Names",
+    "@names": {
+        "description": "Names"
+    },
+    "birthDate": "BirthDate",
+    "@birthDate": {
+        "description": "Birth Date"
+    },
+    "birthDateAbbreviation": "DOB",
+    "@birthDateAbbreviation": {
+        "description": "Abbreviation of Birth Date"
+    },
+    "contactName": "Contact Name",
+    "@contactName": {
+        "description": "Contact Name"
+    },
+    "sexAtBirth": "Sex at Birth",
+    "@sexAtBirth": {
+        "description": "Sex at Birth"
+    },
+    "navigator": "Navigator",
+    "@navigator": {
+        "description": "Navigator"
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "Logout"
     }
 }
