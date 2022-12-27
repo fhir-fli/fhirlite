@@ -45,7 +45,7 @@ class PatientView extends ConsumerWidget {
       home: SafeArea(
         child: Scaffold(
           // backgroundColor: Colors.blueGrey,
-          drawer: const NavigationDrawer(),
+          drawer: NavigationDrawer(labels),
           body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(

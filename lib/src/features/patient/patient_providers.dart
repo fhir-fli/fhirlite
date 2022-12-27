@@ -1,5 +1,10 @@
+import 'dart:convert';
+
 import 'package:fhir/r4.dart';
+import 'package:flutter/services.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../src.dart';
 
 part 'patient_providers.g.dart';
 
@@ -55,5 +60,29 @@ class AllPatients extends _$AllPatients {
       patient = patient.newId() as Patient;
     }
     state[patient.id!] = patient;
+  }
+
+  Future<void> loadDemoPatients() async {
+    if (ref.read(isMockDemoProvider)) {
+      final patientFile =
+          ref.read(clientAssetsProvider)?.demoResources?.patients;
+      if (patientFile != null) {
+        final fileContents =
+            jsonDecode(await rootBundle.loadString(patientFile));
+        if (fileContents is List) {
+          final patients = <String, Patient>{};
+          for (var content in fileContents) {
+            var newPatient = Resource.fromJson(content);
+            if (newPatient is Patient) {
+              if (newPatient.id != null) {
+                newPatient = newPatient.newId() as Patient;
+              }
+              patients[newPatient.id!] = newPatient;
+            }
+          }
+          state = patients;
+        }
+      }
+    }
   }
 }

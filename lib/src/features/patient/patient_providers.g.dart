@@ -95,7 +95,7 @@ abstract class _$ActivePatients
   Map<String, Patient> build();
 }
 
-String $AllPatientsHash() => r'5ca32f78ae84a327710e298d3c1fd75642c46c0c';
+String $AllPatientsHash() => r'a8e5b369e848350f86684473ed59972769b28a3a';
 
 /// The Provider that contains all patients stored (even temporarily) on the
 /// device.

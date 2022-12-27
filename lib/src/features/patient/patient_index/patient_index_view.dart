@@ -11,7 +11,11 @@ class PatientIndexView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final labels = LocaleUtil().getLabels(context);
     final patients = ref.watch(allPatientsProvider).values.toList();
+    if (patients.isEmpty) {
+      ref.read(allPatientsProvider.notifier).loadDemoPatients();
+    }
 
     Widget patientCard(Patient patient, void Function()? onPressed) => Padding(
         padding: const EdgeInsets.all(8.0),
@@ -30,9 +34,9 @@ class PatientIndexView extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Names: ',
-                      style: TextStyle(
+                    Text(
+                      '${labels.names}: ',
+                      style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     Text(
@@ -42,9 +46,9 @@ class PatientIndexView extends ConsumerWidget {
                     const Gap(4),
                     Row(
                       children: [
-                        const Text(
-                          'DOB: ',
-                          style: TextStyle(
+                        Text(
+                          '${labels.birthDateAbbreviation}: ',
+                          style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                         Text(
@@ -56,9 +60,9 @@ class PatientIndexView extends ConsumerWidget {
                     const Gap(4),
                     Row(
                       children: [
-                        const Text(
-                          'Gender: ',
-                          style: TextStyle(
+                        Text(
+                          '${labels.sexAtBirth}: ',
+                          style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                         Text(
@@ -68,9 +72,9 @@ class PatientIndexView extends ConsumerWidget {
                       ],
                     ),
                     const Gap(4),
-                    const Text(
-                      'Contact Name: ',
-                      style: TextStyle(
+                    Text(
+                      '${labels.contactName}: ',
+                      style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     Text(
@@ -96,7 +100,7 @@ class PatientIndexView extends ConsumerWidget {
             ),
           ),
           backgroundColor: Colors.blueGrey,
-          drawer: const NavigationDrawer(),
+          drawer: NavigationDrawer(labels),
           body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
