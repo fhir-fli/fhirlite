@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $IsMockDemoHash() => r'dcd0e5291efba97ebbb011f6f7501796898a7a99';
+String $IsMockDemoHash() => r'9f450975f1ea071e8fbed09d81bfe3d470e16324';
 
 /// See also [IsMockDemo].
 final isMockDemoProvider = AutoDisposeNotifierProvider<IsMockDemo, bool>(

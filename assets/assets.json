@@ -71,5 +71,8 @@
                 "inherit": true
             }
         }
+    },
+    "demoResources": {
+        "patients": "assets/fhir/patients.json"
     }
 }

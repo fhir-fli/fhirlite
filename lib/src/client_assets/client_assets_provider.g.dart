@@ -15,7 +15,9 @@ Assets _$AssetsFromJson(Map<String, dynamic> json) => Assets(
           : ClientNames.fromJson(json['clientNames'] as Map<String, dynamic>),
       clientTheme:
           ClientTheme.fromJson(json['clientTheme'] as Map<String, dynamic>),
-    );
+    )..demoResources = json['demoResources'] == null
+        ? null
+        : DemoResources.fromJson(json['demoResources'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$AssetsToJson(Assets instance) {
   final val = <String, dynamic>{};
@@ -29,6 +31,7 @@ Map<String, dynamic> _$AssetsToJson(Assets instance) {
   writeNotNull('clientImages', instance.clientImages?.toJson());
   writeNotNull('clientNames', instance.clientNames?.toJson());
   val['clientTheme'] = instance.clientTheme.toJson();
+  writeNotNull('demoResources', instance.demoResources?.toJson());
   return val;
 }
 

@@ -54,6 +54,7 @@ class Assets {
   ClientImages? clientImages;
   ClientNames? clientNames;
   ClientTheme clientTheme;
+  DemoResources? demoResources;
   ColorScheme? get colorSchemeDark => clientTheme.colorSchemeDark;
   ColorScheme? get colorSchemeLight => clientTheme.colorSchemeLight;
   TextTheme? get textTheme => clientTheme.textTheme;
