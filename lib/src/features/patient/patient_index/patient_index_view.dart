@@ -106,7 +106,11 @@ class PatientIndexView extends ConsumerWidget {
             child: Center(
               child: ListView.builder(
                 itemBuilder: (BuildContext context, int index) =>
-                    patientCard(patients[index], () {}),
+                    patientCard(patients[index], () {
+                  ref.read(activePatientProvider.notifier).state =
+                      patients[index];
+                  const PatientRoute().go(context);
+                }),
                 itemCount: patients.length,
               ),
             ),

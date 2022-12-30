@@ -95,7 +95,7 @@ String preferredNameFromHumanNameList(List<HumanName>? names) {
   final index =
       names.indexWhere((element) => element.use == HumanNameUse.usual);
   if (index == -1) {
-    return '';
+    return givenNamesFromHumanNameList(names: names);
   } else {
     return givenNamesFromSingleHumanName(names[index]);
   }
