@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $LocaleStateHash() => r'1750a5614450c305d1feb62452b97ba6912cf5ca';
+String _$LocaleStateHash() => r'1750a5614450c305d1feb62452b97ba6912cf5ca';
 
 /// See also [LocaleState].
 final localeStateProvider =
@@ -37,7 +37,7 @@ final localeStateProvider =
   LocaleState.new,
   name: r'localeStateProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $LocaleStateHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$LocaleStateHash,
 );
 typedef LocaleStateRef = AutoDisposeNotifierProviderRef<LocaleStates>;
 

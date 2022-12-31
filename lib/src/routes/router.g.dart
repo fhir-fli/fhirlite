@@ -29,13 +29,13 @@ class _SystemHash {
   }
 }
 
-String $routerHash() => r'bdbfa58bc73ec5ba43739fd2095525bd1bf0369d';
+String _$routerHash() => r'bdbfa58bc73ec5ba43739fd2095525bd1bf0369d';
 
 /// See also [router].
 final routerProvider = AutoDisposeProvider<GoRouter>(
   router,
   name: r'routerProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $routerHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$routerHash,
 );
 typedef RouterRef = AutoDisposeProviderRef<GoRouter>;

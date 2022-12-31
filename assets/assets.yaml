@@ -58,3 +58,23 @@ clientTheme:
       inherit: true
 demoResources:
   patients: assets/fhir/patients.json
+patientFields:
+  medicalRecordNumber: true
+  socialSecurityNumber: true
+  diverLicenseNumber: true
+  nationalIdNumber: true
+  preferredName: true
+  givenNames: true
+  familyName: true
+  sexAtBirth: true
+  sexualOrientation: true
+  genderIdentity: true
+  pronouns: true
+  birthDate: true
+  phone1: true
+  phone2: true
+  email1: true
+  address1: true
+  race: true
+  ethnicity: true
+  tribalEntity: true

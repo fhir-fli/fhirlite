@@ -33,6 +33,8 @@ class Assets {
     this.clientImages,
     this.clientNames,
     required this.clientTheme,
+    this.demoResources,
+    required this.patientFields,
   });
 
   factory Assets.fromJson(Map<String, dynamic> json) => _$AssetsFromJson(json);
@@ -55,6 +57,7 @@ class Assets {
   ClientNames? clientNames;
   ClientTheme clientTheme;
   DemoResources? demoResources;
+  PatientFields patientFields;
   ColorScheme? get colorSchemeDark => clientTheme.colorSchemeDark;
   ColorScheme? get colorSchemeLight => clientTheme.colorSchemeLight;
   TextTheme? get textTheme => clientTheme.textTheme;

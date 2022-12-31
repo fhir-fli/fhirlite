@@ -29,14 +29,14 @@ class _SystemHash {
   }
 }
 
-String $IsMockDemoHash() => r'9f450975f1ea071e8fbed09d81bfe3d470e16324';
+String _$IsMockDemoHash() => r'9f450975f1ea071e8fbed09d81bfe3d470e16324';
 
 /// See also [IsMockDemo].
 final isMockDemoProvider = AutoDisposeNotifierProvider<IsMockDemo, bool>(
   IsMockDemo.new,
   name: r'isMockDemoProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $IsMockDemoHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$IsMockDemoHash,
 );
 typedef IsMockDemoRef = AutoDisposeNotifierProviderRef<bool>;
 

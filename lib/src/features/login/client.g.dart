@@ -29,14 +29,14 @@ class _SystemHash {
   }
 }
 
-String $ClientHash() => r'7d26d336d0d11564622f29d9969ca2295876cb9e';
+String _$ClientHash() => r'7d26d336d0d11564622f29d9969ca2295876cb9e';
 
 /// See also [Client].
 final clientProvider = AutoDisposeNotifierProvider<Client, FhirClient>(
   Client.new,
   name: r'clientProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $ClientHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$ClientHash,
 );
 typedef ClientRef = AutoDisposeNotifierProviderRef<FhirClient>;
 
@@ -45,14 +45,14 @@ abstract class _$Client extends AutoDisposeNotifier<FhirClient> {
   FhirClient build();
 }
 
-String $RememberMeHash() => r'9e3e951422ae08a055dce69e01885ea0a8fa06a1';
+String _$RememberMeHash() => r'9e3e951422ae08a055dce69e01885ea0a8fa06a1';
 
 /// See also [RememberMe].
 final rememberMeProvider = AutoDisposeNotifierProvider<RememberMe, bool>(
   RememberMe.new,
   name: r'rememberMeProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $RememberMeHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$RememberMeHash,
 );
 typedef RememberMeRef = AutoDisposeNotifierProviderRef<bool>;
 

@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $ActivePatientHash() => r'93a69f8e3628e13fcd2dfa44b3b0d1011a7c6e86';
+String _$ActivePatientHash() => r'93a69f8e3628e13fcd2dfa44b3b0d1011a7c6e86';
 
 /// When there is a single patient selected, this provider will hold it
 ///
@@ -38,8 +38,9 @@ final activePatientProvider =
     AutoDisposeNotifierProvider<ActivePatient, Patient?>(
   ActivePatient.new,
   name: r'activePatientProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $ActivePatientHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$ActivePatientHash,
 );
 typedef ActivePatientRef = AutoDisposeNotifierProviderRef<Patient?>;
 
@@ -48,7 +49,7 @@ abstract class _$ActivePatient extends AutoDisposeNotifier<Patient?> {
   Patient? build();
 }
 
-String $ProviderPatientsHash() => r'0ff04088faa47f6c7acabe89d5799fe1f4bb0c7c';
+String _$ProviderPatientsHash() => r'0ff04088faa47f6c7acabe89d5799fe1f4bb0c7c';
 
 /// Practitioners often have a patient panel assigned to them, this provider
 /// will contain the those patients assigned to a Provider
@@ -60,7 +61,7 @@ final providerPatientsProvider =
   name: r'providerPatientsProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $ProviderPatientsHash,
+      : _$ProviderPatientsHash,
 );
 typedef ProviderPatientsRef
     = AutoDisposeNotifierProviderRef<Map<String, Patient>>;
@@ -71,7 +72,7 @@ abstract class _$ProviderPatients
   Map<String, Patient> build();
 }
 
-String $ActivePatientsHash() => r'1262ec56d2fb7bf62bf698e0e18da09fa9fbf0ea';
+String _$ActivePatientsHash() => r'1262ec56d2fb7bf62bf698e0e18da09fa9fbf0ea';
 
 /// Will not be used initially, but will be used for reports. This will be when
 /// a specific display needs a group of patients to function on (people with
@@ -84,7 +85,7 @@ final activePatientsProvider =
   name: r'activePatientsProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $ActivePatientsHash,
+      : _$ActivePatientsHash,
 );
 typedef ActivePatientsRef
     = AutoDisposeNotifierProviderRef<Map<String, Patient>>;
@@ -95,7 +96,7 @@ abstract class _$ActivePatients
   Map<String, Patient> build();
 }
 
-String $AllPatientsHash() => r'a8e5b369e848350f86684473ed59972769b28a3a';
+String _$AllPatientsHash() => r'a8e5b369e848350f86684473ed59972769b28a3a';
 
 /// The Provider that contains all patients stored (even temporarily) on the
 /// device.
@@ -106,7 +107,7 @@ final allPatientsProvider =
   AllPatients.new,
   name: r'allPatientsProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $AllPatientsHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$AllPatientsHash,
 );
 typedef AllPatientsRef = AutoDisposeNotifierProviderRef<Map<String, Patient>>;
 

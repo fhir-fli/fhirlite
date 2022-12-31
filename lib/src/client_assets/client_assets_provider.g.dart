@@ -15,9 +15,13 @@ Assets _$AssetsFromJson(Map<String, dynamic> json) => Assets(
           : ClientNames.fromJson(json['clientNames'] as Map<String, dynamic>),
       clientTheme:
           ClientTheme.fromJson(json['clientTheme'] as Map<String, dynamic>),
-    )..demoResources = json['demoResources'] == null
-        ? null
-        : DemoResources.fromJson(json['demoResources'] as Map<String, dynamic>);
+      demoResources: json['demoResources'] == null
+          ? null
+          : DemoResources.fromJson(
+              json['demoResources'] as Map<String, dynamic>),
+      patientFields:
+          PatientFields.fromJson(json['patientFields'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$AssetsToJson(Assets instance) {
   final val = <String, dynamic>{};
@@ -32,6 +36,7 @@ Map<String, dynamic> _$AssetsToJson(Assets instance) {
   writeNotNull('clientNames', instance.clientNames?.toJson());
   val['clientTheme'] = instance.clientTheme.toJson();
   writeNotNull('demoResources', instance.demoResources?.toJson());
+  val['patientFields'] = instance.patientFields.toJson();
   return val;
 }
 
@@ -62,14 +67,14 @@ class _SystemHash {
   }
 }
 
-String $ClientAssetsHash() => r'f4eb2af0c4c03d3e6fcece6dfd3002db2d6a2f88';
+String _$ClientAssetsHash() => r'f4eb2af0c4c03d3e6fcece6dfd3002db2d6a2f88';
 
 /// See also [ClientAssets].
 final clientAssetsProvider = AutoDisposeNotifierProvider<ClientAssets, Assets?>(
   ClientAssets.new,
   name: r'clientAssetsProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $ClientAssetsHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$ClientAssetsHash,
 );
 typedef ClientAssetsRef = AutoDisposeNotifierProviderRef<Assets?>;
 
