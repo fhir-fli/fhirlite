@@ -1,0 +1,694 @@
+{
+    "resourceType": "ValueSet",
+    "meta": {
+        "profile": [
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-valueset"
+        ]
+    },
+    "url": "mayjuun.com/fhir/ValueSet/pronouns",
+    "name": "pronouns",
+    "title": "Pronouns",
+    "status": "draft",
+    "publisher": "MayJuun LLC",
+    "contact": [
+        {
+            "name": "MayJuun LLC",
+            "telecom": [
+                {
+                    "system": "email",
+                    "value": "info@mayjuun.com",
+                    "use": "work"
+                }
+            ]
+        }
+    ],
+    "compose": {
+        "include": [
+            {
+                "system": "mayjuun.com",
+                "concept": [
+                    {
+                        "code": "he",
+                        "display": "he/him/his/himself",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Él/ella/él/sí mismo"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "li/li/li menm"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Ele/ele/ele/ele/ele/ele"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "il / lui / lui-même"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "she",
+                        "display": "she/her/hers/herself",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "ella/ella/ella/ella misma"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "li/li/li/tèt li"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "ela/ela/ela mesma"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "elle / elle / elle-même"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "they",
+                        "display": "they/them/their/theirs/themselves",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "ellos/ellos/sus/suyos/ellos mismos"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "yo/yo/yo/tèt yo"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "eles/eles/seus/seus/si mesmos"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "ils / eux / leurs / eux / eux-mêmes"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "xe",
+                        "display": "xe/xem/xyr/xyrs/xemself",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "xe/xem/xyr/xyrs/xemself"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "xe/xem/xyr/xyrs/xemself"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "xe/xem/xyr/xyrs/xemself"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "XE / XEM / XYR / XYRS / XEMelf"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "e",
+                        "display": "e/em/eir/eirs/eirself",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "e/em/eir/eirs/eirself"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "e/em/eir/eirs/eirself"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "e/em/eir/eirs/eirself"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "e / em / eir / eirrs / eirfelf"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "unsure",
+                        "display": "Unsure",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Inseguro"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Ensèten"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Inseguro"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Incertain"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "other",
+                        "display": "Other",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Otro"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Lòt"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Outro"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Autre"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "all",
+                        "display": "I use all/any pronouns",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Yo uso todos/cualquier pronombres"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Mwen sèvi ak tout/nenpòt pwonon"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Eu uso todos/quaisquer pronomes"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "J'utilise tous les pronoms"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "none",
+                        "display": "I do not use pronouns, I use only my name",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "No uso pronombres, solo uso mi nombre"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Mwen pa sèvi ak pwonon, mwen itilize sèlman non mwen"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Eu não uso pronomes, eu uso apenas meu nome"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Je n'utilise pas de pronoms, je n'utilise que mon nom"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "different",
+                        "display": "I use different pronouns in different contexts",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Yo uso diferentes pronombres en diferentes contextos"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Mwen sèvi ak pwonon diferan nan kontèks diferan"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Eu uso pronomes diferentes em contextos diferentes"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "J'utilise différents pronoms dans différents contextes"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "code": "not-disclose",
+                        "display": "Prefer not to disclose",
+                        "_display": {
+                            "extension": [
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "es"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Prefiere no revelar"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "ht"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Prefere pa divilge"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "pt"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Prefira não divulgar"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                },
+                                {
+                                    "extension": [
+                                        {
+                                            "url": "lang",
+                                            "valueCode": "fr"
+                                        },
+                                        {
+                                            "url": "content",
+                                            "valueCode": "Préfèrent ne pas divulguer"
+                                        }
+                                    ],
+                                    "url": "http://hl7.org/fhir/StructureDefinition/translation"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
