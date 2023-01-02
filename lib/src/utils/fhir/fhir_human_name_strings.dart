@@ -88,7 +88,7 @@ String givenNamesFromHumanNameList(
 /// [HumanName]s as this is usually how it's found in a FHIR resource. This
 /// searches for the [HumanNameUse.usual], and if it's not found returns an
 /// empty String
-String preferredNameFromHumanNameList(List<HumanName>? names) {
+String preferredNameFromHumanNameList({List<HumanName>? names}) {
   if (names == null) {
     return '';
   }

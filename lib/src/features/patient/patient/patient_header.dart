@@ -15,7 +15,7 @@ class PatientHeader extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final localeStates = ref.watch(localeStateProvider);
-    final name = preferredNameFromHumanNameList(patient?.name);
+    final name = preferredNameFromHumanNameList(names: patient?.name);
     final familyName = familyNameFromHumanNameList(names: patient?.name);
     final age = ageString(ageCalculator(birthDate: patient?.birthDate), labels);
     final genderIdentity = valueSetCodeToDisplay(
