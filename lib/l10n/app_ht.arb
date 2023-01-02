@@ -29,5 +29,21 @@
     "contactName": "Non Kontakte",
     "sexAtBirth": "Sèks nan nesans",
     "navigator": "Navigatè",
-    "logout": "Dekonekte"
+    "logout": "Dekonekte",
+    "preferredName": "Non prefere",
+    "familyName": "Siyati",
+    "patientInfo": "Enfòmasyon pasyan yo",
+    "growth": "Grosisman",
+    "dataReview": "Done Revizyon",
+    "notes": "Nòt",
+    "searchPatient": "Rechèch pasyan",
+    "newPatient": "Nouvo pasyan",
+    "noBirthdateAvailable": "Pa gen dat nesans ki disponib",
+    "days": "Jou",
+    "years": "Ane",
+    "months": "Mwa",
+    "unavailable": "In bagay",
+    "age": "Vyeyi",
+    "genderIdentity": "Idantite sèks",
+    "pronouns": "Pronons"
 }

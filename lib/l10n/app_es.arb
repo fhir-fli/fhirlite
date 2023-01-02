@@ -29,5 +29,21 @@
     "contactName": "Nombre de contacto",
     "sexAtBirth": "Sexo al nacer",
     "navigator": "Navegador",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "preferredName": "Nombre Preferido",
+    "familyName": "Apellido",
+    "patientInfo": "Información del paciente",
+    "growth": "Crecimiento",
+    "dataReview": "Revisión de datos",
+    "notes": "Notas",
+    "searchPatient": "Buscar paciente",
+    "newPatient": "Paciente nuevo",
+    "noBirthdateAvailable": "No hay una cita de nacimiento disponible",
+    "days": "Dias",
+    "years": "Años",
+    "months": "Meses",
+    "unavailable": "Indisponible",
+    "age": "Años",
+    "genderIdentity": "Identidad de género",
+    "pronouns": "Pronombres"
 }

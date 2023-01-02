@@ -119,5 +119,69 @@
     "logout": "Logout",
     "@logout": {
         "description": "Logout"
+    },
+    "preferredName": "Preferred Name",
+    "@preferredName": {
+        "description": "Preferred Name"
+    },
+    "familyName": "Family Name",
+    "@familyName": {
+        "description": "Family Name"
+    },
+    "patientInfo": "Patient Info",
+    "@patientInfo": {
+        "description": "Patient Info"
+    },
+    "growth": "Growth",
+    "@growth": {
+        "description": "Growth"
+    },
+    "dataReview": "Data Review",
+    "@dataReview": {
+        "description": "Data Review"
+    },
+    "notes": "Notes",
+    "@notes": {
+        "description": "Notes"
+    },
+    "searchPatient": "Search Patient",
+    "@searchPatient": {
+        "description": "Search Patient"
+    },
+    "newPatient": "New Patient",
+    "@newPatient": {
+        "description": "New Patient"
+    },
+    "noBirthdateAvailable": "No Birthdate Available",
+    "@noBirthdateAvailable": {
+        "description": "No Birthdate Available"
+    },
+    "days": "Days",
+    "@days": {
+        "description": "Days"
+    },
+    "years": "Years",
+    "@years": {
+        "description": "Years"
+    },
+    "months": "Months",
+    "@months": {
+        "description": "Months"
+    },
+    "unavailable": "Unavailable",
+    "@unavailable": {
+        "description": "Unavailable"
+    },
+    "age": "Age",
+    "@age": {
+        "description": "Age"
+    },
+    "genderIdentity": "Gender Identity",
+    "@genderIdentity": {
+        "description": "Gender Identity"
+    },
+    "pronouns": "Pronouns",
+    "@pronouns": {
+        "description": "Pronouns"
     }
 }

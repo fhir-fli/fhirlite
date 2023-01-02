@@ -29,5 +29,21 @@
     "contactName": "Nome de contato",
     "sexAtBirth": "Sexo no nascimento",
     "navigator": "Navegador",
-    "logout": "Sair"
+    "logout": "Sair",
+    "preferredName": "nome preferido",
+    "familyName": "Nome de família",
+    "patientInfo": "Informação do paciente",
+    "growth": "Crescimento",
+    "dataReview": "Revisão de dados",
+    "notes": "Notas",
+    "searchPatient": "Paciente de pesquisa",
+    "newPatient": "Novo paciente",
+    "noBirthdateAvailable": "Nenhuma data de nascimento disponível",
+    "days": "Dias",
+    "years": "Anos",
+    "months": "Meses",
+    "unavailable": "Indisponível",
+    "age": "Idade",
+    "genderIdentity": "Identidade de gênero",
+    "pronouns": "Pronomes"
 }
