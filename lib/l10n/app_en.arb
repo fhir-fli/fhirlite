@@ -8,93 +8,13 @@
     "@a1languageTitle": {
         "description": "A message without extra parameters"
     },
-    "forgotPassword": "Forgot Password?",
-    "@forgotPassword": {
-        "description": "Forgot Password?"
-    },
-    "rememberMe": "Remember Me",
-    "@rememberMe": {
-        "description": "Remember Me"
-    },
-    "loginCapital": "LOGIN",
-    "@loginCapital": {
-        "description": "LOGIN"
-    },
-    "loginLowercase": "login",
-    "@loginLowercase": {
-        "description": "login"
-    },
-    "orForLogin": "- OR -",
-    "@orForLogin": {
-        "description": "- OR -"
-    },
-    "signInWith": "Sign In With",
-    "@signInWith": {
-        "description": "Sign In With"
-    },
-    "dontHaveAccount": "Don't Have an Account?",
-    "@dontHaveAccount": {
-        "description": "Don't Have an Account?"
-    },
-    "signUp": "Sign Up",
-    "@signUp": {
-        "description": "Sign Up"
-    },
-    "signIn": "Sign In",
-    "@signIn": {
-        "description": "Sign In"
-    },
-    "email": "Email",
-    "@email": {
-        "description": "Email"
-    },
-    "enterYourEmail": "Enter your Email",
-    "@enterYourEmail": {
-        "description": "Enter your Email"
-    },
-    "password": "Password",
-    "@password": {
-        "description": "Password"
-    },
-    "enterYourPassword": "Enter your Password",
-    "@enterYourPassword": {
-        "description": "Enter your Password"
-    },
-    "homePage": "Home Page",
-    "@homePage": {
-        "description": "Home Page"
-    },
-    "schedule": "Schedule",
-    "@schedule": {
-        "description": "Schedule"
-    },
-    "patientIndex": "Patient Index",
-    "@patientIndex": {
-        "description": "Patient Index"
-    },
-    "communication": "Communication",
-    "@communication": {
-        "description": "Communication"
-    },
-    "population": "Population",
-    "@population": {
-        "description": "Population"
-    },
     "admin": "Admin",
     "@admin": {
         "description": "Admin"
     },
-    "patient": "Patient",
-    "@patient": {
-        "description": "Patient"
-    },
-    "name": "Name",
-    "@name": {
-        "description": "name"
-    },
-    "names": "Names",
-    "@names": {
-        "description": "Names"
+    "age": "Age",
+    "@age": {
+        "description": "Age"
     },
     "birthDate": "BirthDate",
     "@birthDate": {
@@ -104,49 +24,85 @@
     "@birthDateAbbreviation": {
         "description": "Abbreviation of Birth Date"
     },
+    "communication": "Communication",
+    "@communication": {
+        "description": "Communication"
+    },
     "contactName": "Contact Name",
     "@contactName": {
         "description": "Contact Name"
-    },
-    "sexAtBirth": "Sex at Birth",
-    "@sexAtBirth": {
-        "description": "Sex at Birth"
-    },
-    "navigator": "Navigator",
-    "@navigator": {
-        "description": "Navigator"
-    },
-    "logout": "Logout",
-    "@logout": {
-        "description": "Logout"
-    },
-    "preferredName": "Preferred Name",
-    "@preferredName": {
-        "description": "Preferred Name"
-    },
-    "familyName": "Family Name",
-    "@familyName": {
-        "description": "Family Name"
-    },
-    "patientInfo": "Patient Info",
-    "@patientInfo": {
-        "description": "Patient Info"
-    },
-    "growth": "Growth",
-    "@growth": {
-        "description": "Growth"
     },
     "dataReview": "Data Review",
     "@dataReview": {
         "description": "Data Review"
     },
-    "notes": "Notes",
-    "@notes": {
-        "description": "Notes"
+    "days": "Days",
+    "@days": {
+        "description": "Days"
     },
-    "searchPatient": "Search Patient",
-    "@searchPatient": {
-        "description": "Search Patient"
+    "dontHaveAccount": "Don't Have an Account?",
+    "@dontHaveAccount": {
+        "description": "Don't Have an Account?"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email"
+    },
+    "enterYourEmail": "Enter your Email",
+    "@enterYourEmail": {
+        "description": "Enter your Email"
+    },
+    "enterYourPassword": "Enter your Password",
+    "@enterYourPassword": {
+        "description": "Enter your Password"
+    },
+    "familyName": "Family Name",
+    "@familyName": {
+        "description": "Family Name"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Forgot Password?"
+    },
+    "genderIdentity": "Gender Identity",
+    "@genderIdentity": {
+        "description": "Gender Identity"
+    },
+    "growth": "Growth",
+    "@growth": {
+        "description": "Growth"
+    },
+    "homePage": "Home Page",
+    "@homePage": {
+        "description": "Home Page"
+    },
+    "loginCapital": "LOGIN",
+    "@loginCapital": {
+        "description": "LOGIN"
+    },
+    "loginLowercase": "login",
+    "@loginLowercase": {
+        "description": "login"
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "Logout"
+    },
+    "months": "Months",
+    "@months": {
+        "description": "Months"
+    },
+    "name": "Name",
+    "@name": {
+        "description": "name"
+    },
+    "names": "Names",
+    "@names": {
+        "description": "Names"
+    },
+    "navigator": "Navigator",
+    "@navigator": {
+        "description": "Navigator"
     },
     "newPatient": "New Patient",
     "@newPatient": {
@@ -156,32 +112,88 @@
     "@noBirthdateAvailable": {
         "description": "No Birthdate Available"
     },
-    "days": "Days",
-    "@days": {
-        "description": "Days"
+    "notes": "Notes",
+    "@notes": {
+        "description": "Notes"
     },
-    "years": "Years",
-    "@years": {
-        "description": "Years"
+    "orForLogin": "- OR -",
+    "@orForLogin": {
+        "description": "- OR -"
     },
-    "months": "Months",
-    "@months": {
-        "description": "Months"
+    "password": "Password",
+    "@password": {
+        "description": "Password"
+    },
+    "patient": "Patient",
+    "@patient": {
+        "description": "Patient"
+    },
+    "patientIndex": "Patient Index",
+    "@patientIndex": {
+        "description": "Patient Index"
+    },
+    "patientInfo": "Patient Info",
+    "@patientInfo": {
+        "description": "Patient Info"
+    },
+    "population": "Population",
+    "@population": {
+        "description": "Population"
+    },
+    "preferredName": "Preferred Name",
+    "@preferredName": {
+        "description": "Preferred Name"
+    },
+    "pronouns": "Pronouns",
+    "@pronouns": {
+        "description": "Pronouns"
+    },
+    "rememberMe": "Remember Me",
+    "@rememberMe": {
+        "description": "Remember Me"
+    },
+    "schedule": "Schedule",
+    "@schedule": {
+        "description": "Schedule"
+    },
+    "searchPatient": "Search Patient",
+    "@searchPatient": {
+        "description": "Search Patient"
+    },
+    "sexAtBirth": "Sex at Birth",
+    "@sexAtBirth": {
+        "description": "Sex at Birth"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Sign In"
+    },
+    "signInWith": "Sign In With",
+    "@signInWith": {
+        "description": "Sign In With"
+    },
+    "signUp": "Sign Up",
+    "@signUp": {
+        "description": "Sign Up"
     },
     "unavailable": "Unavailable",
     "@unavailable": {
         "description": "Unavailable"
     },
-    "age": "Age",
-    "@age": {
-        "description": "Age"
+    "years": "Years",
+    "@years": {
+        "description": "Years"
     },
-    "genderIdentity": "Gender Identity",
-    "@genderIdentity": {
-        "description": "Gender Identity"
+    "year": "Year",
+    "@year": {
+        "description": "Year"
     },
-    "pronouns": "Pronouns",
-    "@pronouns": {
-        "description": "Pronouns"
+    "month": "Month",
+    "@month": {
+        "description": "Month"
+    },
+    "day": "Day",
+    "@day": {
+        "description": "Day"
     }
 }
