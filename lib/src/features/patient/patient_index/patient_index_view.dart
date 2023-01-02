@@ -90,10 +90,10 @@ class PatientIndexView extends ConsumerWidget {
           appBar: AppBar(
             backgroundColor: Colors.blueGrey,
             title: TextFormField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                label: Text('Search Patient'),
-                prefix: Icon(Icons.search),
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                label: Text(labels.searchPatient),
+                prefix: const Icon(Icons.search),
               ),
               initialValue: '',
               onChanged: (String newValue) {},
@@ -117,7 +117,7 @@ class PatientIndexView extends ConsumerWidget {
           ),
           // floatingActionButton: FloatingActionButton.extended(
           //   onPressed: () => PatientRoute().go(context),
-          //   label: const Text('New Patient'),
+          //   label: Text(labels.newPatient),
           //   icon: const Icon(Icons.add),
           // ),
         ),

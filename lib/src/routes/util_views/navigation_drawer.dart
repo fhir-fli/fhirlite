@@ -39,7 +39,8 @@ class NavigationDrawer extends ConsumerWidget {
               ),
             ),
           Text(
-            ref.watch(clientAssetsProvider)?.clientNames?.title ?? 'Navigator',
+            ref.watch(clientAssetsProvider)?.clientNames?.title ??
+                labels.navigator,
             style:
                 ref.watch(clientAssetsProvider)?.textTheme?.bodySmall?.copyWith(
                       color: Colors.white,
@@ -85,7 +86,7 @@ class NavigationDrawer extends ConsumerWidget {
           const Expanded(child: SizedBox()),
           drawerButton(
             Icons.logout_rounded,
-            'Logout',
+            labels.logout,
             () => const LoginRoute().go(context),
           ),
         ],
