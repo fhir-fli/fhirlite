@@ -18,45 +18,6 @@ class LoginView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final labels = LocaleUtil().getLabels(context);
 
-    Widget buildTF(
-      String text,
-      String hintText,
-      bool obscureText,
-      IconData icons, [
-      TextInputType? textInputType,
-    ]) =>
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              text,
-              style: kLabelStyle,
-            ),
-            const Gap(10.0),
-            Container(
-              alignment: Alignment.centerLeft,
-              decoration: kBoxDecorationStyle,
-              height: 60.0,
-              child: TextField(
-                cursorColor: Colors.white,
-                obscureText: false,
-                keyboardType: textInputType,
-                style: const TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: const EdgeInsets.only(top: 14.0),
-                  prefixIcon: Icon(
-                    icons,
-                    color: Colors.white,
-                  ),
-                  hintText: hintText,
-                  hintStyle: kHintTextStyle,
-                ),
-              ),
-            )
-          ],
-        );
-
     Widget buildForgotPasswordButton() => Container(
           alignment: Alignment.centerRight,
           child: TextButton(
@@ -114,7 +75,8 @@ class LoginView extends ConsumerWidget {
             ref
                 .read(clientProvider.notifier)
                 .update(FhirClient(fhirUri: FhirUri('mayjuun.com/fhir')));
-            const HomeRoute().go(context);
+
+            const PatientIndexRoute().go(context);
           },
           child: Text(
             labels.loginCapital,
@@ -243,12 +205,21 @@ class LoginView extends ConsumerWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color(0xFF73AEF5),
-                        Color(0xFF61A4F1),
-                        Color(0xFF478DE0),
-                        Color(0xFF398AE5),
+                        Color(0xFFB46EBF),
+                        Color(0xFF6637CB),
+                        Color(0xFF25939A),
+                        Color(0xFF25939A),
+                        Color(0xFF6637CB),
+                        Color(0xFFB46EBF),
                       ],
-                      stops: [0.1, 0.4, 0.7, 0.9],
+                      stops: [
+                        0.006,
+                        0.018,
+                        0.25,
+                        0.9,
+                        0.982,
+                        0.994,
+                      ],
                     ),
                   ),
                 ),
@@ -275,7 +246,7 @@ class LoginView extends ConsumerWidget {
                               ),
                         ),
                         const Gap(30),
-                        buildTF(
+                        buildTextField(
                           labels.email,
                           labels.enterYourEmail,
                           false,
@@ -283,7 +254,7 @@ class LoginView extends ConsumerWidget {
                           TextInputType.emailAddress,
                         ),
                         const Gap(10),
-                        buildTF(
+                        buildTextField(
                           labels.password,
                           labels.enterYourEmail,
                           true,

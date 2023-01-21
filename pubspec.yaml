@@ -24,6 +24,7 @@ dependencies:
   intl: ^0.17.0
   json_annotation: ^4.7.0
   json_theme: ^4.0.3+2
+  material_design_icons_flutter: ^6.0.7096
   riverpod_annotation: ^1.1.1
   validators: ^3.0.0
   yaml: ^3.1.1

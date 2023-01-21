@@ -1,5 +1,4 @@
 import 'package:fhir/r4.dart';
-import 'package:fhirlite/src/features/patient/patient_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -88,30 +87,61 @@ class PatientIndexView extends ConsumerWidget {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blueGrey,
+            backgroundColor: const Color(0xFF6637CB),
             title: TextFormField(
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                label: Text(labels.searchPatient),
-                prefix: const Icon(Icons.search),
+                label: Text(
+                  labels.searchPatient,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                prefix: const Padding(
+                  padding: EdgeInsets.fromLTRB(10.0, 0.0, 16.0, 0.0),
+                  child: Icon(Icons.search),
+                ),
               ),
               initialValue: '',
               onChanged: (String newValue) {},
             ),
           ),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: const Color(0xFF6637CB),
           drawer: NavigationDrawer(labels),
-          body: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(
-              child: ListView.builder(
-                itemBuilder: (BuildContext context, int index) =>
-                    patientCard(patients[index], () {
-                  ref.read(activePatientProvider.notifier).state =
-                      patients[index];
-                  const PatientRoute().go(context);
-                }),
-                itemCount: patients.length,
+          body: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFB46EBF),
+                  Color(0xFF6637CB),
+                  Color(0xFF6637CB),
+                  Color(0xFFB46EBF),
+                ],
+                stops: [
+                  0.006,
+                  0.25,
+                  0.9,
+                  0.994,
+                ],
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: ListView.builder(
+                  itemBuilder: (BuildContext context, int index) =>
+                      patientCard(patients[index], () {
+                    ref.read(activePatientProvider.notifier).state =
+                        patients[index];
+                    const PatientRoute().go(context);
+                  }),
+                  itemCount: patients.length,
+                ),
               ),
             ),
           ),
