@@ -1,55 +1,31 @@
 import 'package:fhir/r4.dart';
 
-/// This is the result we expect from a Search, if it is not an OperationOutcome
-/// or a Bundle, then it is an error, and we return that as an OperationOutcome
-/// as well
-List<Resource> parseRequestResult(Resource result) => result is OperationOutcome
-    ? [result]
-    : result is Bundle
-        ? parseBundle(result)
-        : [incorrectResultType(result)];
-
-/// Similar, but this time we specify the type of Resource we expected within
-/// the Bundle. It will return a list of Resources, that will either be
-/// of the type specified, or an OperationOutcome specifying that the Resource
-/// returned was not of the correct type.
-List<Resource> parseRequestResultForType<T>(Resource result) =>
-    result is OperationOutcome || result is T
-        ? [result]
-        : result is Bundle
-            ? parseBundleForType<T>(result)
-            : [incorrectResultWithType<T>(result)];
-
-/// Convenience method to create an OperationOutcome
-OperationOutcome incorrectResultType(Resource result, [String? requestName]) =>
-    OperationOutcome(
-      contained: [result],
-      issue: [
-        OperationOutcomeIssue(
-          code: Code('structure'),
-          diagnostics:
-              'This ${requestName ?? "request"} did not return any of the following:\n'
-              ' 1. A Bundle'
-              ' 2. An OperationOutcome'
-              ' The return resource is contained in this new and locally created'
-              ' OperationOutcome for troubleshooting purposes',
-        ),
-      ],
-    );
+/// When a Get request (including Search) is made to a FHIR server, the return
+/// results are almost always going to be an OperationOutcome (meaning an error
+/// has occurred), a single Resource of type T (if you, for instance, only
+/// requested Patient/12345), or, if you did any sort of request for more than
+/// one resource, it should return a Bundle, this checks and parses out your
+/// result to only include OperationOutcomes or type T, and retrieves all
+/// resources form the Bundle (as long as they are type T)
+ReturnResults<T> parseRequestResultForType<T>(Resource result) =>
+    result is OperationOutcome
+        ? ReturnResults<T>(operationOutcomes: [result])
+        : result is T
+            ? ReturnResults<T>(resources: [result as T])
+            : result is Bundle
+                ? parseBundleForType<T>(result)
+                : ReturnResults<T>(
+                    operationOutcomes: [incorrectResultWithType<T>(result)]);
 
 /// A convenience method that creates an OperationOutcome specifying the Type
 /// that was requested but not returned
-OperationOutcome incorrectResultWithType<T>(
-  Resource result, [
-  String? requestName,
-]) =>
+OperationOutcome incorrectResultWithType<T>(Resource result) =>
     OperationOutcome(
       contained: [result],
       issue: [
         OperationOutcomeIssue(
           code: Code('structure'),
-          diagnostics:
-              'This ${requestName ?? "request"} did not return any of the following:\n'
+          diagnostics: 'This request did not return any of the following:\n'
               ' 1. The requested type: $T'
               ' 2. A Bundle'
               ' 3. An OperationOutcome'
@@ -59,48 +35,38 @@ OperationOutcome incorrectResultWithType<T>(
       ],
     );
 
-/// Extracts all Resources that were returned by the Bundle
-List<Resource> parseBundle(Bundle bundle) {
-  final resources = <Resource>[];
-  if (bundle.type == Code('transaction-response')) {
-    for (var entry in bundle.entry ?? <BundleEntry>[]) {
-      if (entry.resource != null) {
-        resources.add(entry.resource!);
-      } else if (entry.response?.outcome != null) {
-        resources.add(entry.response!.outcome!);
-      } else {
-        resources.add(
-          OperationOutcome(
-            issue: [
-              OperationOutcomeIssue(
-                code: Code('informational'),
-                diagnostics: 'Status: ${entry.response?.status ?? "none"}'
-                    '\nLocation: ${entry.response?.location ?? "none"}',
-              ),
-            ],
-          ),
-        );
-      }
-    }
-  }
-  return resources;
-}
+OperationOutcome incorrectResultType<T>(Resource result) => OperationOutcome(
+      contained: [result],
+      issue: [
+        OperationOutcomeIssue(
+          code: Code('structure'),
+          diagnostics:
+              'This request returned a bundle, but this resource is not:\n'
+              ' 1. The requested type: $T'
+              ' 2. An OperationOutcome'
+              ' The return resource is contained in this new and locally created'
+              ' OperationOutcome for troubleshooting purposes',
+        ),
+      ],
+    );
 
 /// Extracts all Resources that were returned by the Bundle
-List<Resource> parseBundleForType<T>(Bundle bundle) {
-  final resources = <Resource>[];
+ReturnResults<T> parseBundleForType<T>(Bundle bundle) {
+  final returnResults = ReturnResults<T>();
   if (bundle.type == Code('transaction-response')) {
     for (var entry in bundle.entry ?? <BundleEntry>[]) {
       if (entry.resource != null) {
         if (entry.resource is T) {
-          resources.add(entry.resource!);
+          returnResults.resources.add(entry.resource! as T);
         } else {
-          resources.add(incorrectResultWithType<T>(entry.resource!));
+          returnResults.operationOutcomes
+              .add(incorrectResultType<T>(entry.resource!));
         }
       } else if (entry.response?.outcome != null) {
-        resources.add(entry.response!.outcome!);
+        returnResults.operationOutcomes
+            .add(entry.response!.outcome! as OperationOutcome);
       } else {
-        resources.add(
+        returnResults.operationOutcomes.add(
           OperationOutcome(
             issue: [
               OperationOutcomeIssue(
@@ -114,18 +80,16 @@ List<Resource> parseBundleForType<T>(Bundle bundle) {
       }
     }
   }
-  return resources;
+  return returnResults;
 }
 
-/// Evaluates the entries in a Bundle and returns the first Resource that is
-/// the Type specified
-Resource extractFirstTypeFromBundle<T>(Bundle bundle) {
-  if (bundle.type == Code('transaction-response')) {
-    for (var entry in bundle.entry ?? <BundleEntry>[]) {
-      if (entry.resource != null && entry.resource is T) {
-        return entry.resource!;
-      }
-    }
+class ReturnResults<T> {
+  ReturnResults(
+      {List<T>? resources, List<OperationOutcome>? operationOutcomes}) {
+    this.resources = resources ?? [];
+    this.operationOutcomes = operationOutcomes ?? [];
   }
-  return bundle;
+
+  late List<T> resources;
+  late List<OperationOutcome> operationOutcomes;
 }

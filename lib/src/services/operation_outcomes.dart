@@ -1,17 +1,16 @@
-// Package imports:
 import 'package:fhir/r4.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-OperationOutcome operationOutcome(String issue, {String? diagnostics}) =>
-    OperationOutcome(issue: [
-      OperationOutcomeIssue(
-        severity: Code('error'),
-        code: Code('value'),
-        details: CodeableConcept(text: issue),
-        diagnostics: diagnostics,
-      )
-    ]);
+part 'operation_outcomes.g.dart';
 
-OperationOutcome operationOutcomeError(Object e, StackTrace stack) =>
-    operationOutcome('There was an error getting Task resources: $e',
-        diagnostics:
-            'The following was the stack when the error was thrown: $stack');
+@riverpod
+class OperationOutcomes extends _$OperationOutcomes {
+  @override
+  List<OperationOutcome> build() => <OperationOutcome>[];
+
+  void newOperationOutcome(OperationOutcome operationOutcome) =>
+      state.add(operationOutcome);
+
+  void newOperationOutcomes(Iterable<OperationOutcome> operationOutcomes) =>
+      state.addAll(operationOutcomes);
+}

@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locale_provider.dart';
+part of 'login_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$localeStateHash() => r'1750a5614450c305d1feb62452b97ba6912cf5ca';
+String _$loginHash() => r'e4ef7f38599ff5c36b80eee89f6483085dbed5f7';
 
-/// See also [LocaleState].
-@ProviderFor(LocaleState)
-final localeStateProvider =
-    AutoDisposeNotifierProvider<LocaleState, LocaleStates>.internal(
-  LocaleState.new,
-  name: r'localeStateProvider',
+/// See also [Login].
+@ProviderFor(Login)
+final loginProvider =
+    AutoDisposeNotifierProvider<Login, SecureFhirClient>.internal(
+  Login.new,
+  name: r'loginProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$localeStateHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$loginHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$LocaleState = AutoDisposeNotifier<LocaleStates>;
+typedef _$Login = AutoDisposeNotifier<SecureFhirClient>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
