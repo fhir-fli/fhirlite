@@ -14,17 +14,18 @@ class InitRoute extends GoRouteData {
   static const path = '/';
 
   @override
-  Widget build(BuildContext context) => const AlertView();
+  Widget build(BuildContext context, GoRouterState state) => const AlertView();
 }
 
 @TypedGoRoute<FhirLiteRoute>(path: FhirLiteRoute.path)
 class FhirLiteRoute extends GoRouteData {
-  const FhirLiteRoute({this.configFilePath});
+  const FhirLiteRoute({this.configFilePath = ''});
   static const path = '/fhirlite:configFilePath';
-  final String? configFilePath;
+  final String configFilePath;
 
   @override
-  Widget build(BuildContext context) => FhirLiteView(configFilePath);
+  Widget build(BuildContext context, GoRouterState state) =>
+      FhirLiteView(configFilePath);
 }
 
 @TypedGoRoute<HomeRoute>(path: HomeRoute.path)
@@ -34,7 +35,7 @@ class HomeRoute extends GoRouteData {
   final String? configFilePath;
 
   @override
-  Widget build(BuildContext context) => const HomeView();
+  Widget build(BuildContext context, GoRouterState state) => const HomeView();
 }
 
 @TypedGoRoute<LoginRoute>(path: LoginRoute.path)
@@ -43,7 +44,7 @@ class LoginRoute extends GoRouteData {
   static const path = '/login';
 
   @override
-  Widget build(BuildContext context) => const LoginView();
+  Widget build(BuildContext context, GoRouterState state) => const LoginView();
 }
 
 /// ********** ********** *********** *********** **********
@@ -60,7 +61,8 @@ class PatientRoute extends GoRouteData {
   static const path = '/patient';
 
   @override
-  Widget build(BuildContext context) => const PatientView();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const PatientView();
 }
 
 class PatientIndexRoute extends GoRouteData {
@@ -68,7 +70,8 @@ class PatientIndexRoute extends GoRouteData {
   static const path = 'index';
 
   @override
-  Widget build(BuildContext context) => const PatientIndexView();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const PatientIndexView();
 }
 
 /// ********** ********** *********** *********** **********
@@ -83,7 +86,7 @@ class ErrorRoute extends GoRouteData {
   final String requestNumber;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, GoRouterState state) {
     return ErrorView(error, requestNumber);
   }
 }

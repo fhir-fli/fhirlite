@@ -1,25 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'router_notifier.dart';
+part of 'organization_providers.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerNotifierHash() => r'd048e0bf8a52114650423e6c8f29bef0796a66eb';
+String _$activeOrganizationHash() =>
+    r'0afb1013af94f8755f0a65eaeed877709f8de83a';
 
-/// See also [RouterNotifier].
-@ProviderFor(RouterNotifier)
-final routerNotifierProvider =
-    AutoDisposeAsyncNotifierProvider<RouterNotifier, bool>.internal(
-  RouterNotifier.new,
-  name: r'routerNotifierProvider',
+/// The Provider that contains all patients stored (even temporarily) on the
+/// device.
+///
+/// Copied from [ActiveOrganization].
+@ProviderFor(ActiveOrganization)
+final activeOrganizationProvider =
+    AutoDisposeNotifierProvider<ActiveOrganization, Organization?>.internal(
+  ActiveOrganization.new,
+  name: r'activeOrganizationProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$routerNotifierHash,
+      : _$activeOrganizationHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$RouterNotifier = AutoDisposeAsyncNotifier<bool>;
+typedef _$ActiveOrganization = AutoDisposeNotifier<Organization?>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

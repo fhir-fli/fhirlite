@@ -1,25 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'router_notifier.dart';
+part of 'new_location.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerNotifierHash() => r'd048e0bf8a52114650423e6c8f29bef0796a66eb';
+String _$geographicLocationHash() =>
+    r'7b877b79645ee6f4dad69270036c812d2c57cc80';
 
-/// See also [RouterNotifier].
-@ProviderFor(RouterNotifier)
-final routerNotifierProvider =
-    AutoDisposeAsyncNotifierProvider<RouterNotifier, bool>.internal(
-  RouterNotifier.new,
-  name: r'routerNotifierProvider',
+/// See also [GeographicLocation].
+@ProviderFor(GeographicLocation)
+final geographicLocationProvider =
+    AutoDisposeAsyncNotifierProvider<GeographicLocation, Location?>.internal(
+  GeographicLocation.new,
+  name: r'geographicLocationProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$routerNotifierHash,
+      : _$geographicLocationHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$RouterNotifier = AutoDisposeAsyncNotifier<bool>;
+typedef _$GeographicLocation = AutoDisposeAsyncNotifier<Location?>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

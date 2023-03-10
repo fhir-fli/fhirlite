@@ -26,5 +26,5 @@ GoRouter router(RouterRef ref) {
       redirect: notifier.redirect,
       errorBuilder: (c, s) =>
           ErrorRoute(s.error ?? const RouteFailuresUnspecifiedError(), '1')
-              .build(c));
+              .build(c, s));
 }

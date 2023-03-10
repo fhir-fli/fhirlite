@@ -5,13 +5,13 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../src.dart';
 
-class NavigationDrawer extends ConsumerWidget {
-  const NavigationDrawer(this.labels, {super.key});
+class FhirLiteNavigationDrawer extends ConsumerWidget {
+  const FhirLiteNavigationDrawer(this.labels, {super.key});
 
   final AppLocalizations labels;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Drawer build(BuildContext context, WidgetRef ref) {
     Widget drawerButton(
             IconData icons, String label, void Function()? onPressed) =>
         SizedBox(

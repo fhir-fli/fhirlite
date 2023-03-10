@@ -26,9 +26,12 @@ extension $InitRouteExtension on InitRoute {
         '/',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 }
 
 GoRoute get $fhirLiteRoute => GoRouteData.$route(
@@ -38,19 +41,22 @@ GoRoute get $fhirLiteRoute => GoRouteData.$route(
 
 extension $FhirLiteRouteExtension on FhirLiteRoute {
   static FhirLiteRoute _fromState(GoRouterState state) => FhirLiteRoute(
-        configFilePath: state.queryParams['config-file-path'],
+        configFilePath: state.queryParams['config-file-path'] ?? '',
       );
 
   String get location => GoRouteData.$location(
-        '/fhirlite${Uri.encodeComponent(configFilePath!)}',
+        '/fhirlite${Uri.encodeComponent(configFilePath)}',
         queryParams: {
-          if (configFilePath != null) 'config-file-path': configFilePath!,
+          if (configFilePath != '') 'config-file-path': configFilePath,
         },
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 }
 
 GoRoute get $homeRoute => GoRouteData.$route(
@@ -66,13 +72,16 @@ extension $HomeRouteExtension on HomeRoute {
   String get location => GoRouteData.$location(
         '/home',
         queryParams: {
-          if (configFilePath != null) 'config-file-path': configFilePath!,
+          if (configFilePath != null) 'config-file-path': configFilePath,
         },
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 }
 
 GoRoute get $loginRoute => GoRouteData.$route(
@@ -87,9 +96,12 @@ extension $LoginRouteExtension on LoginRoute {
         '/login',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 }
 
 GoRoute get $patientRoute => GoRouteData.$route(
@@ -110,9 +122,12 @@ extension $PatientRouteExtension on PatientRoute {
         '/patient',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 }
 
 extension $PatientIndexRouteExtension on PatientIndexRoute {
@@ -123,7 +138,10 @@ extension $PatientIndexRouteExtension on PatientIndexRoute {
         '/patient/index',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 }

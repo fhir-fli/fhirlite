@@ -19,7 +19,7 @@ class PatientView extends ConsumerWidget {
           Center(child: PatientHeader(patient: patient, labels: labels))
         ],
       ),
-      navigationDrawer: NavigationDrawer(labels),
+      // navigationDrawer: NavigationDrawer(labels),
       activityCards: <ActivityCard>[
         ActivityCard(
           icons: Icons.edit_note,

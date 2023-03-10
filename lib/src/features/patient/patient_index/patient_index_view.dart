@@ -110,7 +110,7 @@ class PatientIndexView extends ConsumerWidget {
             ),
           ),
           backgroundColor: const Color(0xFF6637CB),
-          drawer: NavigationDrawer(labels),
+          // drawer: NavigationDrawer(labels),
           body: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(

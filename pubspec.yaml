@@ -4,28 +4,30 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: '>=2.19.0 <3.0.0'
 
 dependencies:
   age_calculator: ^1.0.0
   auto_size_text: ^3.0.0
   cupertino_icons: ^1.0.5
-  fhir: ^0.9.3
-  fhir_auth: ^0.9.3
+  fhir: ^0.9.4
+  fhir_auth: ^0.9.4
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   freezed_annotation: ^2.2.0
   gap: ^2.0.1
-  google_fonts: ^3.0.1
-  go_router: ^5.2.4
-  hooks_riverpod: ^2.1.3
+  geolocator: ^9.0.2
+  google_fonts: ^4.0.3
+  go_router: ^6.2.0
+  hooks_riverpod: ^2.3.1
   intl: ^0.17.0
-  json_annotation: ^4.7.0
-  json_theme: ^4.0.3+2
+  json_annotation: ^4.8.0
+  json_theme: ^4.0.3
   material_design_icons_flutter: ^6.0.7096
-  riverpod_annotation: ^1.1.1
+  riverpod_annotation: ^2.0.1
+  url_launcher: 6.1.10
   validators: ^3.0.0
   yaml: ^3.1.1
     
@@ -35,9 +37,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.3.2
-  go_router_builder: ^1.0.15
-  json_serializable: ^6.5.4
-  riverpod_generator: ^1.1.1
+  go_router_builder: ^1.1.5
+  json_serializable: ^6.6.1
+  riverpod_generator: ^2.1.2
 
 flutter:
   uses-material-design: true
