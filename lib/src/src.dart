@@ -1,5 +1,6 @@
-export 'client_assets/api_public.dart';
-export 'client_assets/client_assets.dart';
+export 'branding/branding.dart';
 export 'features/features.dart';
+export 'routes/routes.dart';
+export 'services/services.dart';
 export 'ui/ui.dart';
 export 'utils/utils.dart';

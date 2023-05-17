@@ -2,16 +2,13 @@ import 'package:flex_seed_scheme/flex_seed_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:json_theme/json_theme.dart';
 
-import 'client_apis.dart';
-import 'client_color_defaults.dart';
-import 'client_color_extensions.dart';
-import 'client_links.dart';
-import 'standard_text_theme.dart';
+import 'branding.dart';
 
 @immutable
 class ClientAssets {
   const ClientAssets({
     required this.clientApis,
+    required this.clientFeatures,
     required this.clientLinks,
     required this.colorSchemeDark,
     required this.colorSchemeLight,
@@ -26,6 +23,7 @@ class ClientAssets {
     GlobalKey<ScaffoldMessengerState> scaffoldKey,
   ) {
     final ClientApis clientApis = json['clientApis'];
+    final ClientFeatures clientFeatures = json['clientFeatures'];
     final Map<String, dynamic> textTheme = json['clientTextTheme'];
     final googleFont = textTheme.remove('googleFont');
 
@@ -189,6 +187,7 @@ class ClientAssets {
 
     return ClientAssets(
       clientApis: clientApis,
+      clientFeatures: clientFeatures,
       colorSchemeLight: colorSchemeLight,
       colorSchemeDark: colorSchemeDark,
       colorExtensionsLight: colorExtensionsLight,
@@ -205,6 +204,7 @@ class ClientAssets {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'clientApis': clientApis.toJson(),
+      'clientFeatures': clientFeatures.toJson(),
       'clientLinks': clientLinks.toJson(),
       'clientTheme': {
         'colorScheme': {
@@ -221,6 +221,8 @@ class ClientAssets {
   }
 
   final ClientApis clientApis;
+
+  final ClientFeatures clientFeatures;
 
   /// Custom theme settings
   final ColorScheme colorSchemeDark;

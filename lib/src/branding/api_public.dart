@@ -17,6 +17,8 @@ class EnvConfig {
   static const APP_SUFFIX = String.fromEnvironment('APP_SUFFIX');
 }
 
+bool isProd = _getApiMode() == ApiMode.prod;
+
 enum ApiMode { dev, stage, prod }
 
 final ApiMode apiMode = _getApiMode();
