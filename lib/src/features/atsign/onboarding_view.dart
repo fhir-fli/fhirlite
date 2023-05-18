@@ -4,8 +4,6 @@ import 'package:fhirlite/fhirlite.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'atsign.dart';
-
 class OnBoardingView extends HookConsumerWidget {
   OnBoardingView({super.key});
   final Future<AtClientPreference> futurePreference = loadAtClientPreference();

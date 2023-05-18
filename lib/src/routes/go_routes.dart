@@ -33,7 +33,7 @@ class OnboardingRoute extends GoRouteData {
   static const path = '/onboarding';
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => const LoginView();
+  Widget build(BuildContext context, GoRouterState state) => OnBoardingView();
 }
 
 @TypedGoRoute<AlertRoute>(path: AlertRoute.path)
