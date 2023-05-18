@@ -35,8 +35,8 @@ class StyledCancelButton extends ConsumerWidget {
           ),
         )),
         child: TextButton(
-          child: Text(label ?? labels.navCancel, textAlign: TextAlign.center),
           onPressed: onPressed,
+          child: Text(label ?? labels.navCancel, textAlign: TextAlign.center),
         ));
   }
 }

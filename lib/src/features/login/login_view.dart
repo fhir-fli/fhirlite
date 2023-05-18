@@ -1,4 +1,3 @@
-import 'package:fhir_biometric/fhir_biometric.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -52,18 +51,35 @@ class LoginView extends ConsumerWidget {
                     label: labels.login,
                     onPressed: () {
                       ref.read(loginProvider.notifier).loggedIn();
+                      if (context.mounted) {
+                        const OnboardingRoute().go(context);
+                      }
                     },
                   ),
                   Gap(doubleByHeight(context, 120)),
                   IconButton(
                     onPressed: () async {
-                      final auth = BiometricAuth();
+                      final auth = BiometricAuth(
+                        biometricInstructions: labels.biometricInstructions,
+                        unsuccessfulBiometrics: labels.unsuccessfulBiometrics,
+                        biometricsUnavailable: labels.biometricsUnavailable,
+                        biometricsNotEnrolled: labels.biometricsNotEnrolled,
+                        biometricPlatformException:
+                            labels.biometricPlatformException,
+                        biometricOtherException: labels.biometricOtherException,
+                      );
                       final result = await auth.login();
                       if (result == 'true') {
                         ref.read(loginProvider.notifier).loggedIn();
+                        if (context.mounted) {
+                          const OnboardingRoute().go(context);
+                        }
                       } else if (context.mounted) {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(SnackBar(content: Text(result)));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                          result,
+                          style: clientAssets.clientTextTheme.headlineMedium,
+                        )));
                       }
                     },
                     icon: Icon(

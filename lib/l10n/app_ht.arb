@@ -20,5 +20,11 @@
     "username": "Non itilizatè",
     "password": "Paròl",
     "login": "Ouvri sesyon an",
-    "localAuthLogin": "Oswa konekte ak anprent ou"
+    "localAuthLogin": "Oswa konekte ak anprent ou",
+    "biometricInstructions": "Otantifye lè l sèvi avèk anprent ou",
+    "unsuccessfulBiometrics": "Malchanse",
+    "biometricsUnavailable": "Byometrik pa disponib, tanpri chwazi yon lòt opsyon",
+    "biometricsNotEnrolled": "Biometrik pa enskri. Tanpri chwazi yon lòt opsyon, oswa enskri byometrik ak Lè sa a, eseye ankò.",
+    "biometricPlatformException": "Erè ap eseye konekte.",
+    "biometricOtherException": "Erè enkoni"
 }

@@ -12,13 +12,13 @@ class ClientColorExtensions extends ThemeExtension<ClientColorExtensions> {
 
   factory ClientColorExtensions.fromJson(
       Map<String, dynamic> json, Brightness brightness) {
-    final _defaultExtension = defaultColorExtension(brightness);
+    final defaultExtension = defaultColorExtension(brightness);
 
     return ClientColorExtensions(
       notification: ThemeDecoder.decodeColor(json['notification']) ??
-          _defaultExtension.notification,
+          defaultExtension.notification,
       onNotification: ThemeDecoder.decodeColor(json['onNotification']) ??
-          _defaultExtension.onNotification,
+          defaultExtension.onNotification,
     );
   }
 

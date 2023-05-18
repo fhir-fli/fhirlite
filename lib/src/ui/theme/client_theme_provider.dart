@@ -73,14 +73,14 @@ class ClientThemeStateNotifier extends StateNotifier<ClientThemeState> {
       );
 
   ThemeMode _getThemeModeFromString(String theme) {
-    ThemeMode _setThemeMode = ThemeMode.system;
+    ThemeMode setThemeMode = ThemeMode.system;
     if (theme == 'light') {
-      _setThemeMode = ThemeMode.light;
+      setThemeMode = ThemeMode.light;
     }
     if (theme == 'dark') {
-      _setThemeMode = ThemeMode.dark;
+      setThemeMode = ThemeMode.dark;
     }
-    return _setThemeMode;
+    return setThemeMode;
   }
 
   ThemeData _getNewClientTheme(ThemeMode themeMode) {

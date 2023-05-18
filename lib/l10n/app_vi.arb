@@ -20,5 +20,11 @@
     "username": "tên tài khoản",
     "password": "Mật khẩu",
     "login": "Đăng nhập",
-    "localAuthLogin": "Hoặc đăng nhập bằng dấu vân tay của bạn"
+    "localAuthLogin": "Hoặc đăng nhập bằng dấu vân tay của bạn",
+    "biometricInstructions": "Xác thực bằng cách sử dụng dấu vân tay của bạn",
+    "unsuccessfulBiometrics": "Không thành công",
+    "biometricsUnavailable": "Sinh trắc học không khả dụng, vui lòng chọn một tùy chọn khác",
+    "biometricsNotEnrolled": "Sinh trắc học không đăng ký. Vui lòng chọn một tùy chọn khác hoặc đăng ký sinh trắc học và sau đó thử lại.",
+    "biometricPlatformException": "Lỗi khi cố gắng đăng nhập.",
+    "biometricOtherException": "Lỗi không rõ"
 }

@@ -20,5 +20,11 @@
     "username": "Nom d'utilisateur",
     "password": "Mot de passe",
     "login": "Connexion",
-    "localAuthLogin": "Ou connectez-vous avec votre empreinte digitale"
+    "localAuthLogin": "Ou connectez-vous avec votre empreinte digitale",
+    "biometricInstructions": "Authentifier en utilisant votre empreinte digitale",
+    "unsuccessfulBiometrics": "Infructueux",
+    "biometricsUnavailable": "Biométrie non disponible, veuillez choisir une autre option",
+    "biometricsNotEnrolled": "Biométrie non inscrite. Veuillez choisir une autre option ou inscrire la biométrie, puis réessayer.",
+    "biometricPlatformException": "Erreur essayant de se connecter.",
+    "biometricOtherException": "Erreur inconnue"
 }

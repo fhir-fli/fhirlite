@@ -43,11 +43,11 @@ class StyledSecondaryTextButton extends ConsumerWidget {
         ),
         child: (onPressed == null || useOutlineOverride)
             ? OutlinedButton(
-                child: Text(data, textAlign: TextAlign.center),
                 onPressed: onPressed,
+                child: Text(data, textAlign: TextAlign.center),
               )
             : TextButton(
-                child: Text(data, textAlign: TextAlign.center),
-                onPressed: onPressed));
+                onPressed: onPressed,
+                child: Text(data, textAlign: TextAlign.center)));
   }
 }

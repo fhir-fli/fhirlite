@@ -9,6 +9,9 @@ part of 'go_routes.dart';
 List<RouteBase> get $appRoutes => [
       $initRoute,
       $loginRoute,
+      $onboardingRoute,
+      $alertRoute,
+      $loadingRoute,
     ];
 
 RouteBase get $initRoute => GoRouteData.$route(
@@ -41,6 +44,69 @@ extension $LoginRouteExtension on LoginRoute {
 
   String get location => GoRouteData.$location(
         '/login',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+RouteBase get $onboardingRoute => GoRouteData.$route(
+      path: '/onboarding',
+      factory: $OnboardingRouteExtension._fromState,
+    );
+
+extension $OnboardingRouteExtension on OnboardingRoute {
+  static OnboardingRoute _fromState(GoRouterState state) =>
+      const OnboardingRoute();
+
+  String get location => GoRouteData.$location(
+        '/onboarding',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+RouteBase get $alertRoute => GoRouteData.$route(
+      path: '/alert:message',
+      factory: $AlertRouteExtension._fromState,
+    );
+
+extension $AlertRouteExtension on AlertRoute {
+  static AlertRoute _fromState(GoRouterState state) => AlertRoute(
+        state.pathParameters['message']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/alert${Uri.encodeComponent(message)}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+RouteBase get $loadingRoute => GoRouteData.$route(
+      path: '/loading',
+      factory: $LoadingRouteExtension._fromState,
+    );
+
+extension $LoadingRouteExtension on LoadingRoute {
+  static LoadingRoute _fromState(GoRouterState state) => const LoadingRoute();
+
+  String get location => GoRouteData.$location(
+        '/loading',
       );
 
   void go(BuildContext context) => context.go(location);

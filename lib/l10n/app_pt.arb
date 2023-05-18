@@ -20,5 +20,11 @@
     "username": "Nome de usuário",
     "password": "Senha",
     "login": "Conecte-se",
-    "localAuthLogin": "Ou login com sua impressão digital"
+    "localAuthLogin": "Ou login com sua impressão digital",
+    "biometricInstructions": "Autentique usando sua impressão digital",
+    "unsuccessfulBiometrics": "Mal sucedido",
+    "biometricsUnavailable": "Biometria não disponível, escolha outra opção",
+    "biometricsNotEnrolled": "Biometria não está inscrita. Escolha outra opção ou inscreva -se biometria e tente novamente.",
+    "biometricPlatformException": "Erro tentando fazer login.",
+    "biometricOtherException": "Erro desconhecido"
 }

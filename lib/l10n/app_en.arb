@@ -83,5 +83,29 @@
     "localAuthLogin": "Or Login with Your Fingerprint",
     "@localAuthLogin": {
         "description": "Text for fingerprint button that triggers local authentication"
+    },
+    "biometricInstructions": "Authenticate using your fingerprint",
+    "@biometricInstructions": {
+        "description": "Biometric instructions"
+    },
+    "unsuccessfulBiometrics": "Unsuccessful",
+    "@unsuccessfulBiometrics": {
+        "description": "Return from failed Biometric Attempt"
+    },
+    "biometricsUnavailable": "Biometrics not available, please choose another option",
+    "@biometricsUnavailable": {
+        "description": "Alert message when Biometrics are Unavailable on the Device"
+    },
+    "biometricsNotEnrolled": "Biometrics not enrolled. Please choose another option, or enroll Biometrics and then try again.",
+    "@biometricsNotEnrolled": {
+        "description": "Alert message when Biometrics are Available on the Device but have not been Enrolled"
+    },
+    "biometricPlatformException": "Error trying to login.",
+    "@biometricPlatformException": {
+        "description": "Platform Exception error when trying to login"
+    },
+    "biometricOtherException": "Unknown error",
+    "@biometricOtherException": {
+        "description": "Other type of errror that is returned from a Biometric Login attempt"
     }
 }

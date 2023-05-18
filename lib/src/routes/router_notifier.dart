@@ -44,6 +44,8 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
     /// If there is no state for this Notifier, return null
     if (isLoggedIn == null) {
       return null;
+    } else if (isLoggedIn) {
+      return null;
     } else {
       return '/login';
     }

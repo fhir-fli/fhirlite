@@ -20,5 +20,11 @@
     "username": "ชื่อผู้ใช้",
     "password": "รหัสผ่าน",
     "login": "เข้าสู่ระบบ",
-    "localAuthLogin": "หรือเข้าสู่ระบบด้วยลายนิ้วมือของคุณ"
+    "localAuthLogin": "หรือเข้าสู่ระบบด้วยลายนิ้วมือของคุณ",
+    "biometricInstructions": "รับรองความถูกต้องโดยใช้ลายนิ้วมือของคุณ",
+    "unsuccessfulBiometrics": "ไม่สำเร็จ",
+    "biometricsUnavailable": "ไม่สามารถใช้งานทางชีวภาพได้โปรดเลือกตัวเลือกอื่น",
+    "biometricsNotEnrolled": "Biometrics ไม่ได้ลงทะเบียน โปรดเลือกตัวเลือกอื่นหรือลงทะเบียนชีวภาพแล้วลองอีกครั้ง",
+    "biometricPlatformException": "ข้อผิดพลาดพยายามเข้าสู่ระบบ",
+    "biometricOtherException": "ข้อผิดพลาดที่ไม่รู้จัก"
 }

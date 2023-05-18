@@ -89,7 +89,7 @@ class _AppStoreInfo extends ConsumerWidget implements PreferredSizeWidget {
     final labels = LocaleUtil().getLabels(context);
     final colorExtension = getColorExtension(context);
 
-    final _style = Theme.of(context)
+    final style = Theme.of(context)
         .textTheme
         .bodyLarge
         ?.apply(color: colorExtension.onNotification);
@@ -107,7 +107,7 @@ class _AppStoreInfo extends ConsumerWidget implements PreferredSizeWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 AutoSizeText(labels.notificationAppRunsBest,
-                    maxLines: 1, textAlign: TextAlign.center, style: _style),
+                    maxLines: 1, textAlign: TextAlign.center, style: style),
                 RichText(
                   maxLines: 1,
                   text: TextSpan(children: [
@@ -115,7 +115,7 @@ class _AppStoreInfo extends ConsumerWidget implements PreferredSizeWidget {
                         labels.notificationDownloadNow,
                         _appStoreLink(),
                         context,
-                        _style!.apply(decoration: TextDecoration.underline)),
+                        style!.apply(decoration: TextDecoration.underline)),
                   ]),
                 ),
               ],

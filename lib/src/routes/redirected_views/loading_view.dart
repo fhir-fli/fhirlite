@@ -6,8 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../src.dart';
 
-class DataLoadingView extends ConsumerWidget {
-  const DataLoadingView({Key? key}) : super(key: key);
+class LoadingView extends ConsumerWidget {
+  const LoadingView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

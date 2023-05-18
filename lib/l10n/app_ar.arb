@@ -20,5 +20,11 @@
     "username": "اسم المستخدم",
     "password": "كلمة المرور",
     "login": "تسجيل الدخول",
-    "localAuthLogin": "أو تسجيل الدخول باستخدام بصمة بصمة"
+    "localAuthLogin": "أو تسجيل الدخول باستخدام بصمة بصمة",
+    "biometricInstructions": "المصادقة باستخدام بصمات الأصابع الخاصة بك",
+    "unsuccessfulBiometrics": "غير ناجح",
+    "biometricsUnavailable": "القياسات الحيوية غير متوفرة ، يرجى اختيار خيار آخر",
+    "biometricsNotEnrolled": "القياسات الحيوية غير مسجلة. يرجى اختيار خيار آخر ، أو تسجيل القياسات الحيوية ثم حاول مرة أخرى.",
+    "biometricPlatformException": "خطأ في محاولة تسجيل الدخول.",
+    "biometricOtherException": "خطأ غير معروف"
 }

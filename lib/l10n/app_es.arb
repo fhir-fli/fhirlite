@@ -20,5 +20,11 @@
     "username": "Nombre de usuario",
     "password": "Contraseña",
     "login": "Acceso",
-    "localAuthLogin": "O iniciar sesión con su huella digital"
+    "localAuthLogin": "O iniciar sesión con su huella digital",
+    "biometricInstructions": "Autenticar usando su huella digital",
+    "unsuccessfulBiometrics": "Fracasado",
+    "biometricsUnavailable": "Biometría no disponible, elija otra opción",
+    "biometricsNotEnrolled": "Biometría no inscrita. Elija otra opción o inscriba biometría y luego vuelva a intentarlo.",
+    "biometricPlatformException": "Error al intentar iniciar sesión.",
+    "biometricOtherException": "Error desconocido"
 }

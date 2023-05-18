@@ -21,11 +21,11 @@ class StyledAppBarIconButtons extends StatelessWidget {
       customBorder: const CircleBorder(),
       splashColor: Colors.grey.withOpacity(0.25),
       highlightColor: Colors.grey.withOpacity(0.5),
+      onTap: onPressed,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Icon(icon, size: iconSize, color: color),
       ),
-      onTap: onPressed,
     );
   }
 }

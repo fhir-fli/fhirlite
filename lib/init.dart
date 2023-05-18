@@ -1,11 +1,10 @@
 // Flutter imports:
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 // Package imports:
+import 'package:at_app_flutter/at_app_flutter.dart' show AtEnv;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:at_utils/at_logger.dart' show AtSignLogger;
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -14,6 +13,8 @@ import 'fhirlite.dart';
 /// GetIt required for singletone injection of client asset dependencies
 /// This includes color scheme, unique text, unique asset paths, etc
 GetIt getIt = GetIt.instance;
+
+final AtSignLogger _logger = AtSignLogger(AtEnv.appNamespace);
 
 /// Init Widget does all of the initial loading of anything that needs to be
 /// loaded asynchronously
@@ -25,6 +26,13 @@ class Init extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Future<bool> initializeAsync() async {
+      // * AtEnv is an abtraction of the flutter_dotenv package used to
+      // * load the environment variables set by at_app
+      try {
+        await AtEnv.load();
+      } catch (e) {
+        _logger.finer('Environment failed to load from .env: ', e);
+      }
       final themeEvents = ref.read(clientThemeProvider.notifier);
       await themeEvents
           .mapEventsToStates(const ClientThemeEvents.setFirstLoadInfo());
