@@ -24,29 +24,25 @@ class FhirHomeView extends HookConsumerWidget {
             ),
             child: Center(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   StyledOvalButton(
-                    percentHeight: .3,
+                    percentHeight: 1,
+                    heightMax: 150,
                     label: 'Upload Random',
-                    onPressed: () {
-                      final result = ref.read(
-                          atSignUpdateFhirResourceProvider(generatePatient()));
-                      print(result);
+                    onPressed: () async {
+                      await atSignUpdateFhirResource(generatePatient());
                     },
                   ),
                   StyledOvalButton(
-                    percentHeight: .3,
+                    percentHeight: 1,
+                    heightMax: 150,
                     label: 'Download All',
                     onPressed: () async {
-                      ref.read(atSignGetAllFhirResourcesProvider).when(
-                            data: (data) {
-                              for (final Resource resource in data) {
-                                print(resource.toJson());
-                              }
-                            },
-                            error: (e, s) {},
-                            loading: () {},
-                          );
+                      final resultList = await atSignGetAllFhirResources();
+                      for (final Resource resource in resultList) {
+                        print(resource.path);
+                      }
                     },
                   ),
                 ],
