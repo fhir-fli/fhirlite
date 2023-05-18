@@ -1,3 +1,4 @@
+import 'package:fhirlite/src/src.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:local_auth/local_auth.dart';
@@ -34,7 +35,7 @@ class BiometricAuth {
   Future<List<BiometricType>> get biometricTypes async =>
       auth.getAvailableBiometrics();
 
-  Future<String> login() async {
+  Future<SuccessOrErrorMessage> login() async {
     try {
       if (await biometricsAvailable) {
         final bool success = await auth.authenticate(
@@ -44,23 +45,23 @@ class BiometricAuth {
           ),
         );
         if (success) {
-          return 'true';
+          return const SuccessOrErrorMessage.success();
         } else {
-          return unsuccessfulBiometrics;
+          return SuccessOrErrorMessage.failure(unsuccessfulBiometrics);
         }
       } else {
-        return biometricsUnavailable;
+        return SuccessOrErrorMessage.failure(biometricsUnavailable);
       }
     } on PlatformException catch (e) {
       if (e.code == auth_error.notAvailable) {
-        return biometricsUnavailable;
+        return SuccessOrErrorMessage.failure(biometricsUnavailable);
       } else if (e.code == auth_error.notEnrolled) {
-        return biometricsNotEnrolled;
+        return SuccessOrErrorMessage.failure(biometricsNotEnrolled);
       } else {
-        return '$biometricPlatformException: $e';
+        return SuccessOrErrorMessage.failure('$biometricPlatformException: $e');
       }
     } catch (e) {
-      return '$biometricOtherException: $e';
+      return SuccessOrErrorMessage.failure('$biometricOtherException: $e');
     }
   }
 }

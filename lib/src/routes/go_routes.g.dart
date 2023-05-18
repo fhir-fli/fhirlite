@@ -9,7 +9,7 @@ part of 'go_routes.dart';
 List<RouteBase> get $appRoutes => [
       $initRoute,
       $loginRoute,
-      $onboardingRoute,
+      $fhirRoute,
       $alertRoute,
       $loadingRoute,
     ];
@@ -54,17 +54,16 @@ extension $LoginRouteExtension on LoginRoute {
       context.pushReplacement(location);
 }
 
-RouteBase get $onboardingRoute => GoRouteData.$route(
-      path: '/onboarding',
-      factory: $OnboardingRouteExtension._fromState,
+RouteBase get $fhirRoute => GoRouteData.$route(
+      path: '/Fhir',
+      factory: $FhirRouteExtension._fromState,
     );
 
-extension $OnboardingRouteExtension on OnboardingRoute {
-  static OnboardingRoute _fromState(GoRouterState state) =>
-      const OnboardingRoute();
+extension $FhirRouteExtension on FhirRoute {
+  static FhirRoute _fromState(GoRouterState state) => const FhirRoute();
 
   String get location => GoRouteData.$location(
-        '/onboarding',
+        '/Fhir',
       );
 
   void go(BuildContext context) => context.go(location);

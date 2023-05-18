@@ -37,7 +37,7 @@ class StyledOvalButton extends HookConsumerWidget {
               ? heightMax
               : doublePercentHeight,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
               ref.watch(clientThemeProvider).data.colorScheme.inversePrimary),

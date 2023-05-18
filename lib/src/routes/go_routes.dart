@@ -27,13 +27,14 @@ class LoginRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const LoginView();
 }
 
-@TypedGoRoute<OnboardingRoute>(path: OnboardingRoute.path)
-class OnboardingRoute extends GoRouteData {
-  const OnboardingRoute();
-  static const path = '/onboarding';
+@TypedGoRoute<FhirRoute>(path: FhirRoute.path)
+class FhirRoute extends GoRouteData {
+  const FhirRoute();
+  static const path = '/Fhir';
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => OnBoardingView();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FhirHomeView();
 }
 
 @TypedGoRoute<AlertRoute>(path: AlertRoute.path)

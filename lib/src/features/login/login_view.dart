@@ -1,17 +1,90 @@
+import 'package:at_app_flutter/at_app_flutter.dart';
+import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../src.dart';
+import 'load_at_client_preference.dart';
 
-class LoginView extends ConsumerWidget {
+class LoginView extends HookConsumerWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final labels = LocaleUtil().getLabels(context);
+    final Future<AtClientPreference> futurePreference =
+        loadAtClientPreference();
     final TextEditingController usernameController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
+
+    Future<bool> biometricAuth() async {
+      final auth = BiometricAuth(
+        biometricInstructions: labels.biometricInstructions,
+        unsuccessfulBiometrics: labels.unsuccessfulBiometrics,
+        biometricsUnavailable: labels.biometricsUnavailable,
+        biometricsNotEnrolled: labels.biometricsNotEnrolled,
+        biometricPlatformException: labels.biometricPlatformException,
+        biometricOtherException: labels.biometricOtherException,
+      );
+      final result = await auth.login();
+      return result.when(
+        success: () => true,
+        failure: (message) {
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  message,
+                  style: clientAssets.clientTextTheme.headlineMedium,
+                ),
+              ),
+            );
+          }
+          return false;
+        },
+      );
+    }
+
+    Future<void> onboarding() async {
+      AtOnboardingResult onboardingResult = await AtOnboarding.onboard(
+        context: context,
+        config: AtOnboardingConfig(
+          atClientPreference: await futurePreference,
+          rootEnvironment: AtEnv.rootEnvironment,
+          domain: AtEnv.rootDomain,
+          appAPIKey: AtEnv.appApiKey,
+        ),
+      );
+      switch (onboardingResult.status) {
+        case AtOnboardingResultStatus.success:
+          {
+            if (context.mounted) {
+              const FhirRoute().go(context);
+            }
+          }
+          break;
+        case AtOnboardingResultStatus.error:
+          {
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor:
+                      ref.read(clientThemeProvider).data.colorScheme.error,
+                  content: Text(
+                      'An error has occurred trying to onboard ${onboardingResult.atsign}:\n'
+                      'ErrorCode: ${onboardingResult.errorCode}\n'
+                      'Status: ${onboardingResult.status}\n'
+                      'Error Message: ${onboardingResult.message}\n'),
+                ),
+              );
+            }
+          }
+          break;
+        case AtOnboardingResultStatus.cancel:
+          break;
+      }
+    }
 
     return Scaffold(
       body: SafeArea(
@@ -51,42 +124,20 @@ class LoginView extends ConsumerWidget {
                     label: labels.login,
                     onPressed: () {
                       ref.read(loginProvider.notifier).loggedIn();
-                      if (context.mounted) {
-                        const OnboardingRoute().go(context);
-                      }
+                      onboarding();
                     },
                   ),
                   Gap(doubleByHeight(context, 120)),
                   IconButton(
-                    onPressed: () async {
-                      final auth = BiometricAuth(
-                        biometricInstructions: labels.biometricInstructions,
-                        unsuccessfulBiometrics: labels.unsuccessfulBiometrics,
-                        biometricsUnavailable: labels.biometricsUnavailable,
-                        biometricsNotEnrolled: labels.biometricsNotEnrolled,
-                        biometricPlatformException:
-                            labels.biometricPlatformException,
-                        biometricOtherException: labels.biometricOtherException,
-                      );
-                      final result = await auth.login();
-                      if (result == 'true') {
-                        ref.read(loginProvider.notifier).loggedIn();
-                        if (context.mounted) {
-                          const OnboardingRoute().go(context);
+                      onPressed: () async {
+                        final bioAuth = await biometricAuth();
+                        if (bioAuth) {
+                          ref.read(loginProvider.notifier).loggedIn();
+                          onboarding();
                         }
-                      } else if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text(
-                          result,
-                          style: clientAssets.clientTextTheme.headlineMedium,
-                        )));
-                      }
-                    },
-                    icon: Icon(
-                      Icons.fingerprint,
-                      size: doubleBySize(context, 170),
-                    ),
-                  ),
+                      },
+                      icon: Icon(Icons.fingerprint,
+                          size: doubleBySize(context, 170))),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
