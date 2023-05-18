@@ -1,4 +1,3 @@
-import 'package:fhir/r4.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -40,8 +39,11 @@ class FhirHomeView extends HookConsumerWidget {
                     label: 'Download All',
                     onPressed: () async {
                       final resultList = await atSignGetAllFhirResources();
-                      for (final Resource resource in resultList) {
-                        print(resource.path);
+                      ref
+                          .watch(fhirResourcesProvider.notifier)
+                          .addResources(resultList);
+                      if (context.mounted) {
+                        const FhirListRoute().go(context);
                       }
                     },
                   ),

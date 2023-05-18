@@ -57,17 +57,17 @@ Patient generatePatient() {
 }
 
 int random(int numb) {
-  final _rand = Random();
-  return _rand.nextInt(numb);
+  final rand = Random();
+  return rand.nextInt(numb);
 }
 
 String zipCode() => digits(5);
 
 String digits(int digit) {
-  const _chars = '1234567890';
-  final _rnd = Random();
+  const chars = '1234567890';
+  final rnd = Random();
   return String.fromCharCodes(Iterable.generate(
-      digit, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+      digit, (_) => chars.codeUnitAt(rnd.nextInt(chars.length))));
 }
 
 const lastNames = [

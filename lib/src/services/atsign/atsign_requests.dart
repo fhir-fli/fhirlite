@@ -46,19 +46,9 @@ Future<Resource> atSignGetFhirResource(
 Future<List<Resource>> atSignGetAllFhirResources() async {
   AtClient atClient = AtClientManager.getInstance().atClient;
   final allKeys = await atClient.getAtKeys();
-  print(allKeys);
-  allKeys.removeWhere((element) {
-    if (element.key == null) {
-      return false;
-    } else {
-      print(element.key!.contains('.fhir@'));
-      return false;
-    }
-  });
-  print(allKeys);
+  allKeys.retainWhere((element) => element.namespace == 'fhir');
   final List<Resource> resourceList = <Resource>[];
   for (final AtKey atKey in allKeys) {
-    print(atKey.key);
     final AtValue atValue = await atClient.get(atKey);
     if (atValue.value is! String) {
       resourceList.add(operationOutcome(atKey, atValue));

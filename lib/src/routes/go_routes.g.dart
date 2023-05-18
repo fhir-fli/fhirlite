@@ -55,15 +55,56 @@ extension $LoginRouteExtension on LoginRoute {
 }
 
 RouteBase get $fhirRoute => GoRouteData.$route(
-      path: '/Fhir',
+      path: '/fhir',
       factory: $FhirRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: 'fhirlist',
+          factory: $FhirListRouteExtension._fromState,
+        ),
+        GoRouteData.$route(
+          path: 'fhirPretty',
+          factory: $FhirPrettyRouteExtension._fromState,
+        ),
+      ],
     );
 
 extension $FhirRouteExtension on FhirRoute {
   static FhirRoute _fromState(GoRouterState state) => const FhirRoute();
 
   String get location => GoRouteData.$location(
-        '/Fhir',
+        '/fhir',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+extension $FhirListRouteExtension on FhirListRoute {
+  static FhirListRoute _fromState(GoRouterState state) => const FhirListRoute();
+
+  String get location => GoRouteData.$location(
+        '/fhir/fhirlist',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+extension $FhirPrettyRouteExtension on FhirPrettyRoute {
+  static FhirPrettyRoute _fromState(GoRouterState state) =>
+      const FhirPrettyRoute();
+
+  String get location => GoRouteData.$location(
+        '/fhir/fhirPretty',
       );
 
   void go(BuildContext context) => context.go(location);

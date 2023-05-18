@@ -29,11 +29,13 @@ dependencies:
   google_fonts: ^4.0.4
   hooks_riverpod: ^2.3.6
   intl: ^0.18.0
+  json_annotation: ^4.8.1
   json_theme: ^5.0.2
   local_auth: ^2.1.6
   material_design_icons_flutter: ^6.0.7096
   package_info_plus: ^3.1.2
   riverpod_annotation: ^2.1.1
+  scrollable_table_view: ^1.0.1
   shared_preferences: ^2.1.1
   url_launcher: ^6.1.11
 
