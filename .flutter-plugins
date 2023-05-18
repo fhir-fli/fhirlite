@@ -1,4 +1,9 @@
 # This is a generated file; do not edit or check into version control.
+flutter_plugin_android_lifecycle=/home/grey/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.14/
+local_auth=/home/grey/.pub-cache/hosted/pub.dev/local_auth-2.1.6/
+local_auth_android=/home/grey/.pub-cache/hosted/pub.dev/local_auth_android-1.0.28/
+local_auth_ios=/home/grey/.pub-cache/hosted/pub.dev/local_auth_ios-1.1.2/
+local_auth_windows=/home/grey/.pub-cache/hosted/pub.dev/local_auth_windows-1.0.8/
 package_info_plus=/home/grey/.pub-cache/hosted/pub.dev/package_info_plus-4.0.0/
 path_provider=/home/grey/.pub-cache/hosted/pub.dev/path_provider-2.0.15/
 path_provider_android=/home/grey/.pub-cache/hosted/pub.dev/path_provider_android-2.0.27/

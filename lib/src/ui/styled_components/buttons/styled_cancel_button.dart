@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../src.dart';
+import '../../../src.dart';
 
 class StyledCancelButton extends ConsumerWidget {
   const StyledCancelButton({

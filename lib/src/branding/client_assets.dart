@@ -22,8 +22,9 @@ class ClientAssets {
     Map<String, dynamic> json,
     GlobalKey<ScaffoldMessengerState> scaffoldKey,
   ) {
-    final ClientApis clientApis = json['clientApis'];
-    final ClientFeatures clientFeatures = json['clientFeatures'];
+    final ClientApis clientApis = ClientApis.fromJson(json['clientApis']);
+    final ClientFeatures clientFeatures =
+        ClientFeatures.fromJson(json['clientFeatures']);
     final Map<String, dynamic> textTheme = json['clientTextTheme'];
     final googleFont = textTheme.remove('googleFont');
 

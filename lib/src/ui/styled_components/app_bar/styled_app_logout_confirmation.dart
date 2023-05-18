@@ -34,11 +34,11 @@ Future<bool> styledAppLogoutConfirmation(BuildContext context) async {
                   shouldLogout = true;
 
                   /// notify login state that we will be logging out
-                  await ref.read(loginProvider.notifier).logout();
+                  // await ref.read(loginProvider.notifier).logout();
 
                   /// navigate back to login screen
                   // context.goNamed(RouteNames.LOGIN);
-                  const LoginRoute().go(context);
+                  // const LoginRoute().go(context);
                 },
               ),
             ],

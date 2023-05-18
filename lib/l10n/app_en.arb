@@ -2,198 +2,86 @@
     "@@locale": "en",
     "a1languageInEnglish": "English",
     "@a1languageInEnglish": {
-        "description": "A message without extra parameters"
+        "description": "This is the English title for each language"
     },
     "a1languageTitle": "English",
     "@a1languageTitle": {
-        "description": "A message without extra parameters"
+        "description": "Language title, as defined by the original language"
     },
-    "admin": "Admin",
-    "@admin": {
-        "description": "Admin"
+    "a1languageNameEn": "English",
+    "@a1languageNameEn": {
+        "description": "Language title, translated to the current locale"
     },
-    "age": "Age",
-    "@age": {
-        "description": "Age"
+    "a1languageNameEs": "Spanish",
+    "@a1languageNameEs": {
+        "description": "Language title, translated to the current locale"
     },
-    "birthDate": "BirthDate",
-    "@birthDate": {
-        "description": "Birth Date"
+    "a1languageNameHt": "Haitian Creole",
+    "@a1languageNameHt": {
+        "description": "Language title, translated to the current locale"
     },
-    "birthDateAbbreviation": "DOB",
-    "@birthDateAbbreviation": {
-        "description": "Abbreviation of Birth Date"
+    "a1languageNameFr": "French",
+    "@a1languageNameFr": {
+        "description": "Language title, translated to the current locale"
     },
-    "communication": "Communication",
-    "@communication": {
-        "description": "Communication"
+    "a1languageNamePt": "Portuguese",
+    "@a1languageNamePt": {
+        "description": "Language title, translated to the current locale"
     },
-    "contactName": "Contact Name",
-    "@contactName": {
-        "description": "Contact Name"
+    "a1LanguageNameTh": "Thai",
+    "@a1LanguageNameTh": {
+        "description": "Language title, translated to the current locale"
     },
-    "dataReview": "Data Review",
-    "@dataReview": {
-        "description": "Data Review"
+    "a1LanguageNameVi": "Vietnamese",
+    "@a1LanguageNameVi": {
+        "description": "Language title, translated to the current locale"
     },
-    "days": "Days",
-    "@days": {
-        "description": "Days"
+    "a1LanguageNameZhcn": "Simplified Chinese",
+    "@a1LanguageNameZhcn": {
+        "description": "Language title, translated to the current locale"
     },
-    "dontHaveAccount": "Don't Have an Account?",
-    "@dontHaveAccount": {
-        "description": "Don't Have an Account?"
+    "a1LanguageNameAr": "Arabic",
+    "@a1LanguageNameAr": {
+        "description": "Language title, translated to the current locale"
     },
-    "email": "Email",
-    "@email": {
-        "description": "Email"
+    "notificationAppRunsBest": "This app runs best on Android / iOS",
+    "@notificationAppRunsBest": {
+        "description": "Message used in the notification if opened as a PWA"
     },
-    "enterYourEmail": "Enter your Email",
-    "@enterYourEmail": {
-        "description": "Enter your Email"
+    "notificationDownloadNow": "Download Now",
+    "@notificationDownloadNow": {
+        "description": "Message used in the notification if opened as a PWA"
     },
-    "enterYourPassword": "Enter your Password",
-    "@enterYourPassword": {
-        "description": "Enter your Password"
+    "authLogout": "Logout",
+    "@authLogout": {
+        "description": "Message for the authorization screen"
     },
-    "familyName": "Family Name",
-    "@familyName": {
-        "description": "Family Name"
+    "authLogoutDialog": "Are you sure you want to log out?",
+    "@authLogoutDialog": {
+        "description": "Message for the authorization screen"
     },
-    "forgotPassword": "Forgot Password?",
-    "@forgotPassword": {
-        "description": "Forgot Password?"
-    },
-    "genderIdentity": "Gender Identity",
-    "@genderIdentity": {
-        "description": "Gender Identity"
-    },
-    "growth": "Growth",
-    "@growth": {
-        "description": "Growth"
-    },
-    "homePage": "Home Page",
-    "@homePage": {
-        "description": "Home Page"
-    },
-    "loginCapital": "LOGIN",
-    "@loginCapital": {
-        "description": "LOGIN"
-    },
-    "loginLowercase": "login",
-    "@loginLowercase": {
-        "description": "login"
-    },
-    "logout": "Logout",
-    "@logout": {
-        "description": "Logout"
-    },
-    "months": "Months",
-    "@months": {
-        "description": "Months"
-    },
-    "name": "Name",
-    "@name": {
-        "description": "name"
-    },
-    "names": "Names",
-    "@names": {
-        "description": "Names"
-    },
-    "navigator": "Navigator",
-    "@navigator": {
-        "description": "Navigator"
-    },
-    "newPatient": "New Patient",
-    "@newPatient": {
-        "description": "New Patient"
-    },
-    "noBirthdateAvailable": "No Birthdate Available",
-    "@noBirthdateAvailable": {
-        "description": "No Birthdate Available"
-    },
-    "notes": "Notes",
-    "@notes": {
-        "description": "Notes"
-    },
-    "orForLogin": "- OR -",
-    "@orForLogin": {
-        "description": "- OR -"
-    },
-    "password": "Password",
-    "@password": {
-        "description": "Password"
-    },
-    "patient": "Patient",
-    "@patient": {
-        "description": "Patient"
-    },
-    "patientIndex": "Patient Index",
-    "@patientIndex": {
-        "description": "Patient Index"
-    },
-    "patientInfo": "Patient Info",
-    "@patientInfo": {
-        "description": "Patient Info"
-    },
-    "population": "Population",
-    "@population": {
-        "description": "Population"
-    },
-    "preferredName": "Preferred Name",
-    "@preferredName": {
-        "description": "Preferred Name"
-    },
-    "pronouns": "Pronouns",
-    "@pronouns": {
-        "description": "Pronouns"
-    },
-    "rememberMe": "Remember Me",
-    "@rememberMe": {
-        "description": "Remember Me"
-    },
-    "schedule": "Schedule",
-    "@schedule": {
-        "description": "Schedule"
-    },
-    "searchPatient": "Search Patient",
-    "@searchPatient": {
-        "description": "Search Patient"
-    },
-    "sexAtBirth": "Sex at Birth",
-    "@sexAtBirth": {
-        "description": "Sex at Birth"
+    "navCancel": "Cancel",
+    "@navCancel": {
+        "description": "Message used in navigation"
     },
     "signIn": "Sign In",
     "@signIn": {
-        "description": "Sign In"
+        "description": "Header on Login Page"
     },
-    "signInWith": "Sign In With",
-    "@signInWith": {
-        "description": "Sign In With"
+    "username": "Username",
+    "@username": {
+        "description": "Hint for Username Text Box"
     },
-    "signUp": "Sign Up",
-    "@signUp": {
-        "description": "Sign Up"
+    "password": "Password",
+    "@password": {
+        "description": "Hint for Password Text Box"
     },
-    "unavailable": "Unavailable",
-    "@unavailable": {
-        "description": "Unavailable"
+    "login": "Login",
+    "@login": {
+        "description": "Button Text on Login Page"
     },
-    "years": "Years",
-    "@years": {
-        "description": "Years"
-    },
-    "year": "Year",
-    "@year": {
-        "description": "Year"
-    },
-    "month": "Month",
-    "@month": {
-        "description": "Month"
-    },
-    "day": "Day",
-    "@day": {
-        "description": "Day"
+    "localAuthLogin": "Or Login with Your Fingerprint",
+    "@localAuthLogin": {
+        "description": "Text for fingerprint button that triggers local authentication"
     }
 }

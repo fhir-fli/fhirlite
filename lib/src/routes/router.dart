@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../src.dart';
+
 part 'router.g.dart';
 
 /// **************************************************************************
@@ -21,10 +23,10 @@ GoRouter router(RouterRef ref) {
       navigatorKey: _key,
       refreshListenable: notifier,
       debugLogDiagnostics: true,
-      initialLocation: InitRoute.path,
+      initialLocation: LoginRoute.path,
       routes: notifier.routes,
       redirect: notifier.redirect,
       errorBuilder: (c, s) =>
-          ErrorRoute(s.error ?? const RouteFailuresUnspecifiedError(), '1')
+          ErrorRoute(s.error ?? const RouteFailuresUnspecifiedError())
               .build(c, s));
 }

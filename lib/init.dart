@@ -18,19 +18,13 @@ GetIt getIt = GetIt.instance;
 /// Init Widget does all of the initial loading of anything that needs to be
 /// loaded asynchronously
 class Init extends ConsumerWidget {
-  const Init(this.config);
+  const Init(this.config, {super.key});
 
   final String config;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Future<bool> initializeAsync() async {
-      final Map<String, dynamic> configAssets =
-          jsonDecode(jsonEncode(await rootBundle.loadString(config)))
-              as Map<String, dynamic>;
-      ClientAssets customClientAssets() => ClientAssets.fromJson(
-          configAssets, GlobalKey<ScaffoldMessengerState>());
-      getIt.registerSingleton<ClientAssets>(customClientAssets());
       final themeEvents = ref.read(clientThemeProvider.notifier);
       await themeEvents
           .mapEventsToStates(const ClientThemeEvents.setFirstLoadInfo());
@@ -51,7 +45,7 @@ class Init extends ConsumerWidget {
             home: Scaffold(
               body: SafeArea(
                 child: Center(
-                  child: Image.asset('assets/png/logo.png'),
+                  child: Image.asset('assets/images/fhir-fli-logo.png'),
                 ),
               ),
             ),
@@ -63,7 +57,7 @@ class Init extends ConsumerWidget {
 }
 
 class MyApp extends ConsumerStatefulWidget {
-  const MyApp();
+  const MyApp({super.key});
 
   @override
   ConsumerState<MyApp> createState() => _MyAppState();
@@ -94,7 +88,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   Widget build(BuildContext context) {
     final theme = ref.watch(clientThemeProvider);
     final localeStates = ref.watch(localeProvider);
-    final _goRouter = ref.watch(routerProvider);
+    final goRouter = ref.watch(routerProvider);
     final clientAssets = getIt<ClientAssets>();
 
     return MaterialApp.router(
@@ -109,9 +103,9 @@ class _MyAppState extends ConsumerState<MyApp> {
 
       // *** ROUTES ***
       restorationScopeId: 'root',
-      routeInformationProvider: _goRouter.routeInformationProvider,
-      routeInformationParser: _goRouter.routeInformationParser,
-      routerDelegate: _goRouter.routerDelegate,
+      routeInformationProvider: goRouter.routeInformationProvider,
+      routeInformationParser: goRouter.routeInformationParser,
+      routerDelegate: goRouter.routerDelegate,
 
       // *** LOCALES ***
       localizationsDelegates: const [
