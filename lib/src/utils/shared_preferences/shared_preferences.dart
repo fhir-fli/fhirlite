@@ -1,2 +1,2 @@
 export 'shared_preferences_interaction.dart';
-export 'shared_preferences_provider.dart';
+export 'shared_pref_provider.dart';

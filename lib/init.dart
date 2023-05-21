@@ -21,6 +21,8 @@ final AtSignLogger _logger = AtSignLogger(AtEnv.appNamespace);
 class Init extends ConsumerWidget {
   const Init(this.config, {super.key});
 
+  /// We currently do this in the launch app for dev purposes, but in real life
+  /// we could put it here, so we pass in the path of the config file
   final String config;
 
   @override
@@ -33,7 +35,9 @@ class Init extends ConsumerWidget {
       } catch (e) {
         _logger.finer('Environment failed to load from .env: ', e);
       }
-      final themeEvents = ref.read(clientThemeProvider.notifier);
+
+      /// Load the provider that manages our theme
+      final themeEvents = ref.read(appThemeProvider.notifier);
       await themeEvents
           .mapEventsToStates(const ClientThemeEvents.setFirstLoadInfo());
       await themeEvents
@@ -74,7 +78,7 @@ class MyApp extends ConsumerStatefulWidget {
 class _MyAppState extends ConsumerState<MyApp> {
   @override
   void initState() {
-    final themeEvents = ref.read(clientThemeProvider.notifier);
+    final themeEvents = ref.read(appThemeProvider.notifier);
     super.initState();
 
     final window = WidgetsBinding.instance.window;
@@ -86,7 +90,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       /// Otherwise, it wouldn't know to change themes to the new one
       /// spec: https://stackoverflow.com/a/69784475
       if (WidgetsBinding.instance.window.platformBrightness !=
-          ref.read(clientThemeProvider).data.brightness) {
+          ref.read(appThemeProvider).data.brightness) {
         themeEvents.mapEventsToStates(const ClientThemeEvents.loadLastTheme());
       }
     };
@@ -94,7 +98,7 @@ class _MyAppState extends ConsumerState<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = ref.watch(clientThemeProvider);
+    final theme = ref.watch(appThemeProvider);
     final localeStates = ref.watch(localeProvider);
     final goRouter = ref.watch(routerProvider);
     final clientAssets = getIt<ClientAssets>();

@@ -40,7 +40,7 @@ class StyledOvalButton extends HookConsumerWidget {
         onPressed: onPressed,
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
-              ref.watch(clientThemeProvider).data.colorScheme.inversePrimary),
+              ref.watch(appThemeProvider).data.colorScheme.inversePrimary),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),

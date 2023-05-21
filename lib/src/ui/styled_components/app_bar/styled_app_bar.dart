@@ -47,7 +47,7 @@ class StyledAppBar extends ConsumerWidget implements PreferredSizeWidget {
   @override
   PreferredSizeWidget build(BuildContext context, WidgetRef ref) => AppBar(
         title: includeVersionNumber ?? false
-            ? _Text('v${ref.watch(clientThemeProvider).versionNumber}$title')
+            ? _Text('v${ref.watch(appThemeProvider).versionNumber}$title')
             : _Text(title),
         actions: replaceActionsWithLogoutButton ?? false
             ? const [StyledAppBarLogoutButton(), Gap(8)]

@@ -43,7 +43,7 @@ class StyledOvalTextFormField extends HookConsumerWidget {
                 borderSide: BorderSide(
                     width: 1,
                     color: ref
-                        .read(clientThemeProvider)
+                        .read(appThemeProvider)
                         .data
                         .colorScheme
                         .onBackground),

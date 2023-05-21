@@ -70,7 +70,7 @@ class LoginView extends HookConsumerWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor:
-                      ref.read(clientThemeProvider).data.colorScheme.error,
+                      ref.read(appThemeProvider).data.colorScheme.error,
                   content: Text(
                       'An error has occurred trying to onboard ${onboardingResult.atsign}:\n'
                       'ErrorCode: ${onboardingResult.errorCode}\n'

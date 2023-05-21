@@ -2,56 +2,58 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../src.dart';
 
-final clientThemeProvider =
-    StateNotifierProvider<ClientThemeStateNotifier, ClientThemeState>(
-        (ref) => ClientThemeStateNotifier(ref));
+part 'app_theme_provider.g.dart';
 
-class ClientThemeStateNotifier extends StateNotifier<ClientThemeState> {
-  /// ***************************************************
-  /// Constructor
-  /// ***************************************************
-  ClientThemeStateNotifier(this.ref) : super(ClientThemeState.initial());
-
-  /// ***************************************************
-  /// PROPERTIES
-  /// ***************************************************
-  final Ref ref;
+@riverpod
+class AppTheme extends _$AppTheme {
+  @override
+  ClientThemeState build() => ClientThemeState.initial();
 
   Future<bool> mapEventsToStates(ClientThemeEvents events) async => events.map(
+        /// To change the current theme mode
         themeModeChanged: (value) async {
-          await ref.watch(sharedPreferencesProvider(SPInteraction.setString(
+          /// We save it using the sharedPrefProvider
+          await ref.watch(sharedPrefProvider(SPInteraction.setString(
             key: 'theme',
             value: ThemeModeUtil().convertThemeModeToString(value.themeMode),
           )).selectAsync((data) => data));
 
+          /// Then set the theme
           _getNewThemeAndSaveState(value.themeMode);
 
           return true;
         },
+
+        /// To load the last theme from sharedPreferences
         loadLastTheme: (value) async {
+          ///Read the data from sharedPreferences
           final data = await ref.watch(
-              sharedPreferencesProvider(SPInteraction.getString(key: 'theme'))
+              sharedPrefProvider(SPInteraction.getString(key: 'theme'))
                   .selectAsync((data) => data));
 
+          /// extract the themeString from the theme
           final themeString = (data as SPInteractionGetString).value;
           // if success, then set theme mode to the new string. all failures default to system
           final newThemeMode = themeString == null
               ? ThemeMode.system
               : _getThemeModeFromString(themeString);
 
+          /// set the theme
           _getNewThemeAndSaveState(newThemeMode);
 
           return true;
         },
+
+        /// first load info
         setFirstLoadInfo: (ClientSetFirstLoadInfo value) async {
-          final data = await ref.watch(sharedPreferencesProvider(
-                  SPInteraction.setBool(
-                      key: 'isFirstLoad', value: value.firstLoad))
+          /// request data from sharedProvider
+          final data = await ref.watch(sharedPrefProvider(SPInteraction.setBool(
+                  key: 'isFirstLoad', value: value.firstLoad))
               .selectAsync((data) => data));
 
           // trigger a state change
@@ -59,8 +61,13 @@ class ClientThemeStateNotifier extends StateNotifier<ClientThemeState> {
               state.copyWith(isFirstLoad: (data as SPInteractionSetBool).value);
           return true;
         },
+
+        /// for package info
         getPackageInfo: (ClientPackageInfo value) async {
+          /// use PackageInfo to get it
           final packageInfo = await PackageInfo.fromPlatform();
+
+          /// update the state to include the information
           state = state.copyWith(versionNumber: packageInfo.version);
           return true;
         },
