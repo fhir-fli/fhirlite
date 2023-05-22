@@ -26,27 +26,27 @@ class SharedPref extends _$SharedPref {
       getInt: (_) async {
         final value = prefs.getInt(_.key);
         return (interaction as SPInteractionGetInt)
-            .copyWith(value: value, success: value == null);
+            .copyWith(value: value, success: value != null);
       },
       getBool: (_) async {
         final value = prefs.getBool(_.key);
         return (interaction as SPInteractionGetBool)
-            .copyWith(value: value, success: value == null);
+            .copyWith(value: value, success: value != null);
       },
       getDouble: (_) async {
         final value = prefs.getDouble(_.key);
         return (interaction as SPInteractionGetDouble)
-            .copyWith(value: value, success: value == null);
+            .copyWith(value: value, success: value != null);
       },
       getString: (_) async {
         final value = prefs.getString(_.key);
         return (interaction as SPInteractionGetString)
-            .copyWith(value: value, success: value == null);
+            .copyWith(value: value, success: value != null);
       },
       getStringList: (_) async {
         final value = prefs.getStringList(_.key);
         return (interaction as SPInteractionGetStringList)
-            .copyWith(value: value, success: value == null);
+            .copyWith(value: value, success: value != null);
       },
       remove: (_) async =>
           interaction.copyWith(success: await prefs.remove(_.key)),

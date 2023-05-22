@@ -5,5 +5,5 @@ import 'utils/utils.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await sharedPreferences();
+  // await sharedPreferences();
 }

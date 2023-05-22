@@ -6,7 +6,7 @@ part of 'shared_pref_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sharedPrefHash() => r'90ff2c95772ad6c29d7f47721ff68a640ca94600';
+String _$sharedPrefHash() => r'5bc2fcdb02b1a299ff4330a29257ffc5f6f38eb9';
 
 /// Copied from Dart SDK
 class _SystemHash {
