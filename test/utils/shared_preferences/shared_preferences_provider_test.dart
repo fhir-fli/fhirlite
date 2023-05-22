@@ -1,14 +1,9 @@
 import 'package:fhirlite/src/utils/shared_preferences/shared_preferences.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class MockSPInteraction extends Mock implements SPInteraction {}
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+Future<void> sharedPreferences() async {
   SharedPreferences.setMockInitialValues({});
   group('Shared Preferences Provider', () {
     final container = ProviderContainer();
