@@ -31,6 +31,8 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
   List<RouteBase> get routes => $appRoutes;
 
   String? redirect(BuildContext context, GoRouterState state) {
+    print(state.location);
+
     /// Sometimes, opening an existing flutter app redirect goes to a path that it doesn't know how to parse
     /// For example, `xcrun simctl openurl booted "https://YOUR-SITE/#/login?request-no=demo&id=2"`
     /// is interpreted as `/#/login?request-no=demo&id=2` instead of `/login?request-no=demo&id=2`

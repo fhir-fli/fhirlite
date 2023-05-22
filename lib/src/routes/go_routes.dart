@@ -12,7 +12,7 @@ part 'go_routes.g.dart';
 @TypedGoRoute<InitRoute>(path: InitRoute.path)
 class InitRoute extends GoRouteData {
   const InitRoute();
-  static const path = '/';
+  static const path = '/init';
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>

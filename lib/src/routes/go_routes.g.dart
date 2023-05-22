@@ -15,7 +15,7 @@ List<RouteBase> get $appRoutes => [
     ];
 
 RouteBase get $initRoute => GoRouteData.$route(
-      path: '/',
+      path: '/init',
       factory: $InitRouteExtension._fromState,
     );
 
@@ -23,7 +23,7 @@ extension $InitRouteExtension on InitRoute {
   static InitRoute _fromState(GoRouterState state) => const InitRoute();
 
   String get location => GoRouteData.$location(
-        '/',
+        '/init',
       );
 
   void go(BuildContext context) => context.go(location);
