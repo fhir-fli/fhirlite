@@ -9,13 +9,15 @@ environment:
 dependencies:
   at_app_flutter: ^5.1.1
   at_client_mobile: ^3.2.9
+  at_fhir:
+    path: ../at_fhir
   at_onboarding_flutter: ^6.0.3
   at_utils: ^3.0.12
   auto_size_text: ^3.0.0
   biometric_storage: ^4.1.3
   cupertino_icons: ^1.0.5
   path_provider: ^2.0.15
-  fhir: ^0.10.0
+  fhir: ^0.11.0
   flutter:
     sdk: flutter
   flutter_localizations:

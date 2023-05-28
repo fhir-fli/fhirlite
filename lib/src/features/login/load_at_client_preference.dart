@@ -1,5 +1,5 @@
 import 'package:at_app_flutter/at_app_flutter.dart';
-import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
+import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<AtClientPreference> loadAtClientPreference() async {

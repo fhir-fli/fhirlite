@@ -36,7 +36,7 @@ class ClientAssets {
 
     /// The app defaults to light or dark mode based on color schemes set above
     /// If, for some reason, you want to set a custom brightness for one of these modes, you can
-    Brightness _getBrightnessFromJson(
+    Brightness getBrightnessFromJson(
         Map<String, dynamic> colorSchemeJson, Brightness nullBrightness) {
       final brightnessString = colorSchemeJson['brightness'];
 
@@ -54,7 +54,7 @@ class ClientAssets {
       return nullBrightness;
     }
 
-    ColorScheme _getColorSchemeFromJson(
+    ColorScheme getColorSchemeFromJson(
         Map<String, dynamic> colorSchemeJson, Brightness brightness) {
       final bool isFromSeed = colorSchemeJson['fromSeed'] ?? false;
       final bool includeOverrides =
@@ -163,7 +163,7 @@ class ClientAssets {
           defaultColorScheme(brightness);
     }
 
-    ClientColorExtensions _getColorExtensionsFromJson(
+    ClientColorExtensions getColorExtensionsFromJson(
             Map<String, dynamic> colorSchemeJson, Brightness brightness) =>
         ClientColorExtensions.fromJson(
             colorSchemeJson['extensions'], brightness);
@@ -171,20 +171,20 @@ class ClientAssets {
     /// This allows you to set custom brightness in the JSON
     /// Color schemes and extensions are build from this data (or defaults if unset)
     final brightnessLight =
-        _getBrightnessFromJson(lightModeColorScheme, Brightness.light);
+        getBrightnessFromJson(lightModeColorScheme, Brightness.light);
     final colorSchemeLight =
-        _getColorSchemeFromJson(lightModeColorScheme, brightnessLight);
+        getColorSchemeFromJson(lightModeColorScheme, brightnessLight);
     final colorExtensionsLight =
-        _getColorExtensionsFromJson(lightModeColorScheme, brightnessLight);
+        getColorExtensionsFromJson(lightModeColorScheme, brightnessLight);
 
     /// This allows you to set custom brightness in the JSON
     /// Color schemes and extensions are build from this data (or defaults if unset)
     final brightnessDark =
-        _getBrightnessFromJson(darkModeColorScheme, Brightness.dark);
+        getBrightnessFromJson(darkModeColorScheme, Brightness.dark);
     final colorSchemeDark =
-        _getColorSchemeFromJson(darkModeColorScheme, brightnessDark);
+        getColorSchemeFromJson(darkModeColorScheme, brightnessDark);
     final colorExtensionsDark =
-        _getColorExtensionsFromJson(darkModeColorScheme, brightnessDark);
+        getColorExtensionsFromJson(darkModeColorScheme, brightnessDark);
 
     return ClientAssets(
       clientApis: clientApis,

@@ -1,4 +1,3 @@
-import 'package:fhir/r4.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -59,7 +58,8 @@ class FhirPrettyRoute extends GoRouteData {
   static const path = 'fhirPretty';
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => FhirPrettyView();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FhirPrettyView();
 }
 
 @TypedGoRoute<AlertRoute>(path: AlertRoute.path)

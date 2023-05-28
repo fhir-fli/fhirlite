@@ -39,6 +39,7 @@ class FhirHomeView extends HookConsumerWidget {
                     label: 'Download All',
                     onPressed: () async {
                       final resultList = await atSignGetAllFhirResources();
+                      print(resultList.length);
                       ref
                           .watch(fhirResourcesProvider.notifier)
                           .addResources(resultList);
