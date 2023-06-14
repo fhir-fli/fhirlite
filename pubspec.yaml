@@ -11,19 +11,20 @@ dependencies:
   at_client_mobile: ^3.2.9
   at_fhir:
     path: ../at_fhir
-  at_onboarding_flutter: ^6.0.3
-  at_utils: ^3.0.12
+  at_onboarding_flutter: ^6.1.0
+  at_utils: ^3.0.13
   biometric_storage: ^4.1.3
   cupertino_icons: ^1.0.5
-  fhir: ^0.11.0
+  fhir: ^0.11.2
+  fhir_at_rest: ^0.11.2
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_dotenv: ^5.0.2
+  flutter_dotenv: ^5.1.0
   freezed_annotation: ^2.2.0
   gap: ^3.0.0
-  go_router: ^7.0.1
+  go_router: ^8.0.3
   hooks_riverpod: ^2.3.6
   intl: ^0.18.0
   json_annotation: ^4.8.1
@@ -33,13 +34,13 @@ dependencies:
   url_launcher: ^6.1.11
 
 dev_dependencies:
-  build_runner: ^2.4.4
+  build_runner: ^2.4.5
   flutter_lints: ^2.0.1
   flutter_riverpod: ^2.3.6
   flutter_test:
     sdk: flutter
-  freezed: ^2.3.4
-  go_router_builder: ^2.0.1
+  freezed: ^2.3.5
+  go_router_builder: ^2.1.1
   json_serializable: ^6.7.0
   mocktail: ^0.3.0
   riverpod_generator: ^2.2.3
@@ -50,3 +51,4 @@ flutter:
 
 dependency_overrides:
   http: ^1.0.0
+  intl: ^0.18.0
