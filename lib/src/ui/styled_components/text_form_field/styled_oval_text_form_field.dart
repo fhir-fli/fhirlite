@@ -40,13 +40,6 @@ class StyledOvalTextFormField extends HookConsumerWidget {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                    width: 1,
-                    color: ref
-                        .read(appThemeProvider)
-                        .data
-                        .colorScheme
-                        .onBackground),
                 borderRadius: BorderRadius.circular(30.0),
               ),
               label: label == null ? null : Text(label!),

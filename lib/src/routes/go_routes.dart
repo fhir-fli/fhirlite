@@ -27,13 +27,6 @@ class LoginRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const LoginView();
 }
 
-/// Path for logging in and confirming via one-time passcode
-@TypedGoRoute<FhirRoute>(
-    path: FhirRoute.path,
-    routes: <TypedGoRoute<GoRouteData>>[
-      TypedGoRoute<FhirListRoute>(path: FhirListRoute.path),
-      TypedGoRoute<FhirPrettyRoute>(path: FhirPrettyRoute.path),
-    ])
 @TypedGoRoute<FhirRoute>(path: FhirRoute.path)
 class FhirRoute extends GoRouteData {
   const FhirRoute();
@@ -42,24 +35,6 @@ class FhirRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const FhirHomeView();
-}
-
-class FhirListRoute extends GoRouteData {
-  const FhirListRoute();
-  static const path = 'fhirlist';
-
-  @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const FhirListView();
-}
-
-class FhirPrettyRoute extends GoRouteData {
-  const FhirPrettyRoute();
-  static const path = 'fhirPretty';
-
-  @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const FhirPrettyView();
 }
 
 @TypedGoRoute<AlertRoute>(path: AlertRoute.path)
@@ -79,7 +54,7 @@ class LoadingRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const LoadingView();
+      const AlertView('Loading...');
 }
 
 class ErrorRoute extends GoRouteData {

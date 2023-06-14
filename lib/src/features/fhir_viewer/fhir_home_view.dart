@@ -1,4 +1,4 @@
-import 'package:at_fhir/services/notify.dart';
+import 'package:at_fhir/at_fhir.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -43,16 +43,7 @@ class FhirHomeView extends HookConsumerWidget {
                     percentHeight: 1,
                     heightMax: 150,
                     label: 'Download All',
-                    onPressed: () async {
-                      final resultList = await atSignGetAllFhirResources();
-                      print(resultList.length);
-                      ref
-                          .watch(fhirResourcesProvider.notifier)
-                          .addResources(resultList);
-                      if (context.mounted) {
-                        const FhirListRoute().go(context);
-                      }
-                    },
+                    onPressed: () async {},
                   ),
                 ],
               ),

@@ -1,4 +1,4 @@
-import 'package:fhirlite/src/src.dart';
+import 'package:at_fhir/at_fhir.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:local_auth/local_auth.dart';
@@ -35,7 +35,7 @@ class BiometricAuth {
   Future<List<BiometricType>> get biometricTypes async =>
       auth.getAvailableBiometrics();
 
-  Future<SuccessOrErrorMessage> login() async {
+  Future<SuccessOrError> login() async {
     try {
       if (await biometricsAvailable) {
         final bool success = await auth.authenticate(
@@ -45,23 +45,23 @@ class BiometricAuth {
           ),
         );
         if (success) {
-          return const SuccessOrErrorMessage.success();
+          return const SuccessOrError.success();
         } else {
-          return SuccessOrErrorMessage.failure(unsuccessfulBiometrics);
+          return SuccessOrError.failureMessage(unsuccessfulBiometrics);
         }
       } else {
-        return SuccessOrErrorMessage.failure(biometricsUnavailable);
+        return SuccessOrError.failureMessage(biometricsUnavailable);
       }
     } on PlatformException catch (e) {
       if (e.code == auth_error.notAvailable) {
-        return SuccessOrErrorMessage.failure(biometricsUnavailable);
+        return SuccessOrError.failureMessage(biometricsUnavailable);
       } else if (e.code == auth_error.notEnrolled) {
-        return SuccessOrErrorMessage.failure(biometricsNotEnrolled);
+        return SuccessOrError.failureMessage(biometricsNotEnrolled);
       } else {
-        return SuccessOrErrorMessage.failure('$biometricPlatformException: $e');
+        return SuccessOrError.failureMessage('$biometricPlatformException: $e');
       }
-    } catch (e) {
-      return SuccessOrErrorMessage.failure('$biometricOtherException: $e');
+    } catch (exception, stackTrace) {
+      return SuccessOrError.exception(exception, stackTrace);
     }
   }
 }

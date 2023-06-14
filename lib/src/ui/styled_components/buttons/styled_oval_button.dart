@@ -39,8 +39,6 @@ class StyledOvalButton extends HookConsumerWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(
-              ref.watch(appThemeProvider).data.colorScheme.inversePrimary),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),

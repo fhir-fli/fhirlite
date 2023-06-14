@@ -1,4 +1,5 @@
 import 'package:at_app_flutter/at_app_flutter.dart';
+import 'package:at_fhir/at_fhir.dart';
 import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -28,22 +29,22 @@ class LoginView extends HookConsumerWidget {
         biometricOtherException: labels.biometricOtherException,
       );
       final result = await auth.login();
-      return result.when(
-        success: () => true,
-        failure: (message) {
-          if (context.mounted) {
+      if (result is SuccessNotError) {
+        return true;
+      } else {
+        if (context.mounted) {
+          if (result is FailureMessageError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(
-                  message,
-                  style: clientAssets.clientTextTheme.headlineMedium,
-                ),
+                content: Text(result.exception),
               ),
             );
+          } else {
+            // TODO(Dokotela): handle all erorrs
           }
-          return false;
-        },
-      );
+        }
+        return false;
+      }
     }
 
     Future<void> onboarding() async {
@@ -69,8 +70,6 @@ class LoginView extends HookConsumerWidget {
             if (context.mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  backgroundColor:
-                      ref.read(appThemeProvider).data.colorScheme.error,
                   content: Text(
                       'An error has occurred trying to onboard ${onboardingResult.atsign}:\n'
                       'ErrorCode: ${onboardingResult.errorCode}\n'
@@ -105,7 +104,6 @@ class LoginView extends HookConsumerWidget {
                   Gap(doubleByPercentHeight(context, .2)),
                   Text(
                     labels.signIn,
-                    style: clientAssets.clientTextTheme.headlineLarge,
                   ),
                   Gap(doubleByHeight(context, 30)),
                   StyledOvalTextFormField(
@@ -143,7 +141,6 @@ class LoginView extends HookConsumerWidget {
                     children: [
                       Text(
                         labels.localAuthLogin,
-                        style: clientAssets.clientTextTheme.headlineSmall,
                       )
                     ],
                   ),
