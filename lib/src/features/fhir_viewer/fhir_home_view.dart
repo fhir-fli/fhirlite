@@ -1,3 +1,4 @@
+import 'package:at_fhir/services/notify.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -30,7 +31,12 @@ class FhirHomeView extends HookConsumerWidget {
                     heightMax: 150,
                     label: 'Upload Random',
                     onPressed: () async {
-                      await atSignUpdateFhirResource(generatePatient());
+                      final result = await ref.read(atNotifyProvider(
+                        generatePatient().toJson(),
+                        '@81xerothermic',
+                      ).future);
+                      print(result.toString());
+                      // await atSignUpdateFhirResource(generatePatient());
                     },
                   ),
                   StyledOvalButton(
