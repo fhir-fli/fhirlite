@@ -1,3 +1,4 @@
+import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_fhir/at_fhir.dart';
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/r4.dart';
@@ -11,7 +12,7 @@ class FhirHomeView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(atListenProvider);
+    ref.watch(atFhirListenProvider);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -39,10 +40,11 @@ class FhirHomeView extends HookConsumerWidget {
                         type: R4ResourceType.Patient,
                         fhirId: '592269',
                       );
-                      await ref.read(atNotifyProvider(
-                        fhirRequest.toJson(),
+                      final result = await ref.read(atNotifyProvider(
+                        AtFhirNotification.r4Request(fhirRequest).toJson(),
                         '@81xerothermic',
                       ).future);
+                      print(result.notificationStatusEnum);
                     },
                   ),
                 ],

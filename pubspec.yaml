@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   at_app_flutter: ^5.1.1
-  at_client_mobile: ^3.2.9
+  at_client_mobile: ^3.2.10
   at_fhir:
     path: ../at_fhir
   at_onboarding_flutter: ^6.1.0
@@ -24,7 +24,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
   freezed_annotation: ^2.2.0
   gap: ^3.0.0
-  go_router: ^8.0.3
+  go_router: ^8.0.5
   hooks_riverpod: ^2.3.6
   intl: ^0.18.0
   json_annotation: ^4.8.1
