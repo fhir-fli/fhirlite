@@ -7,7 +7,7 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  at_app_flutter: ^5.1.1
+  at_app_flutter: ^5.2.0
   at_client_mobile: ^3.2.10
   at_fhir:
     path: ../at_fhir
@@ -23,8 +23,8 @@ dependencies:
     sdk: flutter
   flutter_dotenv: ^5.1.0
   freezed_annotation: ^2.2.0
-  gap: ^3.0.0
-  go_router: ^8.0.5
+  gap: ^3.0.1
+  go_router: ^9.0.0
   hooks_riverpod: ^2.3.6
   intl: ^0.18.0
   json_annotation: ^4.8.1
@@ -40,7 +40,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.3.5
-  go_router_builder: ^2.1.1
+  go_router_builder: ^2.2.0
   json_serializable: ^6.7.0
   mocktail: ^0.3.0
   riverpod_generator: ^2.2.3

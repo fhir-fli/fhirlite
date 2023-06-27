@@ -32,6 +32,8 @@ extension $InitRouteExtension on InitRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $loginRoute => GoRouteData.$route(
@@ -52,6 +54,8 @@ extension $LoginRouteExtension on LoginRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $fhirRoute => GoRouteData.$route(
@@ -72,6 +76,8 @@ extension $FhirRouteExtension on FhirRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $alertRoute => GoRouteData.$route(
@@ -94,6 +100,8 @@ extension $AlertRouteExtension on AlertRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 RouteBase get $loadingRoute => GoRouteData.$route(
@@ -114,4 +122,6 @@ extension $LoadingRouteExtension on LoadingRoute {
 
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }

@@ -33,8 +33,7 @@ class FhirRoute extends GoRouteData {
   static const path = '/fhir';
 
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const FhirHomeView();
+  Widget build(BuildContext context, GoRouterState state) => FhirHomeView();
 }
 
 @TypedGoRoute<AlertRoute>(path: AlertRoute.path)

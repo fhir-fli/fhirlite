@@ -1,5 +1,5 @@
-import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_fhir/at_fhir.dart';
+import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/r4.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +7,23 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../src.dart';
 
-class FhirHomeView extends HookConsumerWidget {
-  const FhirHomeView({super.key});
+void listenFunction(AtClient atClient, AtNotification atNotification) {
+  try {
+    final AtFhirNotification atFhirNotification =
+        AtFhirNotification.fromJsonString(atNotification.key
+            .replaceFirst('${atClient.getCurrentAtSign()}:', ''));
+  } catch (exception) {
+    // TODO(Dokotela): what do to with this error
+  }
+}
 
+class FhirHomeView extends HookConsumerWidget {
+  FhirHomeView({super.key});
+
+  final atClient = AtClientManager.getInstance().atClient;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(atFhirListenProvider);
+    atFhirListen(atClient, listenFunction);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -40,10 +51,11 @@ class FhirHomeView extends HookConsumerWidget {
                         type: R4ResourceType.Patient,
                         fhirId: '592269',
                       );
-                      final result = await ref.read(atNotifyProvider(
-                        AtFhirNotification.r4Request(fhirRequest).toJson(),
+                      final result = await atFhirNotify(
+                        atClient,
+                        AtFhirNotification.r4Request(fhirRequest),
                         '@81xerothermic',
-                      ).future);
+                      );
                       print(result.notificationStatusEnum);
                     },
                   ),
