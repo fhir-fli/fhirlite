@@ -48,40 +48,42 @@ class LoginView extends HookConsumerWidget {
     }
 
     Future<void> onboarding() async {
-      AtOnboardingResult onboardingResult = await AtOnboarding.onboard(
-        context: context,
-        config: AtOnboardingConfig(
-          atClientPreference: await futurePreference,
-          rootEnvironment: AtEnv.rootEnvironment,
-          domain: AtEnv.rootDomain,
-          appAPIKey: AtEnv.appApiKey,
-        ),
-      );
-      switch (onboardingResult.status) {
-        case AtOnboardingResultStatus.success:
-          {
-            if (context.mounted) {
-              const FhirRoute().go(context);
+      if (context.mounted) {
+        AtOnboardingResult onboardingResult = await AtOnboarding.onboard(
+          context: context,
+          config: AtOnboardingConfig(
+            atClientPreference: await futurePreference,
+            domain: AtEnv.rootDomain,
+            rootEnvironment: AtEnv.rootEnvironment,
+            appAPIKey: AtEnv.appApiKey,
+          ),
+        );
+        switch (onboardingResult.status) {
+          case AtOnboardingResultStatus.success:
+            {
+              if (context.mounted) {
+                const FhirRoute().go(context);
+              }
             }
-          }
-          break;
-        case AtOnboardingResultStatus.error:
-          {
-            if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                      'An error has occurred trying to onboard ${onboardingResult.atsign}:\n'
-                      'ErrorCode: ${onboardingResult.errorCode}\n'
-                      'Status: ${onboardingResult.status}\n'
-                      'Error Message: ${onboardingResult.message}\n'),
-                ),
-              );
+            break;
+          case AtOnboardingResultStatus.error:
+            {
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        'An error has occurred trying to onboard ${onboardingResult.atsign}:\n'
+                        'ErrorCode: ${onboardingResult.errorCode}\n'
+                        'Status: ${onboardingResult.status}\n'
+                        'Error Message: ${onboardingResult.message}\n'),
+                  ),
+                );
+              }
             }
-          }
-          break;
-        case AtOnboardingResultStatus.cancel:
-          break;
+            break;
+          case AtOnboardingResultStatus.cancel:
+            break;
+        }
       }
     }
 
