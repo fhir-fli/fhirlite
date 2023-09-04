@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:intl/intl.dart';
 
 // Project imports:
-import '../locale.dart';
 
 part 'locale_states.freezed.dart';
 
@@ -17,9 +17,14 @@ class LocaleStates with _$LocaleStates {
   }) = _LocaleStates;
 
   factory LocaleStates.initial() {
-    // todo: if we want to set initial locale, we can do that here
+    // TODO(FireJuun): if we want to set initial locale, we can do that here
     return LocaleStates(
-      deviceLocale: getDeviceLocale(),
+      deviceLocale: _getDeviceLocale(),
     );
   }
+}
+
+Locale? _getDeviceLocale() {
+  final currentLocaleString = Intl.getCurrentLocale();
+  return currentLocaleString.isNotEmpty ? Locale(currentLocaleString) : null;
 }

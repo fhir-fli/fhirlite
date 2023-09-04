@@ -1,7 +1,8 @@
-import 'package:fhirlite/fhirlite.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../src.dart';
 
 part 'router_notifier.g.dart';
 
@@ -13,12 +14,13 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
   Future<bool> build() async {
     // One could watch more providers and write logic accordingly
 
-    ref.watch(clientProvider);
-    final isLoggedIn = await ref.watch(clientProvider.notifier).isLoggedIn();
+    final isLoggedIn = ref.watch(loginProvider);
 
     ref.listenSelf((_, __) {
       // One could write more conditional logic for when to call redirection
-      if (state.isLoading) return;
+      if (state.isLoading) {
+        return;
+      }
       routerListener?.call();
     });
 
@@ -26,21 +28,26 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
   }
 
   /// Our application routes. Obtained through code generation
-  List<GoRoute> get routes => $appRoutes;
+  List<RouteBase> get routes => $appRoutes;
 
   String? redirect(BuildContext context, GoRouterState state) {
+    /// Sometimes, opening an existing flutter app redirect goes to a path that it doesn't know how to parse
+    /// For example, `xcrun simctl openurl booted "https://YOUR-SITE/#/login?request-no=demo&id=2"`
+    /// is interpreted as `/#/login?request-no=demo&id=2` instead of `/login?request-no=demo&id=2`
+    /// To fix, this will remove the unnecessary leading hash and re-run this [redirect] method
+    if (state.path?.startsWith('/#/') ?? true) {
+      return state.path!.replaceFirst('/#', '');
+    }
+
     final isLoggedIn = this.state.valueOrNull;
 
-    /// If there's no state, something isn't initialized, so to Login we go
+    /// If there is no state for this Notifier, return null
     if (isLoggedIn == null) {
-      return LoginRoute.path;
-
-      /// If you ARE logged in, you're good to go
+      return null;
     } else if (isLoggedIn) {
       return null;
     } else {
-      /// If you're here you're not logged in, you need to do so
-      return LoginRoute.path;
+      return '/login';
     }
   }
 

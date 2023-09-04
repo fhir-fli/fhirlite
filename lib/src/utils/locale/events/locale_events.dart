@@ -11,5 +11,5 @@ class LocaleEvents with _$LocaleEvents {
   const factory LocaleEvents.setLocale({required Locale? newLocale}) =
       SetLocale;
 
-  // todo: create method to locally store/load locale info
+  // TODO(FireJuun): create method to locally store/load locale info
 }

@@ -20,24 +20,18 @@ mixin _$RouteFailures {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) pathNotAvailableError,
-    required TResult Function(String message) missingRequestNumberOrIdError,
-    required TResult Function(String message) missingTaskPathError,
     required TResult Function(String message) unspecifiedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message)? pathNotAvailableError,
-    TResult? Function(String message)? missingRequestNumberOrIdError,
-    TResult? Function(String message)? missingTaskPathError,
     TResult? Function(String message)? unspecifiedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? pathNotAvailableError,
-    TResult Function(String message)? missingRequestNumberOrIdError,
-    TResult Function(String message)? missingTaskPathError,
     TResult Function(String message)? unspecifiedError,
     required TResult orElse(),
   }) =>
@@ -46,10 +40,6 @@ mixin _$RouteFailures {
   TResult map<TResult extends Object?>({
     required TResult Function(RouteFailuresPathNotAvailableError value)
         pathNotAvailableError,
-    required TResult Function(RouteFailuresMissingRequestNumberOrIdError value)
-        missingRequestNumberOrIdError,
-    required TResult Function(RouteFailuresMissingTaskPathError value)
-        missingTaskPathError,
     required TResult Function(RouteFailuresUnspecifiedError value)
         unspecifiedError,
   }) =>
@@ -58,10 +48,6 @@ mixin _$RouteFailures {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(RouteFailuresPathNotAvailableError value)?
         pathNotAvailableError,
-    TResult? Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult? Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
     TResult? Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
   }) =>
       throw _privateConstructorUsedError;
@@ -69,10 +55,6 @@ mixin _$RouteFailures {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RouteFailuresPathNotAvailableError value)?
         pathNotAvailableError,
-    TResult Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
     TResult Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
     required TResult orElse(),
   }) =>
@@ -191,8 +173,6 @@ class _$RouteFailuresPathNotAvailableError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) pathNotAvailableError,
-    required TResult Function(String message) missingRequestNumberOrIdError,
-    required TResult Function(String message) missingTaskPathError,
     required TResult Function(String message) unspecifiedError,
   }) {
     return pathNotAvailableError(message);
@@ -202,8 +182,6 @@ class _$RouteFailuresPathNotAvailableError
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message)? pathNotAvailableError,
-    TResult? Function(String message)? missingRequestNumberOrIdError,
-    TResult? Function(String message)? missingTaskPathError,
     TResult? Function(String message)? unspecifiedError,
   }) {
     return pathNotAvailableError?.call(message);
@@ -213,8 +191,6 @@ class _$RouteFailuresPathNotAvailableError
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? pathNotAvailableError,
-    TResult Function(String message)? missingRequestNumberOrIdError,
-    TResult Function(String message)? missingTaskPathError,
     TResult Function(String message)? unspecifiedError,
     required TResult orElse(),
   }) {
@@ -229,10 +205,6 @@ class _$RouteFailuresPathNotAvailableError
   TResult map<TResult extends Object?>({
     required TResult Function(RouteFailuresPathNotAvailableError value)
         pathNotAvailableError,
-    required TResult Function(RouteFailuresMissingRequestNumberOrIdError value)
-        missingRequestNumberOrIdError,
-    required TResult Function(RouteFailuresMissingTaskPathError value)
-        missingTaskPathError,
     required TResult Function(RouteFailuresUnspecifiedError value)
         unspecifiedError,
   }) {
@@ -244,10 +216,6 @@ class _$RouteFailuresPathNotAvailableError
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(RouteFailuresPathNotAvailableError value)?
         pathNotAvailableError,
-    TResult? Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult? Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
     TResult? Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
   }) {
     return pathNotAvailableError?.call(this);
@@ -258,10 +226,6 @@ class _$RouteFailuresPathNotAvailableError
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RouteFailuresPathNotAvailableError value)?
         pathNotAvailableError,
-    TResult Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
     TResult Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
     required TResult orElse(),
   }) {
@@ -283,348 +247,6 @@ abstract class RouteFailuresPathNotAvailableError
   @JsonKey(ignore: true)
   _$$RouteFailuresPathNotAvailableErrorCopyWith<
           _$RouteFailuresPathNotAvailableError>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RouteFailuresMissingRequestNumberOrIdErrorCopyWith<$Res>
-    implements $RouteFailuresCopyWith<$Res> {
-  factory _$$RouteFailuresMissingRequestNumberOrIdErrorCopyWith(
-          _$RouteFailuresMissingRequestNumberOrIdError value,
-          $Res Function(_$RouteFailuresMissingRequestNumberOrIdError) then) =
-      __$$RouteFailuresMissingRequestNumberOrIdErrorCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$RouteFailuresMissingRequestNumberOrIdErrorCopyWithImpl<$Res>
-    extends _$RouteFailuresCopyWithImpl<$Res,
-        _$RouteFailuresMissingRequestNumberOrIdError>
-    implements _$$RouteFailuresMissingRequestNumberOrIdErrorCopyWith<$Res> {
-  __$$RouteFailuresMissingRequestNumberOrIdErrorCopyWithImpl(
-      _$RouteFailuresMissingRequestNumberOrIdError _value,
-      $Res Function(_$RouteFailuresMissingRequestNumberOrIdError) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$RouteFailuresMissingRequestNumberOrIdError(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RouteFailuresMissingRequestNumberOrIdError
-    implements RouteFailuresMissingRequestNumberOrIdError {
-  const _$RouteFailuresMissingRequestNumberOrIdError(
-      [this.message = 'Error: Request Number or ID are missing']);
-
-  @override
-  @JsonKey()
-  final String message;
-
-  @override
-  String toString() {
-    return 'RouteFailures.missingRequestNumberOrIdError(message: $message)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RouteFailuresMissingRequestNumberOrIdError &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RouteFailuresMissingRequestNumberOrIdErrorCopyWith<
-          _$RouteFailuresMissingRequestNumberOrIdError>
-      get copyWith =>
-          __$$RouteFailuresMissingRequestNumberOrIdErrorCopyWithImpl<
-              _$RouteFailuresMissingRequestNumberOrIdError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String message) pathNotAvailableError,
-    required TResult Function(String message) missingRequestNumberOrIdError,
-    required TResult Function(String message) missingTaskPathError,
-    required TResult Function(String message) unspecifiedError,
-  }) {
-    return missingRequestNumberOrIdError(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? pathNotAvailableError,
-    TResult? Function(String message)? missingRequestNumberOrIdError,
-    TResult? Function(String message)? missingTaskPathError,
-    TResult? Function(String message)? unspecifiedError,
-  }) {
-    return missingRequestNumberOrIdError?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? pathNotAvailableError,
-    TResult Function(String message)? missingRequestNumberOrIdError,
-    TResult Function(String message)? missingTaskPathError,
-    TResult Function(String message)? unspecifiedError,
-    required TResult orElse(),
-  }) {
-    if (missingRequestNumberOrIdError != null) {
-      return missingRequestNumberOrIdError(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RouteFailuresPathNotAvailableError value)
-        pathNotAvailableError,
-    required TResult Function(RouteFailuresMissingRequestNumberOrIdError value)
-        missingRequestNumberOrIdError,
-    required TResult Function(RouteFailuresMissingTaskPathError value)
-        missingTaskPathError,
-    required TResult Function(RouteFailuresUnspecifiedError value)
-        unspecifiedError,
-  }) {
-    return missingRequestNumberOrIdError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RouteFailuresPathNotAvailableError value)?
-        pathNotAvailableError,
-    TResult? Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult? Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
-    TResult? Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
-  }) {
-    return missingRequestNumberOrIdError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RouteFailuresPathNotAvailableError value)?
-        pathNotAvailableError,
-    TResult Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
-    TResult Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
-    required TResult orElse(),
-  }) {
-    if (missingRequestNumberOrIdError != null) {
-      return missingRequestNumberOrIdError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RouteFailuresMissingRequestNumberOrIdError
-    implements RouteFailures, Exception {
-  const factory RouteFailuresMissingRequestNumberOrIdError(
-      [final String message]) = _$RouteFailuresMissingRequestNumberOrIdError;
-
-  @override
-  String get message;
-  @override
-  @JsonKey(ignore: true)
-  _$$RouteFailuresMissingRequestNumberOrIdErrorCopyWith<
-          _$RouteFailuresMissingRequestNumberOrIdError>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RouteFailuresMissingTaskPathErrorCopyWith<$Res>
-    implements $RouteFailuresCopyWith<$Res> {
-  factory _$$RouteFailuresMissingTaskPathErrorCopyWith(
-          _$RouteFailuresMissingTaskPathError value,
-          $Res Function(_$RouteFailuresMissingTaskPathError) then) =
-      __$$RouteFailuresMissingTaskPathErrorCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$RouteFailuresMissingTaskPathErrorCopyWithImpl<$Res>
-    extends _$RouteFailuresCopyWithImpl<$Res,
-        _$RouteFailuresMissingTaskPathError>
-    implements _$$RouteFailuresMissingTaskPathErrorCopyWith<$Res> {
-  __$$RouteFailuresMissingTaskPathErrorCopyWithImpl(
-      _$RouteFailuresMissingTaskPathError _value,
-      $Res Function(_$RouteFailuresMissingTaskPathError) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$RouteFailuresMissingTaskPathError(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RouteFailuresMissingTaskPathError
-    implements RouteFailuresMissingTaskPathError {
-  const _$RouteFailuresMissingTaskPathError(
-      [this.message =
-          'Error: Task is no longer available. Please login again']);
-
-  @override
-  @JsonKey()
-  final String message;
-
-  @override
-  String toString() {
-    return 'RouteFailures.missingTaskPathError(message: $message)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RouteFailuresMissingTaskPathError &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RouteFailuresMissingTaskPathErrorCopyWith<
-          _$RouteFailuresMissingTaskPathError>
-      get copyWith => __$$RouteFailuresMissingTaskPathErrorCopyWithImpl<
-          _$RouteFailuresMissingTaskPathError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String message) pathNotAvailableError,
-    required TResult Function(String message) missingRequestNumberOrIdError,
-    required TResult Function(String message) missingTaskPathError,
-    required TResult Function(String message) unspecifiedError,
-  }) {
-    return missingTaskPathError(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String message)? pathNotAvailableError,
-    TResult? Function(String message)? missingRequestNumberOrIdError,
-    TResult? Function(String message)? missingTaskPathError,
-    TResult? Function(String message)? unspecifiedError,
-  }) {
-    return missingTaskPathError?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? pathNotAvailableError,
-    TResult Function(String message)? missingRequestNumberOrIdError,
-    TResult Function(String message)? missingTaskPathError,
-    TResult Function(String message)? unspecifiedError,
-    required TResult orElse(),
-  }) {
-    if (missingTaskPathError != null) {
-      return missingTaskPathError(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RouteFailuresPathNotAvailableError value)
-        pathNotAvailableError,
-    required TResult Function(RouteFailuresMissingRequestNumberOrIdError value)
-        missingRequestNumberOrIdError,
-    required TResult Function(RouteFailuresMissingTaskPathError value)
-        missingTaskPathError,
-    required TResult Function(RouteFailuresUnspecifiedError value)
-        unspecifiedError,
-  }) {
-    return missingTaskPathError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RouteFailuresPathNotAvailableError value)?
-        pathNotAvailableError,
-    TResult? Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult? Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
-    TResult? Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
-  }) {
-    return missingTaskPathError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RouteFailuresPathNotAvailableError value)?
-        pathNotAvailableError,
-    TResult Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
-    TResult Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
-    required TResult orElse(),
-  }) {
-    if (missingTaskPathError != null) {
-      return missingTaskPathError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RouteFailuresMissingTaskPathError
-    implements RouteFailures, Exception {
-  const factory RouteFailuresMissingTaskPathError([final String message]) =
-      _$RouteFailuresMissingTaskPathError;
-
-  @override
-  String get message;
-  @override
-  @JsonKey(ignore: true)
-  _$$RouteFailuresMissingTaskPathErrorCopyWith<
-          _$RouteFailuresMissingTaskPathError>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -700,8 +322,6 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) pathNotAvailableError,
-    required TResult Function(String message) missingRequestNumberOrIdError,
-    required TResult Function(String message) missingTaskPathError,
     required TResult Function(String message) unspecifiedError,
   }) {
     return unspecifiedError(message);
@@ -711,8 +331,6 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message)? pathNotAvailableError,
-    TResult? Function(String message)? missingRequestNumberOrIdError,
-    TResult? Function(String message)? missingTaskPathError,
     TResult? Function(String message)? unspecifiedError,
   }) {
     return unspecifiedError?.call(message);
@@ -722,8 +340,6 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? pathNotAvailableError,
-    TResult Function(String message)? missingRequestNumberOrIdError,
-    TResult Function(String message)? missingTaskPathError,
     TResult Function(String message)? unspecifiedError,
     required TResult orElse(),
   }) {
@@ -738,10 +354,6 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   TResult map<TResult extends Object?>({
     required TResult Function(RouteFailuresPathNotAvailableError value)
         pathNotAvailableError,
-    required TResult Function(RouteFailuresMissingRequestNumberOrIdError value)
-        missingRequestNumberOrIdError,
-    required TResult Function(RouteFailuresMissingTaskPathError value)
-        missingTaskPathError,
     required TResult Function(RouteFailuresUnspecifiedError value)
         unspecifiedError,
   }) {
@@ -753,10 +365,6 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(RouteFailuresPathNotAvailableError value)?
         pathNotAvailableError,
-    TResult? Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult? Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
     TResult? Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
   }) {
     return unspecifiedError?.call(this);
@@ -767,10 +375,6 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(RouteFailuresPathNotAvailableError value)?
         pathNotAvailableError,
-    TResult Function(RouteFailuresMissingRequestNumberOrIdError value)?
-        missingRequestNumberOrIdError,
-    TResult Function(RouteFailuresMissingTaskPathError value)?
-        missingTaskPathError,
     TResult Function(RouteFailuresUnspecifiedError value)? unspecifiedError,
     required TResult orElse(),
   }) {
