@@ -36,7 +36,7 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
     /// is interpreted as `/#/login?request-no=demo&id=2` instead of `/login?request-no=demo&id=2`
     /// To fix, this will remove the unnecessary leading hash and re-run this [redirect] method
     if (state.path?.startsWith('/#/') ?? true) {
-      return state.path!.replaceFirst('/#', '');
+      return state.path?.replaceFirst('/#', '');
     }
 
     final isLoggedIn = this.state.valueOrNull;
