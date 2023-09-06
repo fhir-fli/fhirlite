@@ -1,67 +1,63 @@
-import 'package:at_fhir/at_fhir.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:local_auth/local_auth.dart';
 
-class BiometricAuth {
-  BiometricAuth({
-    this.biometricInstructions = 'Authenticate using your fingerprint',
-    this.unsuccessfulBiometrics = 'Unsuccessful',
-    this.biometricsUnavailable =
-        'Biometrics not available, please choose another option',
-    this.biometricsNotEnrolled =
-        'Biometrics not enrolled. Please choose another option, '
-            'or enroll Biometrics and then try again.',
-    this.biometricPlatformException = 'Error trying to login',
-    this.biometricOtherException = 'Unknown error',
-  });
+import '../../src.dart';
 
-  final String biometricInstructions;
-  final String unsuccessfulBiometrics;
-  final String biometricsUnavailable;
-  final String biometricsNotEnrolled;
-  final String biometricPlatformException;
-  final String biometricOtherException;
+final LocalAuthentication auth = LocalAuthentication();
 
-  final LocalAuthentication auth = LocalAuthentication();
+Future<bool> canUseBiometrics() async => auth.canCheckBiometrics;
 
-  Future<bool> get canUseBiometrics async => auth.canCheckBiometrics;
+Future<bool> isDeviceSupported() async => auth.isDeviceSupported();
 
-  Future<bool> get isDeviceSupported async => auth.isDeviceSupported();
+Future<bool> biometricsAvailable() async =>
+    await canUseBiometrics() || await auth.isDeviceSupported();
 
-  Future<bool> get biometricsAvailable async =>
-      await canUseBiometrics || await auth.isDeviceSupported();
+Future<List<BiometricType>> biometricTypes() async =>
+    auth.getAvailableBiometrics();
 
-  Future<List<BiometricType>> get biometricTypes async =>
-      auth.getAvailableBiometrics();
-
-  Future<SuccessOrError> login() async {
-    try {
-      if (await biometricsAvailable) {
-        final bool success = await auth.authenticate(
-          localizedReason: biometricInstructions,
-          options: const AuthenticationOptions(
-            stickyAuth: true,
-          ),
-        );
-        if (success) {
-          return const SuccessOrError.success();
-        } else {
-          return SuccessOrError.failureMessage(unsuccessfulBiometrics);
-        }
-      } else {
-        return SuccessOrError.failureMessage(biometricsUnavailable);
-      }
-    } on PlatformException catch (e) {
-      if (e.code == auth_error.notAvailable) {
-        return SuccessOrError.failureMessage(biometricsUnavailable);
-      } else if (e.code == auth_error.notEnrolled) {
-        return SuccessOrError.failureMessage(biometricsNotEnrolled);
-      } else {
-        return SuccessOrError.failureMessage('$biometricPlatformException: $e');
-      }
-    } catch (exception, stackTrace) {
-      return SuccessOrError.exception(exception, stackTrace);
+Future<SuccessOrError> biometricAuth(AppLocalizations labels) async {
+  final biometricInstructions = labels.biometricInstructions == ''
+      ? 'Authenticate using your fingerprint'
+      : labels.biometricInstructions;
+  final unsuccessfulBiometrics = labels.unsuccessfulBiometrics == ''
+      ? 'Unsuccessful'
+      : labels.unsuccessfulBiometrics;
+  final biometricsUnavailable = labels.biometricsUnavailable == ''
+      ? 'Biometrics not available, please choose another option'
+      : labels.biometricsUnavailable;
+  final biometricsNotEnrolled = labels.biometricsNotEnrolled == ''
+      ? 'Biometrics not enrolled. Please choose another option, '
+          'or enroll Biometrics and then try again.'
+      : labels.biometricsNotEnrolled;
+  final biometricPlatformException = labels.biometricPlatformException == ''
+      ? 'Error trying to login'
+      : labels.biometricPlatformException;
+  // final biometricOtherException = labels.biometricOtherException == ''
+  //     ? 'Unknown error'
+  //     : labels.biometricOtherException;
+  try {
+    if (await biometricsAvailable()) {
+      final bool success = await auth.authenticate(
+        localizedReason: biometricInstructions,
+        options: const AuthenticationOptions(
+          stickyAuth: true,
+        ),
+      );
+      return success
+          ? const FhirliteSuccess.success()
+          : FhirliteError.failureMessage(unsuccessfulBiometrics);
+    } else {
+      return FhirliteError.failureMessage(biometricsUnavailable);
     }
+  } on PlatformException catch (e) {
+    return e.code == auth_error.notAvailable
+        ? FhirliteError.failureMessage(biometricsUnavailable)
+        : e.code == auth_error.notEnrolled
+            ? FhirliteError.failureMessage(biometricsNotEnrolled)
+            : FhirliteError.failureMessage('$biometricPlatformException: $e');
+  } catch (exception, stackTrace) {
+    return FhirliteError.exception(exception, stackTrace);
   }
 }

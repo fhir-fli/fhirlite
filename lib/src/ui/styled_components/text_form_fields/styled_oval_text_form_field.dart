@@ -22,7 +22,7 @@ class StyledOvalTextFormField extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) => Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(25.0),
+          borderRadius: BorderRadius.circular(30.0),
           boxShadow: [
             BoxShadow(
               offset: const Offset(5, 5),
