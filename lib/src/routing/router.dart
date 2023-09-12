@@ -20,13 +20,14 @@ GoRouter router(RouterRef ref) {
   final notifier = ref.read(routerNotifierProvider.notifier);
 
   return GoRouter(
-      navigatorKey: _key,
-      refreshListenable: notifier,
-      debugLogDiagnostics: true,
-      initialLocation: LoginRoute.path,
-      routes: notifier.routes,
-      redirect: notifier.redirect,
-      errorBuilder: (c, s) =>
-          ErrorRoute(s.error ?? const RouteFailuresUnspecifiedError())
-              .build(c, s));
+    // navigatorKey: _key,
+    // refreshListenable: notifier,
+    debugLogDiagnostics: true,
+    initialLocation: '/',
+    routes: notifier.routes,
+    // redirect: notifier.redirect,
+    // errorBuilder: (c, s) =>
+    //     ErrorRoute(s.error ?? const RouteFailuresUnspecifiedError())
+    // .build(c, s)
+  );
 }
