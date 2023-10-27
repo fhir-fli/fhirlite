@@ -1,11 +1,11 @@
 # This is a generated file; do not edit or check into version control.
-at_backupkey_flutter=/home/grey/.pub-cache/hosted/pub.dev/at_backupkey_flutter-4.0.10/
+at_backupkey_flutter=/home/grey/.pub-cache/hosted/pub.dev/at_backupkey_flutter-4.0.11/
 at_file_saver=/home/grey/.pub-cache/hosted/pub.dev/at_file_saver-0.1.2/
-at_onboarding_flutter=/home/grey/.pub-cache/hosted/pub.dev/at_onboarding_flutter-6.1.3/
+at_onboarding_flutter=/home/grey/.pub-cache/hosted/pub.dev/at_onboarding_flutter-6.1.4/
 biometric_storage=/home/grey/.pub-cache/hosted/pub.dev/biometric_storage-5.0.0+3/
 device_info_plus=/home/grey/.pub-cache/hosted/pub.dev/device_info_plus-9.0.3/
-file_picker=/home/grey/.pub-cache/hosted/pub.dev/file_picker-5.3.3/
-file_selector=/home/grey/.pub-cache/hosted/pub.dev/file_selector-0.9.5/
+file_picker=/home/grey/.pub-cache/hosted/pub.dev/file_picker-5.5.0/
+file_selector=/home/grey/.pub-cache/hosted/pub.dev/file_selector-1.0.1/
 file_selector_android=/home/grey/.pub-cache/hosted/pub.dev/file_selector_android-0.5.0+3/
 file_selector_ios=/home/grey/.pub-cache/hosted/pub.dev/file_selector_ios-0.5.1+6/
 file_selector_linux=/home/grey/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2+1/
@@ -24,8 +24,8 @@ path_provider_android=/home/grey/.pub-cache/hosted/pub.dev/path_provider_android
 path_provider_foundation=/home/grey/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.1/
 path_provider_linux=/home/grey/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 path_provider_windows=/home/grey/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/
-permission_handler=/home/grey/.pub-cache/hosted/pub.dev/permission_handler-10.4.3/
-permission_handler_android=/home/grey/.pub-cache/hosted/pub.dev/permission_handler_android-10.3.4/
+permission_handler=/home/grey/.pub-cache/hosted/pub.dev/permission_handler-11.0.1/
+permission_handler_android=/home/grey/.pub-cache/hosted/pub.dev/permission_handler_android-11.0.5/
 permission_handler_apple=/home/grey/.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.4/
 permission_handler_windows=/home/grey/.pub-cache/hosted/pub.dev/permission_handler_windows-0.1.3/
 qr_code_scanner=/home/grey/.pub-cache/hosted/pub.dev/qr_code_scanner-1.0.1/

@@ -23,7 +23,7 @@ GoRouter router(RouterRef ref) {
     // navigatorKey: _key,
     // refreshListenable: notifier,
     debugLogDiagnostics: true,
-    initialLocation: '/',
+    initialLocation: '/login',
     routes: notifier.routes,
     // redirect: notifier.redirect,
     // errorBuilder: (c, s) =>

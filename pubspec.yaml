@@ -1,17 +1,17 @@
 name: fhirlite
 description: A lightweight EHR developed in Flutter.
-publish_to: 'none' 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   at_app_flutter: ^5.2.0
   at_client_mobile: ^3.2.12
   at_fhir:
     path: ../at_fhir
-  at_onboarding_flutter: ^6.1.3
+  at_onboarding_flutter: ^6.1.4
   at_utils: ^3.0.15
   biometric_storage: ^5.0.0+3
   cupertino_icons: ^1.0.5
@@ -26,7 +26,7 @@ dependencies:
   gap: ^3.0.1
   go_router: ^10.1.1
   hooks_riverpod: ^2.3.10
-  intl: ^0.18.0
+  intl: ^0.18.1
   json_annotation: ^4.8.1
   local_auth: ^2.1.6
   path_provider: ^2.1.0
@@ -51,3 +51,4 @@ flutter:
 
 dependency_overrides:
   analyzer: ^6.0.0
+  intl: ^0.18.1
