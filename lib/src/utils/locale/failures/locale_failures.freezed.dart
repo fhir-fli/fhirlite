@@ -69,25 +69,25 @@ class _$LocaleFailuresCopyWithImpl<$Res, $Val extends LocaleFailures>
 }
 
 /// @nodoc
-abstract class _$$NotSupportedErrorCopyWith<$Res> {
-  factory _$$NotSupportedErrorCopyWith(
-          _$NotSupportedError value, $Res Function(_$NotSupportedError) then) =
-      __$$NotSupportedErrorCopyWithImpl<$Res>;
+abstract class _$$NotSupportedErrorImplCopyWith<$Res> {
+  factory _$$NotSupportedErrorImplCopyWith(_$NotSupportedErrorImpl value,
+          $Res Function(_$NotSupportedErrorImpl) then) =
+      __$$NotSupportedErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NotSupportedErrorCopyWithImpl<$Res>
-    extends _$LocaleFailuresCopyWithImpl<$Res, _$NotSupportedError>
-    implements _$$NotSupportedErrorCopyWith<$Res> {
-  __$$NotSupportedErrorCopyWithImpl(
-      _$NotSupportedError _value, $Res Function(_$NotSupportedError) _then)
+class __$$NotSupportedErrorImplCopyWithImpl<$Res>
+    extends _$LocaleFailuresCopyWithImpl<$Res, _$NotSupportedErrorImpl>
+    implements _$$NotSupportedErrorImplCopyWith<$Res> {
+  __$$NotSupportedErrorImplCopyWithImpl(_$NotSupportedErrorImpl _value,
+      $Res Function(_$NotSupportedErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$NotSupportedError implements NotSupportedError {
-  const _$NotSupportedError();
+class _$NotSupportedErrorImpl implements NotSupportedError {
+  const _$NotSupportedErrorImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$NotSupportedError implements NotSupportedError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NotSupportedError);
+        (other.runtimeType == runtimeType && other is _$NotSupportedErrorImpl);
   }
 
   @override
@@ -161,5 +161,5 @@ class _$NotSupportedError implements NotSupportedError {
 }
 
 abstract class NotSupportedError implements LocaleFailures {
-  const factory NotSupportedError() = _$NotSupportedError;
+  const factory NotSupportedError() = _$NotSupportedErrorImpl;
 }

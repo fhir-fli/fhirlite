@@ -1,33 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../src.dart';
 
-part 'router.g.dart';
-
-/// **************************************************************************
-/// Most of this is taken directly from
-/// https://github.com/lucavenir/go_router_riverpod
-/// **************************************************************************
-final _key = GlobalKey<NavigatorState>(debugLabel: 'routerKey');
-
-@riverpod
-GoRouter router(RouterRef ref) {
-  final sub = ref.listen(routerNotifierProvider, (_, __) {});
-  ref.onDispose(sub.close);
-
-  final notifier = ref.read(routerNotifierProvider.notifier);
-
-  return GoRouter(
-    // navigatorKey: _key,
-    // refreshListenable: notifier,
-    debugLogDiagnostics: true,
-    initialLocation: '/',
-    routes: notifier.routes,
-    // redirect: notifier.redirect,
-    // errorBuilder: (c, s) =>
-    //     ErrorRoute(s.error ?? const RouteFailuresUnspecifiedError())
-    // .build(c, s)
-  );
+enum Routes {
+  init,
+  login,
+  loading,
+  fhir,
+  alertMessage,
+  error,
 }
+
+final goRouter = GoRouter(
+  initialLocation: '/login',
+  debugLogDiagnostics: true,
+  routes: [
+    GoRoute(
+      path: '/',
+      name: Routes.init.name,
+      pageBuilder: (context, state) => const MaterialPage(
+        fullscreenDialog: true,
+        child: AlertView('Initializing...'),
+      ),
+    ),
+    GoRoute(
+      path: '/login',
+      name: Routes.login.name,
+      pageBuilder: (context, state) => const MaterialPage(
+        fullscreenDialog: true,
+        child: LoginView(),
+      ),
+    ),
+    GoRoute(
+      path: '/fhir',
+      name: Routes.fhir.name,
+      pageBuilder: (context, state) => MaterialPage(
+        fullscreenDialog: true,
+        child: FhirHomeView(),
+      ),
+    ),
+    GoRoute(
+      path: '/loading',
+      name: Routes.loading.name,
+      pageBuilder: (context, state) => const MaterialPage(
+        fullscreenDialog: true,
+        child: AlertView('Loading...'),
+      ),
+    ),
+    GoRoute(
+      path: '/alert:message',
+      name: Routes.alertMessage.name,
+      pageBuilder: (context, state) => const MaterialPage(
+        fullscreenDialog: true,
+        child: AlertView(''),
+      ),
+    ),
+    GoRoute(
+      path: '/error',
+      name: Routes.error.name,
+      pageBuilder: (context, state) => const MaterialPage(
+        fullscreenDialog: true,
+        child: AlertView(''),
+      ),
+    ),
+  ],
+);

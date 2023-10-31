@@ -99,25 +99,25 @@ class _$RouteFailuresCopyWithImpl<$Res, $Val extends RouteFailures>
 }
 
 /// @nodoc
-abstract class _$$RouteFailuresPathNotAvailableErrorCopyWith<$Res>
+abstract class _$$RouteFailuresPathNotAvailableErrorImplCopyWith<$Res>
     implements $RouteFailuresCopyWith<$Res> {
-  factory _$$RouteFailuresPathNotAvailableErrorCopyWith(
-          _$RouteFailuresPathNotAvailableError value,
-          $Res Function(_$RouteFailuresPathNotAvailableError) then) =
-      __$$RouteFailuresPathNotAvailableErrorCopyWithImpl<$Res>;
+  factory _$$RouteFailuresPathNotAvailableErrorImplCopyWith(
+          _$RouteFailuresPathNotAvailableErrorImpl value,
+          $Res Function(_$RouteFailuresPathNotAvailableErrorImpl) then) =
+      __$$RouteFailuresPathNotAvailableErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$RouteFailuresPathNotAvailableErrorCopyWithImpl<$Res>
+class __$$RouteFailuresPathNotAvailableErrorImplCopyWithImpl<$Res>
     extends _$RouteFailuresCopyWithImpl<$Res,
-        _$RouteFailuresPathNotAvailableError>
-    implements _$$RouteFailuresPathNotAvailableErrorCopyWith<$Res> {
-  __$$RouteFailuresPathNotAvailableErrorCopyWithImpl(
-      _$RouteFailuresPathNotAvailableError _value,
-      $Res Function(_$RouteFailuresPathNotAvailableError) _then)
+        _$RouteFailuresPathNotAvailableErrorImpl>
+    implements _$$RouteFailuresPathNotAvailableErrorImplCopyWith<$Res> {
+  __$$RouteFailuresPathNotAvailableErrorImplCopyWithImpl(
+      _$RouteFailuresPathNotAvailableErrorImpl _value,
+      $Res Function(_$RouteFailuresPathNotAvailableErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$RouteFailuresPathNotAvailableErrorCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$RouteFailuresPathNotAvailableError(
+    return _then(_$RouteFailuresPathNotAvailableErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -136,9 +136,9 @@ class __$$RouteFailuresPathNotAvailableErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RouteFailuresPathNotAvailableError
+class _$RouteFailuresPathNotAvailableErrorImpl
     implements RouteFailuresPathNotAvailableError {
-  const _$RouteFailuresPathNotAvailableError(
+  const _$RouteFailuresPathNotAvailableErrorImpl(
       [this.message = 'Error: This URL/path is not available']);
 
   @override
@@ -154,7 +154,7 @@ class _$RouteFailuresPathNotAvailableError
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RouteFailuresPathNotAvailableError &&
+            other is _$RouteFailuresPathNotAvailableErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -164,10 +164,10 @@ class _$RouteFailuresPathNotAvailableError
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RouteFailuresPathNotAvailableErrorCopyWith<
-          _$RouteFailuresPathNotAvailableError>
-      get copyWith => __$$RouteFailuresPathNotAvailableErrorCopyWithImpl<
-          _$RouteFailuresPathNotAvailableError>(this, _$identity);
+  _$$RouteFailuresPathNotAvailableErrorImplCopyWith<
+          _$RouteFailuresPathNotAvailableErrorImpl>
+      get copyWith => __$$RouteFailuresPathNotAvailableErrorImplCopyWithImpl<
+          _$RouteFailuresPathNotAvailableErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -239,36 +239,37 @@ class _$RouteFailuresPathNotAvailableError
 abstract class RouteFailuresPathNotAvailableError
     implements RouteFailures, Exception {
   const factory RouteFailuresPathNotAvailableError([final String message]) =
-      _$RouteFailuresPathNotAvailableError;
+      _$RouteFailuresPathNotAvailableErrorImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$RouteFailuresPathNotAvailableErrorCopyWith<
-          _$RouteFailuresPathNotAvailableError>
+  _$$RouteFailuresPathNotAvailableErrorImplCopyWith<
+          _$RouteFailuresPathNotAvailableErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RouteFailuresUnspecifiedErrorCopyWith<$Res>
+abstract class _$$RouteFailuresUnspecifiedErrorImplCopyWith<$Res>
     implements $RouteFailuresCopyWith<$Res> {
-  factory _$$RouteFailuresUnspecifiedErrorCopyWith(
-          _$RouteFailuresUnspecifiedError value,
-          $Res Function(_$RouteFailuresUnspecifiedError) then) =
-      __$$RouteFailuresUnspecifiedErrorCopyWithImpl<$Res>;
+  factory _$$RouteFailuresUnspecifiedErrorImplCopyWith(
+          _$RouteFailuresUnspecifiedErrorImpl value,
+          $Res Function(_$RouteFailuresUnspecifiedErrorImpl) then) =
+      __$$RouteFailuresUnspecifiedErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$RouteFailuresUnspecifiedErrorCopyWithImpl<$Res>
-    extends _$RouteFailuresCopyWithImpl<$Res, _$RouteFailuresUnspecifiedError>
-    implements _$$RouteFailuresUnspecifiedErrorCopyWith<$Res> {
-  __$$RouteFailuresUnspecifiedErrorCopyWithImpl(
-      _$RouteFailuresUnspecifiedError _value,
-      $Res Function(_$RouteFailuresUnspecifiedError) _then)
+class __$$RouteFailuresUnspecifiedErrorImplCopyWithImpl<$Res>
+    extends _$RouteFailuresCopyWithImpl<$Res,
+        _$RouteFailuresUnspecifiedErrorImpl>
+    implements _$$RouteFailuresUnspecifiedErrorImplCopyWith<$Res> {
+  __$$RouteFailuresUnspecifiedErrorImplCopyWithImpl(
+      _$RouteFailuresUnspecifiedErrorImpl _value,
+      $Res Function(_$RouteFailuresUnspecifiedErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -276,7 +277,7 @@ class __$$RouteFailuresUnspecifiedErrorCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$RouteFailuresUnspecifiedError(
+    return _then(_$RouteFailuresUnspecifiedErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -287,8 +288,9 @@ class __$$RouteFailuresUnspecifiedErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
-  const _$RouteFailuresUnspecifiedError(
+class _$RouteFailuresUnspecifiedErrorImpl
+    implements RouteFailuresUnspecifiedError {
+  const _$RouteFailuresUnspecifiedErrorImpl(
       [this.message = 'Error: Unable to find this route']);
 
   @override
@@ -304,7 +306,7 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RouteFailuresUnspecifiedError &&
+            other is _$RouteFailuresUnspecifiedErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -314,9 +316,10 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RouteFailuresUnspecifiedErrorCopyWith<_$RouteFailuresUnspecifiedError>
-      get copyWith => __$$RouteFailuresUnspecifiedErrorCopyWithImpl<
-          _$RouteFailuresUnspecifiedError>(this, _$identity);
+  _$$RouteFailuresUnspecifiedErrorImplCopyWith<
+          _$RouteFailuresUnspecifiedErrorImpl>
+      get copyWith => __$$RouteFailuresUnspecifiedErrorImplCopyWithImpl<
+          _$RouteFailuresUnspecifiedErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -388,12 +391,13 @@ class _$RouteFailuresUnspecifiedError implements RouteFailuresUnspecifiedError {
 abstract class RouteFailuresUnspecifiedError
     implements RouteFailures, Exception {
   const factory RouteFailuresUnspecifiedError([final String message]) =
-      _$RouteFailuresUnspecifiedError;
+      _$RouteFailuresUnspecifiedErrorImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$RouteFailuresUnspecifiedErrorCopyWith<_$RouteFailuresUnspecifiedError>
+  _$$RouteFailuresUnspecifiedErrorImplCopyWith<
+          _$RouteFailuresUnspecifiedErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

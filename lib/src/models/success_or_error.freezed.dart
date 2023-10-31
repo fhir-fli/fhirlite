@@ -91,25 +91,25 @@ class _$FhirliteSuccessCopyWithImpl<$Res, $Val extends FhirliteSuccess>
 }
 
 /// @nodoc
-abstract class _$$SuccessfulCopyWith<$Res> {
-  factory _$$SuccessfulCopyWith(
-          _$Successful value, $Res Function(_$Successful) then) =
-      __$$SuccessfulCopyWithImpl<$Res>;
+abstract class _$$SuccessfulImplCopyWith<$Res> {
+  factory _$$SuccessfulImplCopyWith(
+          _$SuccessfulImpl value, $Res Function(_$SuccessfulImpl) then) =
+      __$$SuccessfulImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SuccessfulCopyWithImpl<$Res>
-    extends _$FhirliteSuccessCopyWithImpl<$Res, _$Successful>
-    implements _$$SuccessfulCopyWith<$Res> {
-  __$$SuccessfulCopyWithImpl(
-      _$Successful _value, $Res Function(_$Successful) _then)
+class __$$SuccessfulImplCopyWithImpl<$Res>
+    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessfulImpl>
+    implements _$$SuccessfulImplCopyWith<$Res> {
+  __$$SuccessfulImplCopyWithImpl(
+      _$SuccessfulImpl _value, $Res Function(_$SuccessfulImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Successful implements Successful {
-  const _$Successful();
+class _$SuccessfulImpl implements Successful {
+  const _$SuccessfulImpl();
 
   @override
   String toString() {
@@ -119,7 +119,7 @@ class _$Successful implements Successful {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Successful);
+        (other.runtimeType == runtimeType && other is _$SuccessfulImpl);
   }
 
   @override
@@ -205,24 +205,24 @@ class _$Successful implements Successful {
 }
 
 abstract class Successful implements FhirliteSuccess {
-  const factory Successful() = _$Successful;
+  const factory Successful() = _$SuccessfulImpl;
 }
 
 /// @nodoc
-abstract class _$$SuccessStringCopyWith<$Res> {
-  factory _$$SuccessStringCopyWith(
-          _$SuccessString value, $Res Function(_$SuccessString) then) =
-      __$$SuccessStringCopyWithImpl<$Res>;
+abstract class _$$SuccessStringImplCopyWith<$Res> {
+  factory _$$SuccessStringImplCopyWith(
+          _$SuccessStringImpl value, $Res Function(_$SuccessStringImpl) then) =
+      __$$SuccessStringImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$SuccessStringCopyWithImpl<$Res>
-    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessString>
-    implements _$$SuccessStringCopyWith<$Res> {
-  __$$SuccessStringCopyWithImpl(
-      _$SuccessString _value, $Res Function(_$SuccessString) _then)
+class __$$SuccessStringImplCopyWithImpl<$Res>
+    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessStringImpl>
+    implements _$$SuccessStringImplCopyWith<$Res> {
+  __$$SuccessStringImplCopyWithImpl(
+      _$SuccessStringImpl _value, $Res Function(_$SuccessStringImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -230,7 +230,7 @@ class __$$SuccessStringCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$SuccessString(
+    return _then(_$SuccessStringImpl(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -241,8 +241,8 @@ class __$$SuccessStringCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessString implements SuccessString {
-  const _$SuccessString(this.value);
+class _$SuccessStringImpl implements SuccessString {
+  const _$SuccessStringImpl(this.value);
 
   @override
   final String value;
@@ -256,7 +256,7 @@ class _$SuccessString implements SuccessString {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessString &&
+            other is _$SuccessStringImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -266,8 +266,8 @@ class _$SuccessString implements SuccessString {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessStringCopyWith<_$SuccessString> get copyWith =>
-      __$$SuccessStringCopyWithImpl<_$SuccessString>(this, _$identity);
+  _$$SuccessStringImplCopyWith<_$SuccessStringImpl> get copyWith =>
+      __$$SuccessStringImplCopyWithImpl<_$SuccessStringImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -349,29 +349,29 @@ class _$SuccessString implements SuccessString {
 }
 
 abstract class SuccessString implements FhirliteSuccess {
-  const factory SuccessString(final String value) = _$SuccessString;
+  const factory SuccessString(final String value) = _$SuccessStringImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$SuccessStringCopyWith<_$SuccessString> get copyWith =>
+  _$$SuccessStringImplCopyWith<_$SuccessStringImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SuccessBoolCopyWith<$Res> {
-  factory _$$SuccessBoolCopyWith(
-          _$SuccessBool value, $Res Function(_$SuccessBool) then) =
-      __$$SuccessBoolCopyWithImpl<$Res>;
+abstract class _$$SuccessBoolImplCopyWith<$Res> {
+  factory _$$SuccessBoolImplCopyWith(
+          _$SuccessBoolImpl value, $Res Function(_$SuccessBoolImpl) then) =
+      __$$SuccessBoolImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool value});
 }
 
 /// @nodoc
-class __$$SuccessBoolCopyWithImpl<$Res>
-    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessBool>
-    implements _$$SuccessBoolCopyWith<$Res> {
-  __$$SuccessBoolCopyWithImpl(
-      _$SuccessBool _value, $Res Function(_$SuccessBool) _then)
+class __$$SuccessBoolImplCopyWithImpl<$Res>
+    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessBoolImpl>
+    implements _$$SuccessBoolImplCopyWith<$Res> {
+  __$$SuccessBoolImplCopyWithImpl(
+      _$SuccessBoolImpl _value, $Res Function(_$SuccessBoolImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -379,7 +379,7 @@ class __$$SuccessBoolCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$SuccessBool(
+    return _then(_$SuccessBoolImpl(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -390,8 +390,8 @@ class __$$SuccessBoolCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessBool implements SuccessBool {
-  const _$SuccessBool(this.value);
+class _$SuccessBoolImpl implements SuccessBool {
+  const _$SuccessBoolImpl(this.value);
 
   @override
   final bool value;
@@ -405,7 +405,7 @@ class _$SuccessBool implements SuccessBool {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessBool &&
+            other is _$SuccessBoolImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -415,8 +415,8 @@ class _$SuccessBool implements SuccessBool {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessBoolCopyWith<_$SuccessBool> get copyWith =>
-      __$$SuccessBoolCopyWithImpl<_$SuccessBool>(this, _$identity);
+  _$$SuccessBoolImplCopyWith<_$SuccessBoolImpl> get copyWith =>
+      __$$SuccessBoolImplCopyWithImpl<_$SuccessBoolImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -498,30 +498,31 @@ class _$SuccessBool implements SuccessBool {
 }
 
 abstract class SuccessBool implements FhirliteSuccess {
-  const factory SuccessBool(final bool value) = _$SuccessBool;
+  const factory SuccessBool(final bool value) = _$SuccessBoolImpl;
 
   bool get value;
   @JsonKey(ignore: true)
-  _$$SuccessBoolCopyWith<_$SuccessBool> get copyWith =>
+  _$$SuccessBoolImplCopyWith<_$SuccessBoolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SuccessNotificationResultCopyWith<$Res> {
-  factory _$$SuccessNotificationResultCopyWith(
-          _$SuccessNotificationResult value,
-          $Res Function(_$SuccessNotificationResult) then) =
-      __$$SuccessNotificationResultCopyWithImpl<$Res>;
+abstract class _$$SuccessNotificationResultImplCopyWith<$Res> {
+  factory _$$SuccessNotificationResultImplCopyWith(
+          _$SuccessNotificationResultImpl value,
+          $Res Function(_$SuccessNotificationResultImpl) then) =
+      __$$SuccessNotificationResultImplCopyWithImpl<$Res>;
   @useResult
   $Res call({NotificationResult value});
 }
 
 /// @nodoc
-class __$$SuccessNotificationResultCopyWithImpl<$Res>
-    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessNotificationResult>
-    implements _$$SuccessNotificationResultCopyWith<$Res> {
-  __$$SuccessNotificationResultCopyWithImpl(_$SuccessNotificationResult _value,
-      $Res Function(_$SuccessNotificationResult) _then)
+class __$$SuccessNotificationResultImplCopyWithImpl<$Res>
+    extends _$FhirliteSuccessCopyWithImpl<$Res, _$SuccessNotificationResultImpl>
+    implements _$$SuccessNotificationResultImplCopyWith<$Res> {
+  __$$SuccessNotificationResultImplCopyWithImpl(
+      _$SuccessNotificationResultImpl _value,
+      $Res Function(_$SuccessNotificationResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -529,7 +530,7 @@ class __$$SuccessNotificationResultCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$SuccessNotificationResult(
+    return _then(_$SuccessNotificationResultImpl(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -540,8 +541,8 @@ class __$$SuccessNotificationResultCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessNotificationResult implements SuccessNotificationResult {
-  const _$SuccessNotificationResult(this.value);
+class _$SuccessNotificationResultImpl implements SuccessNotificationResult {
+  const _$SuccessNotificationResultImpl(this.value);
 
   @override
   final NotificationResult value;
@@ -555,7 +556,7 @@ class _$SuccessNotificationResult implements SuccessNotificationResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessNotificationResult &&
+            other is _$SuccessNotificationResultImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -565,9 +566,9 @@ class _$SuccessNotificationResult implements SuccessNotificationResult {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessNotificationResultCopyWith<_$SuccessNotificationResult>
-      get copyWith => __$$SuccessNotificationResultCopyWithImpl<
-          _$SuccessNotificationResult>(this, _$identity);
+  _$$SuccessNotificationResultImplCopyWith<_$SuccessNotificationResultImpl>
+      get copyWith => __$$SuccessNotificationResultImplCopyWithImpl<
+          _$SuccessNotificationResultImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -650,11 +651,11 @@ class _$SuccessNotificationResult implements SuccessNotificationResult {
 
 abstract class SuccessNotificationResult implements FhirliteSuccess {
   const factory SuccessNotificationResult(final NotificationResult value) =
-      _$SuccessNotificationResult;
+      _$SuccessNotificationResultImpl;
 
   NotificationResult get value;
   @JsonKey(ignore: true)
-  _$$SuccessNotificationResultCopyWith<_$SuccessNotificationResult>
+  _$$SuccessNotificationResultImplCopyWith<_$SuccessNotificationResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -727,20 +728,20 @@ class _$FhirliteErrorCopyWithImpl<$Res, $Val extends FhirliteError>
 }
 
 /// @nodoc
-abstract class _$$FailureMessageErrorCopyWith<$Res> {
-  factory _$$FailureMessageErrorCopyWith(_$FailureMessageError value,
-          $Res Function(_$FailureMessageError) then) =
-      __$$FailureMessageErrorCopyWithImpl<$Res>;
+abstract class _$$FailureMessageErrorImplCopyWith<$Res> {
+  factory _$$FailureMessageErrorImplCopyWith(_$FailureMessageErrorImpl value,
+          $Res Function(_$FailureMessageErrorImpl) then) =
+      __$$FailureMessageErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$FailureMessageErrorCopyWithImpl<$Res>
-    extends _$FhirliteErrorCopyWithImpl<$Res, _$FailureMessageError>
-    implements _$$FailureMessageErrorCopyWith<$Res> {
-  __$$FailureMessageErrorCopyWithImpl(
-      _$FailureMessageError _value, $Res Function(_$FailureMessageError) _then)
+class __$$FailureMessageErrorImplCopyWithImpl<$Res>
+    extends _$FhirliteErrorCopyWithImpl<$Res, _$FailureMessageErrorImpl>
+    implements _$$FailureMessageErrorImplCopyWith<$Res> {
+  __$$FailureMessageErrorImplCopyWithImpl(_$FailureMessageErrorImpl _value,
+      $Res Function(_$FailureMessageErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -748,7 +749,7 @@ class __$$FailureMessageErrorCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$FailureMessageError(
+    return _then(_$FailureMessageErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -759,8 +760,8 @@ class __$$FailureMessageErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailureMessageError implements FailureMessageError {
-  const _$FailureMessageError(this.message);
+class _$FailureMessageErrorImpl implements FailureMessageError {
+  const _$FailureMessageErrorImpl(this.message);
 
   @override
   final String message;
@@ -774,7 +775,7 @@ class _$FailureMessageError implements FailureMessageError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailureMessageError &&
+            other is _$FailureMessageErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -784,8 +785,8 @@ class _$FailureMessageError implements FailureMessageError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailureMessageErrorCopyWith<_$FailureMessageError> get copyWith =>
-      __$$FailureMessageErrorCopyWithImpl<_$FailureMessageError>(
+  _$$FailureMessageErrorImplCopyWith<_$FailureMessageErrorImpl> get copyWith =>
+      __$$FailureMessageErrorImplCopyWithImpl<_$FailureMessageErrorImpl>(
           this, _$identity);
 
   @override
@@ -861,29 +862,29 @@ class _$FailureMessageError implements FailureMessageError {
 
 abstract class FailureMessageError implements FhirliteError {
   const factory FailureMessageError(final String message) =
-      _$FailureMessageError;
+      _$FailureMessageErrorImpl;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$FailureMessageErrorCopyWith<_$FailureMessageError> get copyWith =>
+  _$$FailureMessageErrorImplCopyWith<_$FailureMessageErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ExceptionErrorCopyWith<$Res> {
-  factory _$$ExceptionErrorCopyWith(
-          _$ExceptionError value, $Res Function(_$ExceptionError) then) =
-      __$$ExceptionErrorCopyWithImpl<$Res>;
+abstract class _$$ExceptionErrorImplCopyWith<$Res> {
+  factory _$$ExceptionErrorImplCopyWith(_$ExceptionErrorImpl value,
+          $Res Function(_$ExceptionErrorImpl) then) =
+      __$$ExceptionErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object exception, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$ExceptionErrorCopyWithImpl<$Res>
-    extends _$FhirliteErrorCopyWithImpl<$Res, _$ExceptionError>
-    implements _$$ExceptionErrorCopyWith<$Res> {
-  __$$ExceptionErrorCopyWithImpl(
-      _$ExceptionError _value, $Res Function(_$ExceptionError) _then)
+class __$$ExceptionErrorImplCopyWithImpl<$Res>
+    extends _$FhirliteErrorCopyWithImpl<$Res, _$ExceptionErrorImpl>
+    implements _$$ExceptionErrorImplCopyWith<$Res> {
+  __$$ExceptionErrorImplCopyWithImpl(
+      _$ExceptionErrorImpl _value, $Res Function(_$ExceptionErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -892,7 +893,7 @@ class __$$ExceptionErrorCopyWithImpl<$Res>
     Object? exception = null,
     Object? stackTrace = null,
   }) {
-    return _then(_$ExceptionError(
+    return _then(_$ExceptionErrorImpl(
       null == exception ? _value.exception : exception,
       null == stackTrace
           ? _value.stackTrace
@@ -904,8 +905,8 @@ class __$$ExceptionErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ExceptionError implements ExceptionError {
-  const _$ExceptionError(this.exception, this.stackTrace);
+class _$ExceptionErrorImpl implements ExceptionError {
+  const _$ExceptionErrorImpl(this.exception, this.stackTrace);
 
   @override
   final Object exception;
@@ -921,7 +922,7 @@ class _$ExceptionError implements ExceptionError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExceptionError &&
+            other is _$ExceptionErrorImpl &&
             const DeepCollectionEquality().equals(other.exception, exception) &&
             (identical(other.stackTrace, stackTrace) ||
                 other.stackTrace == stackTrace));
@@ -934,8 +935,9 @@ class _$ExceptionError implements ExceptionError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ExceptionErrorCopyWith<_$ExceptionError> get copyWith =>
-      __$$ExceptionErrorCopyWithImpl<_$ExceptionError>(this, _$identity);
+  _$$ExceptionErrorImplCopyWith<_$ExceptionErrorImpl> get copyWith =>
+      __$$ExceptionErrorImplCopyWithImpl<_$ExceptionErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1010,28 +1012,31 @@ class _$ExceptionError implements ExceptionError {
 
 abstract class ExceptionError implements FhirliteError {
   const factory ExceptionError(
-      final Object exception, final StackTrace stackTrace) = _$ExceptionError;
+          final Object exception, final StackTrace stackTrace) =
+      _$ExceptionErrorImpl;
 
   Object get exception;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$ExceptionErrorCopyWith<_$ExceptionError> get copyWith =>
+  _$$ExceptionErrorImplCopyWith<_$ExceptionErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AtErrorCopyWith<$Res> {
-  factory _$$AtErrorCopyWith(_$AtError value, $Res Function(_$AtError) then) =
-      __$$AtErrorCopyWithImpl<$Res>;
+abstract class _$$AtErrorImplCopyWith<$Res> {
+  factory _$$AtErrorImplCopyWith(
+          _$AtErrorImpl value, $Res Function(_$AtErrorImpl) then) =
+      __$$AtErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AtException exception, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AtErrorCopyWithImpl<$Res>
-    extends _$FhirliteErrorCopyWithImpl<$Res, _$AtError>
-    implements _$$AtErrorCopyWith<$Res> {
-  __$$AtErrorCopyWithImpl(_$AtError _value, $Res Function(_$AtError) _then)
+class __$$AtErrorImplCopyWithImpl<$Res>
+    extends _$FhirliteErrorCopyWithImpl<$Res, _$AtErrorImpl>
+    implements _$$AtErrorImplCopyWith<$Res> {
+  __$$AtErrorImplCopyWithImpl(
+      _$AtErrorImpl _value, $Res Function(_$AtErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1040,7 +1045,7 @@ class __$$AtErrorCopyWithImpl<$Res>
     Object? exception = null,
     Object? stackTrace = null,
   }) {
-    return _then(_$AtError(
+    return _then(_$AtErrorImpl(
       null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -1055,8 +1060,8 @@ class __$$AtErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AtError implements AtError {
-  const _$AtError(this.exception, this.stackTrace);
+class _$AtErrorImpl implements AtError {
+  const _$AtErrorImpl(this.exception, this.stackTrace);
 
   @override
   final AtException exception;
@@ -1072,7 +1077,7 @@ class _$AtError implements AtError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AtError &&
+            other is _$AtErrorImpl &&
             (identical(other.exception, exception) ||
                 other.exception == exception) &&
             (identical(other.stackTrace, stackTrace) ||
@@ -1085,8 +1090,8 @@ class _$AtError implements AtError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AtErrorCopyWith<_$AtError> get copyWith =>
-      __$$AtErrorCopyWithImpl<_$AtError>(this, _$identity);
+  _$$AtErrorImplCopyWith<_$AtErrorImpl> get copyWith =>
+      __$$AtErrorImplCopyWithImpl<_$AtErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1161,11 +1166,11 @@ class _$AtError implements AtError {
 
 abstract class AtError implements FhirliteError {
   const factory AtError(
-      final AtException exception, final StackTrace stackTrace) = _$AtError;
+      final AtException exception, final StackTrace stackTrace) = _$AtErrorImpl;
 
   AtException get exception;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AtErrorCopyWith<_$AtError> get copyWith =>
+  _$$AtErrorImplCopyWith<_$AtErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

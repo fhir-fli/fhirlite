@@ -89,22 +89,22 @@ class _$LocaleEventsCopyWithImpl<$Res, $Val extends LocaleEvents>
 }
 
 /// @nodoc
-abstract class _$$SetLocaleCopyWith<$Res>
+abstract class _$$SetLocaleImplCopyWith<$Res>
     implements $LocaleEventsCopyWith<$Res> {
-  factory _$$SetLocaleCopyWith(
-          _$SetLocale value, $Res Function(_$SetLocale) then) =
-      __$$SetLocaleCopyWithImpl<$Res>;
+  factory _$$SetLocaleImplCopyWith(
+          _$SetLocaleImpl value, $Res Function(_$SetLocaleImpl) then) =
+      __$$SetLocaleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Locale? newLocale});
 }
 
 /// @nodoc
-class __$$SetLocaleCopyWithImpl<$Res>
-    extends _$LocaleEventsCopyWithImpl<$Res, _$SetLocale>
-    implements _$$SetLocaleCopyWith<$Res> {
-  __$$SetLocaleCopyWithImpl(
-      _$SetLocale _value, $Res Function(_$SetLocale) _then)
+class __$$SetLocaleImplCopyWithImpl<$Res>
+    extends _$LocaleEventsCopyWithImpl<$Res, _$SetLocaleImpl>
+    implements _$$SetLocaleImplCopyWith<$Res> {
+  __$$SetLocaleImplCopyWithImpl(
+      _$SetLocaleImpl _value, $Res Function(_$SetLocaleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +112,7 @@ class __$$SetLocaleCopyWithImpl<$Res>
   $Res call({
     Object? newLocale = freezed,
   }) {
-    return _then(_$SetLocale(
+    return _then(_$SetLocaleImpl(
       newLocale: freezed == newLocale
           ? _value.newLocale
           : newLocale // ignore: cast_nullable_to_non_nullable
@@ -123,8 +123,8 @@ class __$$SetLocaleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SetLocale implements SetLocale {
-  const _$SetLocale({required this.newLocale});
+class _$SetLocaleImpl implements SetLocale {
+  const _$SetLocaleImpl({required this.newLocale});
 
   @override
   final Locale? newLocale;
@@ -138,7 +138,7 @@ class _$SetLocale implements SetLocale {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetLocale &&
+            other is _$SetLocaleImpl &&
             (identical(other.newLocale, newLocale) ||
                 other.newLocale == newLocale));
   }
@@ -149,8 +149,8 @@ class _$SetLocale implements SetLocale {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetLocaleCopyWith<_$SetLocale> get copyWith =>
-      __$$SetLocaleCopyWithImpl<_$SetLocale>(this, _$identity);
+  _$$SetLocaleImplCopyWith<_$SetLocaleImpl> get copyWith =>
+      __$$SetLocaleImplCopyWithImpl<_$SetLocaleImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -210,12 +210,12 @@ class _$SetLocale implements SetLocale {
 }
 
 abstract class SetLocale implements LocaleEvents {
-  const factory SetLocale({required final Locale? newLocale}) = _$SetLocale;
+  const factory SetLocale({required final Locale? newLocale}) = _$SetLocaleImpl;
 
   @override
   Locale? get newLocale;
   @override
   @JsonKey(ignore: true)
-  _$$SetLocaleCopyWith<_$SetLocale> get copyWith =>
+  _$$SetLocaleImplCopyWith<_$SetLocaleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
