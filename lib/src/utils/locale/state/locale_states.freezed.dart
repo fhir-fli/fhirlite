@@ -63,22 +63,22 @@ class _$LocaleStatesCopyWithImpl<$Res, $Val extends LocaleStates>
 }
 
 /// @nodoc
-abstract class _$$_LocaleStatesCopyWith<$Res>
+abstract class _$$LocaleStatesImplCopyWith<$Res>
     implements $LocaleStatesCopyWith<$Res> {
-  factory _$$_LocaleStatesCopyWith(
-          _$_LocaleStates value, $Res Function(_$_LocaleStates) then) =
-      __$$_LocaleStatesCopyWithImpl<$Res>;
+  factory _$$LocaleStatesImplCopyWith(
+          _$LocaleStatesImpl value, $Res Function(_$LocaleStatesImpl) then) =
+      __$$LocaleStatesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Locale? selectedLocale, Locale? deviceLocale});
 }
 
 /// @nodoc
-class __$$_LocaleStatesCopyWithImpl<$Res>
-    extends _$LocaleStatesCopyWithImpl<$Res, _$_LocaleStates>
-    implements _$$_LocaleStatesCopyWith<$Res> {
-  __$$_LocaleStatesCopyWithImpl(
-      _$_LocaleStates _value, $Res Function(_$_LocaleStates) _then)
+class __$$LocaleStatesImplCopyWithImpl<$Res>
+    extends _$LocaleStatesCopyWithImpl<$Res, _$LocaleStatesImpl>
+    implements _$$LocaleStatesImplCopyWith<$Res> {
+  __$$LocaleStatesImplCopyWithImpl(
+      _$LocaleStatesImpl _value, $Res Function(_$LocaleStatesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_LocaleStatesCopyWithImpl<$Res>
     Object? selectedLocale = freezed,
     Object? deviceLocale = freezed,
   }) {
-    return _then(_$_LocaleStates(
+    return _then(_$LocaleStatesImpl(
       selectedLocale: freezed == selectedLocale
           ? _value.selectedLocale
           : selectedLocale // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_LocaleStatesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LocaleStates implements _LocaleStates {
-  const _$_LocaleStates({this.selectedLocale, required this.deviceLocale});
+class _$LocaleStatesImpl implements _LocaleStates {
+  const _$LocaleStatesImpl({this.selectedLocale, required this.deviceLocale});
 
   @override
   final Locale? selectedLocale;
@@ -119,7 +119,7 @@ class _$_LocaleStates implements _LocaleStates {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LocaleStates &&
+            other is _$LocaleStatesImpl &&
             (identical(other.selectedLocale, selectedLocale) ||
                 other.selectedLocale == selectedLocale) &&
             (identical(other.deviceLocale, deviceLocale) ||
@@ -132,14 +132,14 @@ class _$_LocaleStates implements _LocaleStates {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LocaleStatesCopyWith<_$_LocaleStates> get copyWith =>
-      __$$_LocaleStatesCopyWithImpl<_$_LocaleStates>(this, _$identity);
+  _$$LocaleStatesImplCopyWith<_$LocaleStatesImpl> get copyWith =>
+      __$$LocaleStatesImplCopyWithImpl<_$LocaleStatesImpl>(this, _$identity);
 }
 
 abstract class _LocaleStates implements LocaleStates {
   const factory _LocaleStates(
       {final Locale? selectedLocale,
-      required final Locale? deviceLocale}) = _$_LocaleStates;
+      required final Locale? deviceLocale}) = _$LocaleStatesImpl;
 
   @override
   Locale? get selectedLocale;
@@ -147,6 +147,6 @@ abstract class _LocaleStates implements LocaleStates {
   Locale? get deviceLocale;
   @override
   @JsonKey(ignore: true)
-  _$$_LocaleStatesCopyWith<_$_LocaleStates> get copyWith =>
+  _$$LocaleStatesImplCopyWith<_$LocaleStatesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -3,6 +3,7 @@ import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../src.dart';
@@ -34,7 +35,7 @@ class LoginView extends HookConsumerWidget {
           case AtOnboardingResultStatus.success:
             {
               if (context.mounted) {
-                const FhirRoute().go(context);
+                context.goNamed(Routes.fhir.name);
               }
             }
             break;

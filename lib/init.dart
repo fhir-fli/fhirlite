@@ -76,17 +76,13 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     final localeStates = ref.watch(localeProvider);
-    final goRouter = ref.watch(routerProvider);
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       showSemanticsDebugger: false,
 
       // *** ROUTES ***
-      restorationScopeId: 'root',
-      routeInformationProvider: goRouter.routeInformationProvider,
-      routeInformationParser: goRouter.routeInformationParser,
-      routerDelegate: goRouter.routerDelegate,
+      routerConfig: goRouter,
 
       // *** LOCALES ***
       localizationsDelegates: const [

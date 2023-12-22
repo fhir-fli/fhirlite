@@ -1,4 +1,3 @@
-import 'package:at_fhir/at_fhir.dart';
 import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/r4.dart';
@@ -9,9 +8,12 @@ import '../../src.dart';
 
 void listenFunction(AtClient atClient, AtNotification atNotification) {
   try {
-    final AtFhirNotification atFhirNotification =
-        AtFhirNotification.fromJsonString(atNotification.key
-            .replaceFirst('${atClient.getCurrentAtSign()}:', ''));
+    if (atNotification.value == null) {
+      return;
+    } else {
+      final AtFhirNotification atFhirNotification =
+          AtFhirNotification.fromJsonString(atNotification.value!);
+    }
   } catch (exception) {
     // TODO(Dokotela): what do to with this error
   }
@@ -54,9 +56,11 @@ class FhirHomeView extends HookConsumerWidget {
                       final result = await atFhirNotify(
                         atClient,
                         AtFhirNotification.r4Request(fhirRequest),
-                        '@81xerothermic',
+                        '@virgoartificial',
                       );
                       print(result.notificationStatusEnum);
+                      print(result.atClientException);
+                      print(result.toString());
                     },
                   ),
                 ],
